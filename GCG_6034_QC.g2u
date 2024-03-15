@@ -1,0 +1,1531 @@
+Program.Sub.ScreenSU.Start
+Gui.Inspection..Create
+Gui.Inspection..Size(19575,9780)
+Gui.Inspection..MinX(0)
+Gui.Inspection..MinY(0)
+Gui.Inspection..Position(0,0)
+Gui.Inspection..BackColor(-2147483633)
+Gui.Inspection..MousePointer(0)
+Gui.Inspection..Event(UnLoad,Form_UnLoad)
+Gui.Inspection..Caption("Request Quality Inspection v.20.11.02.00")
+Gui.Inspection.lbl1.Create(Label,"Badge",True,690,255,0,135,1065,True,0,"Arial",8,-2147483633,0)
+Gui.Inspection.lbl1.FontStyle(True,False,False,False,False)
+Gui.Inspection.txtBadgeEmpNum.Create(TextBox,"",True,1650,300,0,135,1290,True,0,"Arial",8,-2147483643,1)
+Gui.Inspection.txtBadgeEmpNum.TabStop(True)
+Gui.Inspection.txtBadgeEmpNum.TabIndex(1)
+Gui.Inspection.lblWelcome.Create(Label,"",True,4575,255,0,165,720,True,0,"Arial",8,-2147483633,0)
+Gui.Inspection.lblWelcome.ForeColor(9157775)
+Gui.Inspection.lblWelcome.FontStyle(True,False,False,False,False)
+Gui.Inspection.lbl2.Create(Label,"WO-Sequence",True,1320,255,0,3285,1065,True,0,"Arial",8,-2147483633,0)
+Gui.Inspection.lbl2.FontStyle(True,False,False,False,False)
+Gui.Inspection.txtWO.Create(TextBox,"",True,1650,300,0,3285,1290,True,0,"Arial",8,-2147483643,1)
+Gui.Inspection.txtWO.ControlGroup(1)
+Gui.Inspection.txtWO.TabStop(True)
+Gui.Inspection.txtWO.TabIndex(3)
+Gui.Inspection.txtWO.Event(LostFocus,txtWO_LostFocus)
+Gui.Inspection.txtWOPart.Create(TextBox,"",True,2265,300,0,6705,1290,True,0,"Arial",8,-2147483643,1)
+Gui.Inspection.txtWOPart.MaxLength(20)
+Gui.Inspection.txtWOPart.ControlGroup(1)
+Gui.Inspection.txtWOPart.TabStop(True)
+Gui.Inspection.txtWOPart.TabIndex(6)
+Gui.Inspection.lbl3.Create(Label,"Part",True,1125,255,0,6705,1065,True,0,"Arial",8,-2147483633,0)
+Gui.Inspection.lbl3.FontStyle(True,False,False,False,False)
+Gui.Inspection.txtWOPartDescr.Create(TextBox,"",True,3270,300,0,9060,1290,True,0,"Arial",8,-2147483643,1)
+Gui.Inspection.txtWOPartDescr.MaxLength(30)
+Gui.Inspection.txtWOPartDescr.ControlGroup(1)
+Gui.Inspection.txtWOPartDescr.TabStop(True)
+Gui.Inspection.txtWOPartDescr.TabIndex(7)
+Gui.Inspection.lbl4.Create(Label,"Description",True,1125,255,0,9000,1065,True,0,"Arial",8,-2147483633,0)
+Gui.Inspection.lbl4.FontStyle(True,False,False,False,False)
+Gui.Inspection.lbl5.Create(Label,"Sequence Description",True,2040,255,0,12390,1065,True,0,"Arial",8,-2147483633,0)
+Gui.Inspection.lbl5.FontStyle(True,False,False,False,False)
+Gui.Inspection.txtSeqDescr.Create(TextBox,"",True,3270,300,0,12405,1290,True,0,"Arial",8,-2147483643,1)
+Gui.Inspection.txtSeqDescr.MaxLength(30)
+Gui.Inspection.txtSeqDescr.ControlGroup(1)
+Gui.Inspection.txtSeqDescr.TabStop(True)
+Gui.Inspection.txtSeqDescr.TabIndex(8)
+Gui.Inspection.lbl6.Create(Label,"Inspection Type",True,1605,255,0,15810,1065,True,0,"Arial",8,-2147483633,0)
+Gui.Inspection.lbl6.FontStyle(True,False,False,False,False)
+Gui.Inspection.lbl7.Create(Label,"Quantity",True,825,255,0,14850,1740,True,1,"Arial",8,-2147483633,0)
+Gui.Inspection.lbl7.FontStyle(True,False,False,False,False)
+Gui.Inspection.txtQty.Create(TextBox,"",True,1920,300,0,15810,1665,True,1,"Arial",8,-2147483643,1)
+Gui.Inspection.txtQty.NumericOnly(1)
+Gui.Inspection.txtQty.ControlGroup(1)
+Gui.Inspection.txtQty.TabStop(True)
+Gui.Inspection.txtQty.TabIndex(10)
+Gui.Inspection.txtNote.Create(TextBoxR)
+Gui.Inspection.txtNote.Size(19170,1875)
+Gui.Inspection.txtNote.Position(135,1995)
+Gui.Inspection.txtNote.ControlGroup(1)
+Gui.Inspection.txtNote.Anchor(13)
+Gui.Inspection.txtNote.BackColor(-2147483624)
+Gui.Inspection.txtNote.TabStop(True)
+Gui.Inspection.txtNote.TabIndex(11)
+Gui.Inspection.lbl9.Create(Label,"Note",True,600,255,0,135,1770,True,0,"Arial",8,-2147483633,0)
+Gui.Inspection.lbl9.FontStyle(True,False,False,False,False)
+Gui.Inspection.cmdSubmit.Create(Button)
+Gui.Inspection.cmdSubmit.Size(855,375)
+Gui.Inspection.cmdSubmit.Position(135,3975)
+Gui.Inspection.cmdSubmit.Caption("Submit")
+Gui.Inspection.cmdSubmit.BackColor(9157775)
+Gui.Inspection.cmdSubmit.ForeColor(16777215)
+Gui.Inspection.cmdSubmit.FontStyle(True,False,False,False,False)
+Gui.Inspection.cmdSubmit.Event(Click,cmdSubmit_Click)
+Gui.Inspection.cmdSubmit.TabStop(True)
+Gui.Inspection.cmdSubmit.TabIndex(12)
+Gui.Inspection.ddlType.Create(DropDownList)
+Gui.Inspection.ddlType.Size(1905,330)
+Gui.Inspection.ddlType.Position(15810,1275)
+Gui.Inspection.ddlType.ControlGroup(1)
+Gui.Inspection.ddlType.TabStop(True)
+Gui.Inspection.ddlType.TabIndex(9)
+Gui.Inspection.cmdClear.Create(Button)
+Gui.Inspection.cmdClear.Size(855,375)
+Gui.Inspection.cmdClear.Position(1095,3975)
+Gui.Inspection.cmdClear.Caption("Clear")
+Gui.Inspection.cmdClear.ToolTip("Clear All Entries but Scan Badge")
+Gui.Inspection.cmdClear.Event(Click,cmdClear_Click)
+Gui.Inspection.cmdClear.BackColor(8036607)
+Gui.Inspection.cmdClear.ForeColor(16777215)
+Gui.Inspection.cmdClear.FontStyle(True,False,False,False,False)
+Gui.Inspection.cmdClear.TabStop(True)
+Gui.Inspection.cmdClear.TabIndex(13)
+Gui.Inspection.cmdClearAll.Create(Button)
+Gui.Inspection.cmdClearAll.Size(1275,375)
+Gui.Inspection.cmdClearAll.Position(2055,3975)
+Gui.Inspection.cmdClearAll.Caption("Clear All")
+Gui.Inspection.cmdClearAll.ToolTip("Clear All Entries")
+Gui.Inspection.cmdClearAll.Event(Click,cmdClearAll_Click)
+Gui.Inspection.cmdClearAll.BackColor(8036607)
+Gui.Inspection.cmdClearAll.ForeColor(16777215)
+Gui.Inspection.cmdClearAll.FontStyle(True,False,False,False,False)
+Gui.Inspection.cmdClearAll.TabStop(True)
+Gui.Inspection.cmdClearAll.TabIndex(14)
+Gui.Inspection.cmdLoadWO.Create(Button)
+Gui.Inspection.cmdLoadWO.Size(1020,375)
+Gui.Inspection.cmdLoadWO.Position(5580,1245)
+Gui.Inspection.cmdLoadWO.Caption("Load WO")
+Gui.Inspection.cmdLoadWO.Event(Click,cmdLoadWO_Click)
+Gui.Inspection.cmdLoadWO.BackColor(9157775)
+Gui.Inspection.cmdLoadWO.ForeColor(16777215)
+Gui.Inspection.cmdLoadWO.FontStyle(True,False,False,False,False)
+Gui.Inspection.cmdLoadWO.TabStop(True)
+Gui.Inspection.cmdLoadWO.TabIndex(5)
+Gui.Inspection.gsInsp.Create(GsGridControl)
+Gui.Inspection.gsInsp.Size(19170,4350)
+Gui.Inspection.gsInsp.Position(135,4920)
+Gui.Inspection.gsInsp.Event(RowCellClick,gsInsp_RowCellClick)
+Gui.Inspection.gsInsp.Anchor(15)
+Gui.Inspection.gsInsp.TabStop(True)
+Gui.Inspection.gsInsp.TabIndex(17)
+Gui.Inspection.cmdBrowseJobSeq.Create(Button)
+Gui.Inspection.cmdBrowseJobSeq.Size(495,345)
+Gui.Inspection.cmdBrowseJobSeq.Position(5010,1275)
+Gui.Inspection.cmdBrowseJobSeq.Caption("^")
+Gui.Inspection.cmdBrowseJobSeq.FontSize(7)
+Gui.Inspection.cmdBrowseJobSeq.Event(Click,cmdBrowseJobSeq_Click)
+Gui.Inspection.cmdBrowseJobSeq.TabStop(True)
+Gui.Inspection.cmdBrowseJobSeq.TabIndex(4)
+Gui.Inspection.optJobSuffix.Create(Option)
+Gui.Inspection.optJobSuffix.Size(1350,255)
+Gui.Inspection.optJobSuffix.Position(135,4620)
+Gui.Inspection.optJobSuffix.Caption("Job-Suffix")
+Gui.Inspection.optJobSuffix.FontStyle(True,False,False,False,False)
+Gui.Inspection.optJobSuffix.TabStop(True)
+Gui.Inspection.optJobSuffix.TabIndex(15)
+Gui.Inspection.optJobSuffixSeq.Create(Option)
+Gui.Inspection.optJobSuffixSeq.Size(2160,255)
+Gui.Inspection.optJobSuffixSeq.Position(1545,4620)
+Gui.Inspection.optJobSuffixSeq.Caption("Job-Suffix-Sequence")
+Gui.Inspection.optJobSuffixSeq.FontStyle(True,False,False,False,False)
+Gui.Inspection.optJobSuffixSeq.TabStop(True)
+Gui.Inspection.optJobSuffixSeq.TabIndex(16)
+Gui.Inspection.picGSSLogo.Create(PictureBox)
+Gui.Inspection.picGSSLogo.Size(3765,660)
+Gui.Inspection.picGSSLogo.Position(8760,60)
+Gui.Inspection.picGSSLogo.Anchor(1)
+Gui.Inspection.cmdLoadEmployee.Create(Button)
+Gui.Inspection.cmdLoadEmployee.Size(1335,375)
+Gui.Inspection.cmdLoadEmployee.Position(1875,1245)
+Gui.Inspection.cmdLoadEmployee.Caption("Load Badge")
+Gui.Inspection.cmdLoadEmployee.BackColor(9157775)
+Gui.Inspection.cmdLoadEmployee.ForeColor(16777215)
+Gui.Inspection.cmdLoadEmployee.Event(Click,cmdLoadEmployee_Click)
+Gui.Inspection.cmdLoadEmployee.FontStyle(True,False,False,False,False)
+Gui.Inspection.cmdLoadEmployee.TabStop(True)
+Gui.Inspection.cmdLoadEmployee.TabIndex(2)
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+v.Global.bLoad.Declare
+v.Global.dStartingWOCreateDate.Declare
+v.Global.sExcludePart.Declare
+v.Global.sExcludePart.Set("*!*55417*!*")
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+F.Intrinsic.Control.Try
+	v.Local.sHold.Declare
+	v.Local.sSQL.Declare
+	v.Local.sRet.Declare
+	v.Local.iHold.Declare
+	
+	f.Intrinsic.Control.SelectCase(v.Caller.Hook)
+		
+		'Populate hook at Update screen
+		f.Intrinsic.Control.Case(15840)			
+			Variable.Passed.000048.Set("Quality Insp.")
+			f.Intrinsic.Control.ExitSub
+			
+		'Populate at Main GUI screen	
+		f.Intrinsic.Control.Case(15743)	
+			v.Passed.000016.Set("Quality Insp.")
+			f.Intrinsic.Control.ExitSub
+			
+		'Pre Process button hook	
+		f.Intrinsic.Control.Case(15880)
+			'Variable.Passed.009993: Employee
+			f.ODBC.Connection!conx.OpenCompanyConnection			
+			f.Intrinsic.Control.CallSub(Validate_Employee_Dept,"sEmployee",Variable.Passed.009993)
+			F.Intrinsic.Control.If(v.Args.bQUAL)
+				f.ODBC.Connection!conx.Close
+				f.Intrinsic.Control.ExitSub	
+			F.Intrinsic.Control.EndIf
+			f.Intrinsic.Control.CallSub(Get_Starting_WO_CreateDate)
+			f.Intrinsic.Control.CallSub(GUI_btnProcess_Validation)
+			f.ODBC.Connection!conx.Close
+			f.Intrinsic.Control.ExitSub	
+			
+		'Pre Start Job hook
+		f.Intrinsic.Control.Case(15934)	
+		
+			'Variable.Passed.009993: Employee
+			f.ODBC.Connection!conx.OpenCompanyConnection			
+			f.Intrinsic.Control.CallSub(Validate_Employee_Dept,"sEmployee",Variable.Passed.009993)
+			F.Intrinsic.Control.If(v.Args.bQUAL)
+				f.ODBC.Connection!conx.Close
+				f.Intrinsic.Control.ExitSub	
+			F.Intrinsic.Control.EndIf
+			
+			f.Intrinsic.Control.CallSub(Get_Starting_WO_CreateDate)	
+			f.Intrinsic.Control.CallSub(GUI_PreStartJob_Validation)
+			f.ODBC.Connection!conx.Close
+			f.Intrinsic.Control.ExitSub	
+			
+		'Pre Process for Toggle All 15915/15881
+		f.Intrinsic.Control.Case(15881)
+			'Variable.Passed.009993
+			f.ODBC.Connection!conx.OpenCompanyConnection	
+			
+			f.Intrinsic.Control.CallSub(Get_Starting_WO_CreateDate)	
+			f.Intrinsic.Control.CallSub(Validate_Employee_Dept,"sEmployee",Variable.Passed.009993)
+			F.Intrinsic.Control.If(v.Args.bQUAL)
+				f.ODBC.Connection!conx.Close
+				f.Intrinsic.Control.ExitSub	
+			F.Intrinsic.Control.EndIf	
+			f.Intrinsic.Control.CallSub(Process_ToggleAll)
+			f.ODBC.Connection!conx.Close
+			f.Intrinsic.Control.ExitSub
+		
+		'Gui Update Screen Script 1 button named Quality Insp. Execute
+		f.Intrinsic.Control.Case(15850)
+			f.ODBC.Connection!conx.OpenCompanyConnection		
+			f.Intrinsic.Control.CallSub(Set_Logo)
+			
+			'Inspection Type
+			gui.Inspection.ddlType.AddItem("")
+			gui.Inspection.ddlType.AddItem("FAI")
+			gui.Inspection.ddlType.AddItem("Lot")
+			gui.Inspection.ddlType.AddItem("Final")
+			gui.Inspection.ddlType.ListIndex(0)
+			'Welcome employee label
+			f.Intrinsic.String.Build("Welcome {0}",Variable.Passed.009994,v.Local.sHold)
+			gui.Inspection.lblWelcome.Caption(v.Local.sHold)
+			gui.Inspection.txtBadgeEmpNum.Text(Variable.Passed.009993)
+			f.Intrinsic.String.Build("{0}-{1}-{2}",Variable.Passed.009990,Variable.Passed.009991,Variable.Passed.009992,v.Local.sHold)
+			gui.Inspection.txtWO.Text(v.Local.sHold)
+			'Get Part Head info
+			f.Intrinsic.Control.CallSub(Populate_Part_Head,"Job",Variable.Passed.009990,"Suffix",Variable.Passed.009991,"Seq",Variable.Passed.009992)
+			f.Intrinsic.Control.CallSub(Load,"sJob",Variable.Passed.009990,"sSuffix",Variable.Passed.009991,"sSeq",Variable.Passed.009992)
+			
+			gui.Inspection.optJobSuffixSeq.Value(1)
+			'Context menu
+			f.Intrinsic.Control.CallSub(ContextMenu)
+			
+			'Show form
+			gui.Inspection..Visible(True)
+			gui.Inspection.txtQty.SetFocus
+			f.Intrinsic.Control.ExitSub
+			
+		'Gui Main Screen Script 1 button named Qual Insp. Execute
+		f.Intrinsic.Control.Case(15760)	
+			f.ODBC.Connection!conx.OpenCompanyConnection		
+			f.Intrinsic.Control.CallSub(Set_Logo)
+			
+			'Inspection Type
+			gui.Inspection.ddlType.AddItem("")
+			gui.Inspection.ddlType.AddItem("FAI")
+			gui.Inspection.ddlType.AddItem("Lot")
+			gui.Inspection.ddlType.AddItem("Final")
+			gui.Inspection.ddlType.ListIndex(0)
+			'Welcome employee label
+			f.Intrinsic.String.Build("Welcome {0}",Variable.Passed.009994,v.Local.sHold)
+			gui.Inspection.lblWelcome.Caption(v.Local.sHold)
+			gui.Inspection.txtBadgeEmpNum.Text(Variable.Passed.009993)
+			
+			'Check Job before setting
+			f.Intrinsic.String.Build("Select Job from V_Job_Header where Job = '{0}' and Suffix = '{1}'",Variable.Passed.009990,Variable.Passed.009991,v.Local.sSQL)
+			f.ODBC.Connection!conx.ExecuteAndReturn(v.Local.sSQL,v.Local.sRet)
+			f.Intrinsic.Control.If(v.Ambient.ExecuteAndReturnEOF.Not)	
+				f.Intrinsic.String.Build("{0}-{1}-{2}",Variable.Passed.009990,Variable.Passed.009991,Variable.Passed.009992,v.Local.sHold)
+				gui.Inspection.txtWO.Text(v.Local.sHold)
+				
+				'Get Part Head info
+				f.Intrinsic.Control.CallSub(Populate_Part_Head,"Job",Variable.Passed.009990,"Suffix",Variable.Passed.009991,"Seq",Variable.Passed.009992)
+				f.Intrinsic.Control.CallSub(Load,"sJob",Variable.Passed.009990,"sSuffix",Variable.Passed.009991,"sSeq",Variable.Passed.009992)	
+			f.Intrinsic.Control.EndIf
+			
+			gui.Inspection.optJobSuffixSeq.Value(1)
+			'Context menu
+			f.Intrinsic.Control.CallSub(ContextMenu)
+			
+			'Show form
+			gui.Inspection..Visible(True)
+			gui.Inspection.txtQty.SetFocus
+			f.Intrinsic.Control.ExitSub	
+			
+		'Run from a menu item	
+		f.Intrinsic.Control.CaseElse				
+					
+			f.ODBC.Connection!conx.OpenCompanyConnection			
+			f.Intrinsic.Control.CallSub(Set_Logo)
+			
+			'Inspection Type
+			gui.Inspection.ddlType.AddItem("")
+			gui.Inspection.ddlType.AddItem("FAI")
+			gui.Inspection.ddlType.AddItem("Lot")
+			gui.Inspection.ddlType.AddItem("Final")
+			gui.Inspection.ddlType.ListIndex(0)
+			gui.Inspection.txtBadgeEmpNum.Text("")
+
+			gui.Inspection.optJobSuffixSeq.Value(1)
+			'Context menu
+			f.Intrinsic.Control.CallSub(ContextMenu)
+			
+			'Show form
+			gui.Inspection..Visible(True)
+			gui.Inspection.txtQty.SetFocus
+			f.Intrinsic.Control.ExitSub		
+		
+	
+	f.Intrinsic.Control.EndSelect
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry	
+Program.Sub.Main.End
+
+Program.Sub.Validate_Employee_Dept.Start
+F.Intrinsic.Control.Try
+	v.Local.sSQL.Declare
+	v.Local.sRet.Declare
+	v.Local.bQUAL.Declare
+	
+	f.Intrinsic.String.Build("Select ltrim(rtrim(DEPT_EMPLOYEE))  from V_Employee_Mstr where Employee = '{0}'",v.Args.sEmployee,v.Local.sSQL)
+	F.ODBC.Connection!conx.ExecuteAndreturn(v.Local.sSQL,v.Local.sRet)
+	f.Intrinsic.Control.If(v.Ambient.ExecuteAndReturnEOF.Not)
+		f.Intrinsic.Control.If(v.Local.sRet.UCase,=,"QUAL")
+			V.Local.bQUAL.Set(True)
+		f.Intrinsic.Control.EndIf
+	f.Intrinsic.Control.EndIf
+	
+	f.Intrinsic.Variable.AddRV("bQUAL",V.Local.bQUAL)
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry	
+
+Program.Sub.Validate_Employee_Dept.End
+
+Program.Sub.Get_Starting_WO_CreateDate.Start
+F.Intrinsic.Control.Try
+	v.Local.sHold.Declare
+	v.Local.bDate.Declare
+	
+	'WO Creation Date
+	F.Global.Registry.ReadValue("SUPERVSR",V.Caller.CompanyCode,"WOCREATEDATE",6034,1007,6,"",v.Local.sHold)
+	F.Intrinsic.Date.IsDate(V.Local.sHold,V.Local.bDate)
+	f.Intrinsic.Control.If(v.Local.bDate)
+		v.Global.dStartingWOCreateDate.Set(v.Local.sHold)
+	f.Intrinsic.Control.Else		
+		f.Intrinsic.Control.CallSub("Unload")
+	f.Intrinsic.Control.EndIf	
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry	
+Program.Sub.Get_Starting_WO_CreateDate.End
+
+Program.Sub.GUI_btnProcess_Validation.Start
+F.Intrinsic.Control.Try
+	v.Local.sHold.Declare
+	v.Local.sJobSuffix.Declare
+	v.Local.sJob.Declare
+	v.Local.sSuffix.Declare	
+	v.Local.sSeq.Declare	
+	v.Local.sEmp.Declare
+	v.Local.fGood.Declare
+	v.Local.sReason.Declare
+	v.Local.sWC.Declare		
+	v.Local.sSQL.Declare
+	v.Local.sRet.Declare
+	v.Local.bInstr.Declare	
+	v.Local.sPart.Declare
+	v.Local.sCustomer.Declare	
+
+	'Variable.Passed.000001: good
+	'Variable.Passed.000002: scrap
+	'Variable.Passed.000004: Job XXXXXX-XXX
+	'Variable.Passed.000005: Seq no padded yet
+	'Variable.Passed.000003: closed Y/N
+	'Variable.Passed.000008: Leave Y/N
+	'Variable.Passed.009000: WC
+	
+	'Will let go if Goods = 0
+	v.Local.fGood.Set(Variable.Passed.000001)
+	f.Intrinsic.Control.If(v.Local.fGood,=,0)
+		f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.EndIf
+	
+	'Employee
+	v.Local.sEmp.Set(Variable.Passed.009993)
+	'Job,Suffix,Seq,WC
+	v.Local.sJobSuffix.Set(Variable.Passed.000004)
+	f.Intrinsic.String.LPad(Variable.Passed.000005,"0",6,v.Local.sSeq)
+	f.Intrinsic.String.Split(v.Local.sJobSuffix,"-",v.Local.sHold)
+	v.Local.sJob.Set(v.Local.sHold.(0))
+	f.Intrinsic.Control.If(v.Local.sHold.UBound,>=,1)
+		v.Local.sSuffix.Set(v.Local.sHold(1))
+	f.Intrinsic.Control.EndIf
+	v.Local.sWC.Set(Variable.Passed.009000)
+	
+	'Exclude Part in list and Exclude validation of customer hardcode
+	f.Intrinsic.String.Build("Select Top 1 Part,Customer from Job_Header where Job = '{0}' and Suffix = '{1}'",v.Local.sJob,v.Local.sSuffix,v.Local.sSQL)
+	f.ODBC.Connection!conx.ExecuteAndReturn(v.Local.sSQL,v.Local.sRet)
+	f.Intrinsic.Control.If(v.Ambient.ExecuteAndReturnEOF.Not)
+		f.Intrinsic.String.Split(v.Local.sRet,"*!*",v.Local.sRet)
+		f.Intrinsic.String.Build("*!*{0}*!*",v.Local.sRet(0).Trim,v.Local.sPart)
+		f.Intrinsic.String.IsInString(v.Local.sPart.Trim,"55417",True,v.Local.bInstr)
+		f.Intrinsic.Control.If(v.Local.bInstr)
+			F.Intrinsic.Control.ExitSub		
+		f.Intrinsic.Control.EndIf
+		v.Local.sCustomer.Set(v.Local.sRet(1))
+		f.Intrinsic.Control.If(v.Local.sCustomer.Trim,=,"KAM001")
+			F.Intrinsic.Control.ExitSub	
+		f.Intrinsic.Control.EndIf		
+	f.Intrinsic.Control.EndIf
+	''''''''''''''''''''''''	
+	
+	f.Intrinsic.Control.CallSub(Validate_JSS,"sJob",v.Local.sJob,"sSuffix",v.Local.sSuffix,"sSeq",v.Local.sSeq,"sWC",v.Local.sWC)
+
+	f.Intrinsic.Control.If(v.Args.bValid,=,False)
+		f.Intrinsic.String.Build("Job Seq cannot be processed. Quality Inspection is not completed.{0}{1}{0}Please enter 0 as Good Pieces, check Leave and click Process.",v.Ambient.NewLine,v.Args.sReason,v.Local.sReason)
+		v.Passed.777777.Set(1)
+		f.Intrinsic.UI.Msgbox(v.Local.sReason,"Invalid")		
+	f.Intrinsic.Control.EndIf		
+		
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry			
+
+Program.Sub.GUI_btnProcess_Validation.End
+
+Program.Sub.GUI_PreStartJob_Validation.Start
+F.Intrinsic.Control.Try
+	v.Local.sHold.Declare
+	v.Local.sJobSuffix.Declare
+	v.Local.sJob.Declare
+	v.Local.sSuffix.Declare	
+	v.Local.sSeq.Declare	
+
+	v.Local.sReason.Declare
+	v.Local.sWC.Declare	
+	v.Local.sSQL.Declare
+	v.Local.sRet.Declare
+	v.Local.bInstr.Declare
+	v.Local.sPart.Declare
+	v.Local.sCustomer.Declare
+
+'	Variable.Passed.009000 : Job
+'	Variable.Passed.009991: Suffix
+'	Variable.Passed.009992: Sequence
+'	Variable.Passed.009993: Employee number
+'	Variable.Passed.009994: Employee Name
+'	Variable.Passed.009996: WC
+	
+	v.Local.sJob.Set(Variable.Passed.009000)
+	v.Local.sSuffix.Set(Variable.Passed.009991)
+	v.Local.sSeq.Set(Variable.Passed.009992)
+	v.Local.sWC.Set(Variable.Passed.009996)
+	
+	'Exclude validation of Part in list and Exclude validation of customer hardcode
+	f.Intrinsic.String.Build("Select Top 1 Part,Customer from v_Job_Header where Job = '{0}' and Suffix = '{1}'",v.Local.sJob,v.Local.sSuffix,v.Local.sSQL)
+	f.ODBC.Connection!conx.ExecuteAndReturn(v.Local.sSQL,v.Local.sRet)
+	f.Intrinsic.Control.If(v.Ambient.ExecuteAndReturnEOF.Not)
+		f.Intrinsic.String.Split(v.Local.sRet,"*!*",v.Local.sRet)
+		f.Intrinsic.String.Build("*!*{0}*!*",v.Local.sRet(0).Trim,v.Local.sPart)
+		f.Intrinsic.String.IsInString(v.Local.sPart.Trim,"55417",True,v.Local.bInstr)
+		f.Intrinsic.Control.If(v.Local.bInstr)
+			F.Intrinsic.Control.ExitSub		
+		f.Intrinsic.Control.EndIf
+		v.Local.sCustomer.Set(v.Local.sRet(1))
+		f.Intrinsic.Control.If(v.Local.sCustomer.Trim,=,"KAM001")
+			F.Intrinsic.Control.ExitSub	
+		f.Intrinsic.Control.EndIf		
+	f.Intrinsic.Control.EndIf	
+	''''''''''''''''''''''''
+	
+	f.Intrinsic.Control.CallSub(Validate_JSS,"sJob",v.Local.sJob,"sSuffix",v.Local.sSuffix,"sSeq",v.Local.sSeq,"sWC",v.Local.sWC)
+	f.Intrinsic.Control.If(v.Args.bValid,=,False)
+		f.Intrinsic.String.Build("You must be a member of the Quality Department to Log Into this Task.{0}{1}",v.Ambient.NewLine,v.Args.sReason,v.Local.sReason)
+		v.Passed.777777.Set(1)
+		f.Intrinsic.UI.Msgbox(v.Local.sReason,"Invalid")		
+	f.Intrinsic.Control.EndIf			
+		
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry	
+Program.Sub.GUI_PreStartJob_Validation.End
+
+Program.Sub.Validate_JSS.Start
+f.Intrinsic.Control.Try
+	v.Local.sJob.Declare
+	v.Local.sSuffix.Declare	
+	v.Local.sSeq.Declare
+	
+	v.Local.sSQL.Declare
+	v.Local.sRet.Declare
+	v.Local.bValid.Declare
+	v.Local.sReason.Declare
+	v.Local.sOpCode.Declare
+	v.Local.sWC.Declare
+	v.Local.iCnt.Declare
+	v.Local.sStatus.Declare
+	v.Local.fQty.Declare
+	v.Local.dWOCreateDate.Declare
+	
+	v.Local.bValid.Set(True)
+	v.Local.sReason.Set("")
+	
+	'Passed: ,sJob,sSuffix,sSeq,sWC	
+	v.Local.sJob.Set(v.Args.sJob)
+	v.Local.sSuffix.Set(v.Args.sSuffix)
+	v.Local.sSeq.Set(v.Args.sSeq)
+	v.Local.sWC.Set(v.Args.sWC)
+	v.Local.sWC.Set(v.Local.sWC.Trim)
+	
+	'Check WO Create Date
+	F.Intrinsic.String.Build("Select Date_Opened from v_Job_Header where Job = '{0}' and Suffix = '{1}' ",v.Local.sJob,v.Local.sSuffix,v.Local.sSQL)
+	f.ODBC.Connection!conx.ExecuteAndReturn(v.Local.sSQL,v.Local.sRet)
+	f.Intrinsic.Control.If(v.Ambient.ExecuteAndReturnEOF)
+		f.Intrinsic.Variable.AddRV("bValid",True)
+		f.Intrinsic.Variable.AddRV("sReason","")
+		f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.Else		
+		v.Local.dWOCreateDate.Set(v.Local.sRet)
+		f.Intrinsic.Control.If(v.Local.dWOCreateDate,<,v.Global.dStartingWOCreateDate)
+			f.Intrinsic.Variable.AddRV("bValid",True)
+			f.Intrinsic.Variable.AddRV("sReason","")
+			f.Intrinsic.Control.ExitSub			
+		f.Intrinsic.Control.EndIf	
+	f.Intrinsic.Control.EndIf	
+	
+	f.Intrinsic.Control.If(V.Local.sSeq,>=,"990000")
+		f.Intrinsic.Variable.AddRV("bValid",True)
+		f.Intrinsic.Variable.AddRV("sReason","")
+		f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.EndIf		
+
+	'Check if this seq is a SET UP or QUAL seq. If it is, it must be approved.
+	f.Intrinsic.String.Build("Select Top 1 UCase(Operation) from v_Job_operations where job = '{0}' and suffix = '{1}' and seq = '{2}' and LMO = 'L'",v.Local.sJob,v.Local.sSuffix,v.Local.sSeq,v.Local.sSQL)
+	f.ODBC.Connection!conx.ExecuteAndreturn(v.Local.sSQL,v.Local.sRet)
+	f.Intrinsic.Control.If(v.Ambient.ExecuteAndReturnEOF.Not)
+		v.Local.sOpCode.Set(v.Local.sRet.Trim)
+		'This is a SET UP/QUAL seq
+		f.Intrinsic.Control.If(v.Local.sOpCode,=,"SET UP",OR,v.Local.sWC.UCase,=,"QUAL")
+			'1/Check if this seq is approved with qty > 0
+			f.Intrinsic.String.Build("Select Status,AutoNum,InspectQty,Replace(ApproveTime,':','') as FineApproveTime from GCG_6034_QC where Job = '{0}' and Suffix = '{1}' and Seq = '{2}' and InspectQty > 0 Order by ApproveDate desc, FineApproveTime desc",v.Local.sJob,v.Local.sSuffix,v.Local.sSeq,v.Local.sSQL)
+			f.Intrinsic.Control.If(v.DataTable.TopTemp.Exists)
+				f.Data.DataTable.Close("TopTemp")
+			f.Intrinsic.Control.EndIf
+			f.Data.DataTable.CreateFromSQL("TopTemp","conx",v.Local.sSQL,True)
+			f.Intrinsic.Control.If(v.DataTable.TopTemp.RowCount,>,0)
+				f.Intrinsic.Control.If(v.DataTable.TopTemp(0).Status!FieldValTrim,<>,"Approved")
+					v.Local.bValid.Set(False)
+					f.Intrinsic.String.Build("Sequence {0}-{1}-{2} with OpCode/WC {3}/{4} is not approved yet.",v.Local.sJob,v.Local.sSuffix,v.Local.sSeq,v.Local.sOpCode,V.Local.sWC,v.Local.sReason)	
+				f.Intrinsic.Control.EndIf
+			f.Intrinsic.Control.Else
+				v.Local.bValid.Set(False)
+				f.Intrinsic.String.Build("Sequence {0}-{1}-{2} with OpCode/WC {3}/{4} is not approved yet.",v.Local.sJob,v.Local.sSuffix,v.Local.sSeq,v.Local.sOpCode,V.Local.sWC,v.Local.sReason)		
+			f.Intrinsic.Control.EndIf			
+
+		f.Intrinsic.Control.Else
+			'2/Select excluding WC list
+			f.Intrinsic.String.Build("Select WC from GCG_6034_WC where rtrim(WC) = '{0}'",v.Local.sWC,v.Local.sSQL)
+			f.ODBC.Connection!conx.ExecuteAndReturn(v.Local.sSQL,v.Local.sRet)
+			'3/This is not an excluding WCs, check if all previous SET UP and QUAL are approved
+			f.Intrinsic.Control.If(v.Ambient.ExecuteAndReturnEOF)
+				
+				v.Local.sReason.Set("Previous SET UP/QUAL have not been approved for the following seqeuences:")
+				'Check if all previous SET UP and QUAL sequences have been approved
+				f.Intrinsic.String.Build("Select Job, Suffix, Seq, Operation, Job + '-' + Suffix + '-' + Seq as JSS from Job_Operations where Job = '{0}' and Suffix = '{1}' and Seq < '{2}' and (Rtrim(Operation) = 'SET UP' OR Rtrim(Part) = 'QUAL') Order by Job,Suffix,Seq",v.Local.sJob,v.Local.sSuffix,v.Local.sSeq,v.Local.sSQL)
+				f.Intrinsic.Control.If(v.DataTable.QualSeq.Exists)
+					f.Data.DataTable.Close("QualSeq")
+				f.Intrinsic.Control.EndIf
+				f.Data.DataTable.CreateFromSQL("QualSeq","conx",v.Local.sSQL,True)
+				'There are SET UP and QUAL seq
+				F.Intrinsic.Control.For(V.Local.iCnt,0,V.DataTable.QualSeq.RowCount--,1)
+					f.Intrinsic.String.Build("Select Top 1 Status,InspectQty from GCG_6034_QC where Job = '{0}' and Suffix = '{1}' and Seq = '{2}'  Order by ApproveDate desc, ApproveTime desc",V.DataTable.QualSeq(V.Local.iCnt).Job!FieldValString,V.DataTable.QualSeq(V.Local.iCnt).Suffix!FieldValString,V.DataTable.QualSeq(V.Local.iCnt).Seq!FieldValString,v.Local.sSQL)
+					f.ODBC.Connection!conx.ExecuteAndReturn(v.Local.sSQL,v.Local.sRet)
+					f.Intrinsic.Control.If(v.Ambient.ExecuteAndReturnEOF)
+						v.Local.bValid.Set(False)
+						f.Intrinsic.String.Build("{0}{1}{2}",v.Local.sReason,v.Ambient.NewLine,v.DataTable.QualSeq(v.Local.iCnt).JSS!FieldValTrim,v.Local.sReason)
+					f.Intrinsic.Control.Else
+						f.Intrinsic.String.Split(v.Local.sRet,"*!*",v.Local.sRet)
+						v.Local.sStatus.Set(v.Local.sRet(0).Trim)
+						v.Local.fQty.Set(v.Local.sRet(1).Trim)
+						f.Intrinsic.Control.If(v.Local.sStatus,<>,"Approved",or,v.Local.fQty,<=,0)
+							v.Local.bValid.Set(False)
+							f.Intrinsic.String.Build("{0}{1}{2}",v.Local.sReason,v.Ambient.NewLine,v.DataTable.QualSeq(v.Local.iCnt).JSS!FieldValTrim,v.Local.sReason)
+						f.Intrinsic.Control.EndIf					
+					f.Intrinsic.Control.EndIf				
+				F.Intrinsic.Control.Next(V.Local.iCnt)
+			f.Intrinsic.Control.EndIf			
+			
+		f.Intrinsic.Control.EndIf		
+	f.Intrinsic.Control.EndIf
+	
+	f.Intrinsic.Variable.AddRV("bValid",v.Local.bValid)
+	f.Intrinsic.Variable.AddRV("sReason",v.Local.sReason)	
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry	
+Program.Sub.Validate_JSS.End
+
+Program.Sub.Process_ToggleAll.Start
+f.Intrinsic.Control.Try
+	V.Local.iRow.Declare
+	V.Local.iC.Declare
+	V.Local.sReadRow.Declare	
+	v.Local.sWO.Declare
+	v.Local.sJob.Declare
+	v.Local.sSuffix.Declare
+	v.Local.sSeq.Declare
+	v.Local.fGood.Declare	
+	v.Local.sWC.Declare
+	v.Local.bValid.Declare
+	v.Local.sReason.Declare
+	v.Local.sSQL.Declare
+	v.Local.sRet.Declare
+	v.Local.bInstr.Declare	
+	v.Local.sPart.Declare
+	v.Local.sCustomer.Declare		
+
+	v.Local.bValid.Set(True)		
+	v.Local.sJob.Set(Variable.Passed.009990)
+	v.Local.sSuffix.Set(Variable.Passed.009991)
+	v.Local.sSeq.Set(Variable.Passed.009992)
+	v.Local.fGood.Set(Variable.Passed.000001)
+	v.Local.sWC.Set(Variable.Passed.009996)
+
+	'Exclude Part in list and Exclude validation of customer hardcode
+	f.Intrinsic.String.Build("Select Top 1 Part,Customer from Job_Header where Job = '{0}' and Suffix = '{1}'",v.Local.sJob,v.Local.sSuffix,v.Local.sSQL)
+	f.ODBC.Connection!conx.ExecuteAndReturn(v.Local.sSQL,v.Local.sRet)
+	f.Intrinsic.Control.If(v.Ambient.ExecuteAndReturnEOF.Not)
+		f.Intrinsic.String.Split(v.Local.sRet,"*!*",v.Local.sRet)
+		f.Intrinsic.String.Build("*!*{0}*!*",v.Local.sRet(0).Trim,v.Local.sPart)
+		f.Intrinsic.String.IsInString(v.Local.sPart.Trim,"55417",True,v.Local.bInstr)
+		f.Intrinsic.Control.If(v.Local.bInstr)
+			F.Intrinsic.Control.ExitSub		
+		f.Intrinsic.Control.EndIf	
+	f.Intrinsic.Control.EndIf
+	v.Local.sCustomer.Set(v.Local.sRet(1))
+	f.Intrinsic.Control.If(v.Local.sCustomer.Trim,=,"KAM001")
+		F.Intrinsic.Control.ExitSub	
+	f.Intrinsic.Control.EndIf	
+	''''''''''''''''''''''''
+		
+	f.Intrinsic.Control.If(v.Local.fGood,>,0)
+		f.Intrinsic.Control.CallSub(Validate_JSS,"sJob",v.Local.sJob,"sSuffix",v.Local.sSuffix,"sSeq",v.Local.sSeq,"sWC",v.Local.sWC)
+		f.Intrinsic.Control.If(v.Args.bValid,=,False)
+			v.Local.bValid.Set(False)
+			f.Intrinsic.String.Build("{0}{1}{2}",v.Local.sReason,v.Ambient.NewLine,v.Args.sReason,v.Local.sReason)			
+		f.Intrinsic.Control.EndIf
+		
+	f.Intrinsic.Control.EndIf	
+	
+	f.Intrinsic.Control.If(v.Local.bValid,=,False)
+		f.Intrinsic.String.Build("Invalid. To ignore, please enter 0 as Goods qty.{0}{1}",v.Ambient.NewLine,v.Local.sReason,v.Local.sReason)
+		v.Passed.777777.Set(1)
+		f.Intrinsic.UI.Msgbox(v.Local.sReason,"Invalid")
+	f.Intrinsic.Control.EndIf	
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry	
+Program.Sub.Process_ToggleAll.End
+
+Program.Sub.Process_ToggleAll_obsolete.Start
+f.Intrinsic.Control.Try
+	V.Local.iRow.Declare
+	V.Local.iC.Declare
+	V.Local.sReadRow.Declare	
+	v.Local.sWO.Declare
+	v.Local.sJob.Declare
+	v.Local.sSuffix.Declare
+	v.Local.sSeq.Declare
+	v.Local.fGood.Declare	
+	v.Local.sWC.Declare
+	v.Local.bValid.Declare
+	v.Local.sReason.Declare
+	v.Local.bValid.Set(True)
+	
+	f.Intrinsic.Control.If(v.DataTable.sJob.Exists)
+		f.Data.DataTable.Close("Jobs")
+	f.Intrinsic.Control.EndIf
+	f.Data.DataTable.Create("Jobs",True)
+	f.Data.DataTable.AddColumn("Jobs","Job","String","")
+	f.Data.DataTable.AddColumn("Jobs","Suffix","String","")
+	f.Data.DataTable.AddColumn("Jobs","Seq","String","")
+	f.Data.DataTable.AddColumn("Jobs","WC","String","")
+	f.Data.DataTable.AddColumn("Jobs","Good","float",0)
+	f.Data.DataTable.AddColumn("Jobs","LetGo","boolean",True)
+	
+	F.Intrinsic.BDF.Load("AUX001","AUX001")
+	F.Intrinsic.BDF.Clone("AUX001","Clone")
+	F.Intrinsic.BDF.ReadRowCount("AUX001",V.Local.iRow)
+	F.Intrinsic.Math.Sub(V.Local.iRow,1,V.Local.iRow)
+	
+	F.Intrinsic.Control.For(V.Local.iC,0,V.Local.iRow,1)
+		'Read row and check for additional qty
+		F.Intrinsic.BDF.ReadRow("AUX001",V.Local.iC,V.Local.sReadRow)
+		F.Intrinsic.String.Split(V.Local.sReadRow,"|~|",V.Local.sReadRow)
+		f.Intrinsic.String.Split(v.Local.sReadRow(0).Trim,"-",v.Local.sWO)
+		v.Local.sJob.Set(v.Local.sWO(0).Trim)
+		v.Local.sSuffix.Set(v.Local.sWO(1).Trim)
+		v.Local.sSeq.Set(v.Local.sReadRow(1).Trim)
+		v.Local.fGood.Set(v.Local.sReadRow(2).Trim)
+		v.Local.sWC.Set(v.Local.sReadRow(4).Trim)
+		
+		f.Intrinsic.Control.If(v.Local.fGood,>,0)
+			f.Data.DataTable.AddRow("Jobs","Job",v.Local.sJob,"Suffix",v.Local.sSuffix,"Seq",v.Local.sSeq,"Good",v.Local.fGood,"WC",v.Local.sWC)
+			f.Intrinsic.Control.CallSub(Validate_JSS,"sJob",v.Local.sJob,"sSuffix",v.Local.sSuffix,"sSeq",v.Local.sSeq,"sWC",v.Local.sWC)
+			f.Intrinsic.Control.If(v.Args.bValid,=,False)
+				v.Local.bValid.Set(False)
+				f.Intrinsic.String.Build("{0}{1}{2}",v.Local.sReason,v.Ambient.NewLine,v.Args.sReason,v.Local.sReason)			
+			f.Intrinsic.Control.EndIf
+			
+		f.Intrinsic.Control.EndIf	
+		
+	F.Intrinsic.Control.Next(V.Local.iC)
+	
+	f.Intrinsic.Control.If(v.Local.bValid,=,False)
+		f.Intrinsic.String.Build("Invalid. To ignore, please enter 0 as Goods qty.{0}{1}",v.Ambient.NewLine,v.Local.sReason,v.Local.sReason)
+		v.Passed.777777.Set(1)
+		f.Intrinsic.UI.Msgbox(v.Local.sReason,"Invalid")
+	f.Intrinsic.Control.EndIf	
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry	
+Program.Sub.Process_ToggleAll_obsolete.End
+
+Program.Sub.Catching.Start
+f.Intrinsic.Control.Try
+	v.Local.sMsg.Declare
+	v.Local.sPath.Declare
+	v.Local.sErrorDescr.Declare
+	v.Local.sTitle.Declare
+	f.Intrinsic.String.Replace(v.Ambient.ScriptPath,"\","\\",v.Local.sPath)
+	f.Intrinsic.String.Build("{0}\\GCG_6034_QC.g2u",v.Local.sPath,v.Local.sPath)
+	f.Intrinsic.String.Replace(v.Args.ErrorDesc,"\","\\",v.Local.sErrorDescr)
+	
+	f.Intrinsic.String.Build("RTF{\rtf1\fbidis\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset1 Segoe UI Symbol;}{\f1\fnil Times New Roman;}{\f2\fnil\fcharset0 Times New Roman;}{\f3\fnil\fcharset1 Segoe UI Emoji;}}{0}{\colortbl ;\red247\green150\blue70;\red0\green176\blue80;\red0\green128\blue0;}{0}{\*\generator Riched20 10.0.18362}\viewkind4\uc1{0}\pard\sl240\slmult1\cf1\b\f0\fs20\u-10179?\u-9026?\cf0\f1  \b0\f2 {1}\tab\par{0}\f3\u9881?\u-497?\f1  \f2 {2}\par{0}\cf2\f3\u-10178?\u-8706?\cf0\f1  \f2 {3}\cf3\lang9\par{0}}",v.Ambient.NewLine,v.Local.sPath,v.Args.Sub,v.Local.sErrorDescr,v.Local.sMsg)
+	f.Intrinsic.String.Build("GAB Error Number {0}",v.Args.errorno,v.Local.sTitle)
+	f.Intrinsic.UI.MsgboxExt(v.Local.sTitle,v.Local.sMsg,1)
+	F.Intrinsic.Control.CallSub("Unload")
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.UI.Msgbox(v.Ambient.ErrorDescription)
+	f.Intrinsic.Control.If(v.ODBC.conx.State,=,1)
+		f.ODBC.Connection!conx.Close
+	f.Intrinsic.Control.EndIf
+	f.Intrinsic.Control.End
+f.Intrinsic.Control.EndTry
+Program.Sub.Catching.End
+
+Program.Sub.Set_Logo.Start
+f.Intrinsic.Control.Try
+	V.Local.sIcon.Declare
+	V.Local.sGssLogo.Declare
+	v.Local.bEx.Declare
+	
+	F.Intrinsic.String.Build("{0}\GCG_6034_Logo.png",V.Caller.GasDir,V.Local.sGssLogo)
+	f.Intrinsic.File.Exists(v.Local.sGssLogo,v.Local.bEx)
+	f.Intrinsic.Control.If(v.Local.bEx)
+		gui.Inspection.picGSSLogo.Picture(V.Local.sGssLogo)
+	f.Intrinsic.Control.EndIf	
+	
+	'image files used in the Inspection form
+	F.Intrinsic.String.Build("{0}\GCG_6034.ico",v.Caller.GasDir,v.Local.sIcon)
+	f.Intrinsic.File.Exists(v.Local.sIcon,v.Local.bEx)
+	f.Intrinsic.Control.If(v.Local.bEx)
+		gui.Inspection..Icon(V.Local.sIcon)
+	f.Intrinsic.Control.EndIf	
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry	
+Program.Sub.Set_Logo.End
+
+Program.Sub.cmdLoadWO_Click.Start
+F.Intrinsic.Control.Try
+	v.Local.sJob.Declare
+	v.Local.sSuffix.Declare
+	v.Local.sSeq.Declare
+	v.Local.sRet.Declare
+	v.Local.sSQL.Declare
+	v.Local.sName.Declare
+	v.Local.sEmpl.Declare
+	v.Local.sWO.Declare
+	
+	'Validate employee
+	f.Intrinsic.String.Replace(v.Screen.Inspection!txtWO.Text.Trim,"$%","",v.Local.sWO)
+	gui.Inspection.txtWO.Text(v.Local.sWO)
+	f.Intrinsic.String.Replace(v.Screen.Inspection!txtBadgeEmpNum.Text.Trim,"%$","",v.Local.sEmpl)
+	gui.Inspection.txtBadgeEmpNum.Text(v.Local.sEmpl)
+	f.Intrinsic.String.Build("Select name from Employee_Mstr where employee = '{0}'",v.Local.sEmpl.PSQLFriendly,v.Local.sSQL)
+	f.ODBC.Connection!conx.ExecuteAndReturn(v.Local.ssql,v.Local.sName)
+	f.Intrinsic.Control.If(v.Ambient.ExecuteAndReturnEOF)
+		f.Intrinsic.UI.Msgbox("Invalid Employee number.","Attention")
+		f.Intrinsic.Control.ExitSub		
+	f.Intrinsic.Control.EndIf		
+	
+	'Validate Job-Suffix-Seq
+	f.Intrinsic.String.Split(v.Screen.Inspection!txtWO.Text.Trim,"-",v.Local.sRet)
+	f.Intrinsic.Control.If(v.Local.sRet.UBound,<>,2)
+		f.Intrinsic.UI.Msgbox("Invalid Job-Suffix-Seq.","Attention")
+		f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.EndIf	
+	
+	v.Local.sJob.Set(v.Local.sRet(0))
+	v.Local.sSuffix.Set(v.Local.sRet(1))
+	v.Local.sSeq.Set(v.Local.sRet(2))
+
+	f.Intrinsic.String.Build("Select Top 1 Part,Description from V_Job_Header where Job = '{0}' and Suffix = '{1}'",v.Local.sJob,v.Local.sSuffix,v.Local.sSQL)
+	f.ODBC.Connection!conx.ExecuteAndReturn(v.Local.sSQL,v.Local.sRet)
+	f.Intrinsic.Control.If(v.Ambient.ExecuteAndReturnEOF.Not)
+		f.Intrinsic.String.Split(v.Local.sRet,"*!*",v.Local.sRet)
+		gui.Inspection.txtWOPart.Text(v.Local.sRet(0))
+		gui.Inspection.txtWOPartDescr.Text(v.Local.sRet(1))
+	f.Intrinsic.Control.Else
+		f.Intrinsic.UI.Msgbox("Invalid Job-Suffix.","Attention")
+		f.Intrinsic.Control.ExitSub		
+	f.Intrinsic.Control.EndIf
+		
+	f.Intrinsic.String.Build("Select Top 1 Description from V_Job_Operations where Job = '{0}' and Suffix = '{1}' and Seq = '{2}'",v.Local.sJob,v.Local.sSuffix,v.Local.sSeq,v.Local.sSQL)
+	f.ODBC.Connection!conx.ExecuteAndReturn(v.Local.sSQL,v.Local.sRet)
+	f.Intrinsic.Control.If(v.Ambient.ExecuteAndReturnEOF.Not)
+		gui.Inspection.txtSeqDescr.Text(v.Local.sRet.Trim)
+	f.Intrinsic.Control.Else
+		f.Intrinsic.UI.Msgbox("Invalid Job-Suffix-Seq.","Attention")
+		f.Intrinsic.Control.ExitSub		
+	f.Intrinsic.Control.EndIf
+	
+	f.Intrinsic.Control.CallSub(Load,"sJob",v.Local.sJob,"sSuffix",v.Local.sSuffix,"sSeq",v.Local.sSeq)
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry	
+Program.Sub.cmdLoadWO_Click.End
+
+Program.Sub.Populate_Part_Head.Start
+F.Intrinsic.Control.Try
+	v.Local.sSQL.Declare
+	v.Local.sRet.Declare	
+	v.Local.bValid.Declare
+	
+	v.Local.bValid.Set(True)
+	
+	f.Intrinsic.String.Build("Select Top 1 Part,Description from V_Job_Header where Job = '{0}' and Suffix = '{1}'",v.Args.Job,v.Args.Suffix,v.Local.sSQL)
+	f.ODBC.Connection!conx.ExecuteAndReturn(v.Local.sSQL,v.Local.sRet)
+	f.Intrinsic.Control.If(v.Ambient.ExecuteAndReturnEOF.Not)
+		f.Intrinsic.String.Split(v.Local.sRet,"*!*",v.Local.sRet)
+		gui.Inspection.txtWOPart.Text(v.Local.sRet(0))
+		gui.Inspection.txtWOPartDescr.Text(v.Local.sRet(1))
+	f.Intrinsic.Control.Else
+		gui.Inspection.txtWOPart.Text("")
+		gui.Inspection.txtWOPartDescr.Text("")	
+		v.Local.bValid.Set(False)
+	f.Intrinsic.Control.EndIf
+		
+	f.Intrinsic.String.Build("Select Top 1 Description from V_Job_Operations where Job = '{0}' and Suffix = '{1}' and Seq = '{2}'",v.Args.Job,v.Args.Suffix,v.Args.Seq,v.Local.sSQL)
+	f.ODBC.Connection!conx.ExecuteAndReturn(v.Local.sSQL,v.Local.sRet)
+	f.Intrinsic.Control.If(v.Ambient.ExecuteAndReturnEOF.Not)
+		gui.Inspection.txtSeqDescr.Text(v.Local.sRet.Trim)
+	f.Intrinsic.Control.Else
+		gui.Inspection.txtSeqDescr.Text("")
+		v.Local.bValid.Set(False)
+	f.Intrinsic.Control.EndIf
+	f.Intrinsic.Variable.AddRV("bValidWO",v.Local.bValid)
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry	
+Program.Sub.Populate_Part_Head.End
+
+Program.Sub.Form_UnLoad.Start
+f.Intrinsic.Control.End
+Program.Sub.Form_UnLoad.End
+
+Program.Sub.cmdSubmit_Click.Start
+F.Intrinsic.Control.Try
+	v.Local.sJob.Declare
+	v.Local.sSuffix.Declare
+	v.Local.sSeq.Declare
+	v.Local.sInspectType.Declare
+	v.Local.sSubmitEmp.Declare
+	v.Local.dSubmitDate.Declare
+	v.Local.sSubmitTime.Declare
+	v.Local.sSubmitNote.Declare
+	v.Local.fInspectQty.Declare
+	v.Local.sRet.Declare
+	v.Local.sEmpl.Declare
+	v.Local.sSql.Declare
+	v.Local.sName.Declare
+	v.Local.iFlag.Declare
+	v.Local.sHold.Declare
+	v.Local.iCnt.Declare
+	v.Local.bFirst.Declare
+	
+	'Validate employee
+	v.Local.sEmpl.Set(v.Screen.Inspection!txtBadgeEmpNum.Text.Trim)
+	f.Intrinsic.String.Build("Select name from Employee_Mstr where employee = '{0}'",v.Local.sEmpl.PSQLFriendly,v.Local.sSQL)
+	f.ODBC.Connection!conx.ExecuteAndReturn(v.Local.ssql,v.Local.sName)
+	f.Intrinsic.Control.If(v.Ambient.ExecuteAndReturnEOF)
+		f.Intrinsic.UI.Msgbox("Invalid Employee number.","Attention")
+		f.Intrinsic.Control.ExitSub		
+	f.Intrinsic.Control.EndIf	
+	
+	'Validate Job-Suffix-Seq
+	f.Intrinsic.String.Split(v.Screen.Inspection!txtWO.Text.Trim,"-",v.Local.sRet)
+	f.Intrinsic.Control.If(v.Local.sRet.UBound,<>,2)
+		f.Intrinsic.UI.Msgbox("Invalid Job-Suffix-Seq.","Attention")
+		f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.EndIf	
+	
+	v.Local.sJob.Set(v.Local.sRet(0))
+	v.Local.sSuffix.Set(v.Local.sRet(1))
+	v.Local.sSeq.Set(v.Local.sRet(2))
+	f.Intrinsic.String.Build("Select job from V_Job_Operations where job = '{0}' and suffix = '{1}' and Seq = '{2}'",v.Local.sJob,v.Local.sSuffix,v.Local.sSeq,v.Local.sSQL)
+	f.ODBC.Connection!conx.ExecuteAndReturn(v.Local.sSql,v.Local.sRet)
+	f.Intrinsic.Control.If(v.Ambient.ExecuteAndReturnEOF)
+		f.Intrinsic.UI.Msgbox("Invalid Job-Suffix-Seq.","Attention")
+		f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.EndIf	
+	
+	'Validate Inspection Type
+	f.Intrinsic.Control.If(v.Screen.Inspection!ddlType.Text.Trim,=,"")
+		f.Intrinsic.UI.Msgbox("Please select Inspection Type.","Attention")
+		f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.EndIf
+	
+	'Validate qty
+	v.Local.fInspectQty.Set(v.Screen.Inspection!txtQty.Text)	
+	f.Intrinsic.Control.If(v.Local.fInspectQty,=,0)
+		f.Intrinsic.UI.Msgbox("Invalid Quantity.","Attention")
+		f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.EndIf		
+	
+	v.Local.sInspectType.Set(v.Screen.Inspection!ddlType.Text.Trim)
+	v.Local.sSubmitEmp.Set(v.Local.sEmpl.left5)
+	v.Local.dSubmitDate.Set(v.Ambient.Date)
+	v.Local.sSubmitTime.Set(v.Ambient.Now.FormatHH:NN:SS)
+	v.Local.sSubmitNote.Set(v.Screen.Inspection!txtNote.Text.Trim)
+	v.Local.sSubmitNote.Set(v.Local.sSubmitNote.left3000)
+	
+	F.Intrinsic.String.Build("Insert into GCG_6034_QC (Job,Suffix,Seq,InspectType,SubmitEmp,SubmitDate,SubmitTime,SubmitNote,InspectQty) values ('{0}','{1}','{2}','{3}','{4}','{5}','{6}','{7}','{8}')",v.local.sJob.left6,v.local.sSuffix.left3,v.local.sSeq.left6,v.local.sInspectType.PSQLFriendly,v.local.sSubmitEmp.PSQLFriendly,v.local.dSubmitDate.PervasiveDate,v.local.sSubmitTime,v.local.sSubmitNote.PSQLFriendly,v.local.fInspectQty,v.Local.sSql)
+	f.ODBC.Connection!conx.Execute(v.Local.sSql)		
+	
+	'Clear
+	f.Intrinsic.Control.CallSub(cmdClear_Click)
+	
+	'Refresh
+	F.Intrinsic.Control.CallSub(Load,"sJob",v.Local.sJob,"sSuffix",v.Local.sSuffix,"sSeq",v.Local.sSeq)
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry	
+Program.Sub.cmdSubmit_Click.End
+
+Program.Sub.Unload.Start
+f.Intrinsic.Control.Try
+	
+	f.Intrinsic.Control.If(v.ODBC.conx.State,=,1)
+		f.ODBC.Connection!conx.Close	
+	f.Intrinsic.Control.EndIf
+	f.Intrinsic.Control.End
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.End
+f.Intrinsic.Control.EndTry	
+Program.Sub.Unload.End
+
+Program.Sub.cmdClear_Click.Start
+f.Intrinsic.Control.Try
+	
+	f.Intrinsic.Control.BlockEvents
+	gui.Inspection.txtWO.Text("")
+	gui.Inspection.txtWOPart.Text("")
+	gui.Inspection.txtWOPartDescr.Text("")
+	gui.Inspection.ddlType.Text("")
+	gui.Inspection.txtSeqDescr.Text("")
+	gui.Inspection.txtQty.Text("")
+	gui.Inspection.txtNote.Text("")
+	gui.Inspection.txtWO.SetFocus
+	f.Intrinsic.Control.UnBlockEvents
+	
+F.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdClear_Click.End
+
+Program.Sub.cmdClearAll_Click.Start
+f.Intrinsic.Control.Try
+	
+	f.Intrinsic.Control.BlockEvents
+	f.Intrinsic.Control.CallSub(cmdClear_Click)
+	
+	f.Intrinsic.Control.BlockEvents
+	gui.Inspection.lblWelcome.Caption("")
+	gui.Inspection.txtBadgeEmpNum.Text("")
+	gui.Inspection.txtBadgeEmpNum.SetFocus
+	f.Intrinsic.Control.UnBlockEvents
+	
+	f.Intrinsic.Control.If(v.Global.bLoad)
+		gui.Inspection.gsInsp.ClearRows("gvMain")
+	f.Intrinsic.Control.EndIf
+	
+F.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdClearAll_Click.End
+
+Program.Sub.gsInsp_RowCellClick.Start
+f.Intrinsic.Control.Try
+	V.Local.bAuth.Declare
+
+	f.Intrinsic.Control.SelectCase(v.Args.Column.UCase)
+		f.Intrinsic.Control.Case("SUBMITNOTE")	
+			F.Intrinsic.UI.MsgBoxExt("Employee Note",v.DataTable.Insp(v.Args.RowIndex).SubmitNote!FieldValTrim)
+			
+		f.Intrinsic.Control.Case("APPROVENOTE")	
+			F.Intrinsic.UI.MsgBoxExt("Approver Note",v.DataTable.Insp(v.Args.RowIndex).APPROVENOTE!FieldValTrim)
+			
+	f.Intrinsic.Control.EndSelect
+	
+F.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry			
+Program.Sub.gsInsp_RowCellClick.End
+
+Program.Sub.cmdBrowseJobSeq_Click.Start
+f.Intrinsic.Control.Try
+	v.Local.sRet.Declare
+	v.Local.sWO.Declare
+	v.Local.sName.Declare
+	v.Local.sEmpl.Declare
+	v.Local.sSQL.Declare
+	
+	'Validate employee
+	v.Local.sEmpl.Set(v.Screen.Inspection!txtBadgeEmpNum.Text.Trim)
+	f.Intrinsic.String.Build("Select name from Employee_Mstr where employee = '{0}'",v.Local.sEmpl.PSQLFriendly,v.Local.sSQL)
+	f.ODBC.Connection!conx.ExecuteAndReturn(v.Local.ssql,v.Local.sName)
+	f.Intrinsic.Control.If(v.Ambient.ExecuteAndReturnEOF)
+		f.Intrinsic.UI.Msgbox("Invalid Employee number.","Attention")
+		f.Intrinsic.Control.ExitSub		
+	f.Intrinsic.Control.EndIf		
+	
+	f.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+	f.Intrinsic.UI.Browser("Select Job Sequence","conx","Select h.Part, h.Description,o.Job + '-' + o.Suffix + '-' + o.Seq as WOSeq, O.Description as SequenceDescription,o.Part as WorkCenter from v_Job_header h left join v_job_operations o on h.job = o.job and h.suffix = o.suffix where h.Date_closed = '1900-01-01' and o.LMO = 'L' order by o.Job,o.Suffix,o.Seq","Part*!*Description*!*WO Seq*!*Seq Description*!*Work Center","200*!*300*!*250*!*300*!*150",v.Local.sRet)
+	f.Intrinsic.Control.If(v.Local.sRet.IsCancel,=,False)
+		f.Intrinsic.Control.CallSub(cmdClear_Click)
+		f.Intrinsic.String.Split(v.Local.sRet,"*!*",v.Local.sRet)
+		f.Intrinsic.Control.BlockEvents
+		gui.Inspection.txtWO.Text(v.Local.sRet(2))
+		gui.Inspection.txtWOPart.Text(v.Local.sRet(0).Trim)
+		gui.Inspection.txtWOPartDescr.Text(v.Local.sRet(1).Trim)
+		gui.Inspection.ddlType.Text("")
+		gui.Inspection.txtSeqDescr.Text(v.Local.sRet(3).Trim)
+		gui.Inspection.txtQty.Text("")
+		gui.Inspection.txtNote.Text("")
+		gui.Inspection.txtWO.SetFocus
+		f.Intrinsic.Control.UnBlockEvents
+		
+		f.Intrinsic.String.Split(v.Local.sRet(2).Trim,"-",v.Local.sWO)
+		f.Intrinsic.Control.If(v.Local.sWO.UBound,=,2)
+			f.Intrinsic.Control.CallSub(Load,"sJob",v.Local.sWO(0).Trim,"sSuffix",v.Local.sWO(1).Trim,"sSeq",v.Local.sWO(2).Trim)
+		f.Intrinsic.Control.EndIf
+		
+	f.Intrinsic.Control.EndIf	
+	
+F.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdBrowseJobSeq_Click.End
+
+Program.Sub.Load.Start
+F.Intrinsic.Control.Try
+	v.Local.sSQL.Declare
+		
+	f.Intrinsic.Control.If(v.Global.bLoad)
+		gui.Inspection.gsInsp.ClearRows("gvMain")
+	f.Intrinsic.Control.Else
+		'Get Employee Name
+		f.Data.Dictionary.CreateFromSQL("dEmpName","conx","Select Employee,Name from Employee_MSTR")
+		f.Data.Dictionary.SetDefaultReturn("dEmpName","")
+	f.Intrinsic.Control.EndIf
+	
+	f.Intrinsic.Control.If(v.DataTable.Insp.Exists)
+		f.Data.DataTable.Close("Insp")
+	f.Intrinsic.Control.EndIf
+	f.Intrinsic.Control.If(v.Screen.Inspection!optJobSuffix.Value,=,True)
+		F.Intrinsic.String.Build("Select g.AutoNum, g.Job,g.Suffix,g.Seq,h.Part,h.Description,o.Description as SeqDescription,g.InspectType,g.SubmitNote,g.SubmitEmp,'' as EmpName,g.SubmitDate,g.SubmitTime,g.Status,g.Approver,g.ApproveDate,g.ApproveTime,g.ApproveNote,g.InspectQty from GCG_6034_QC g left join v_job_header h on g.job = h.job and g.suffix = h.suffix left join v_job_Operations o on g.job = o.job and g.suffix = o.suffix and g.seq = o.seq Where g.Job = '{0}' and g.Suffix = '{1}'  Order by g.SubmitDate,g.SubmitTime,g.ApproveDate,g.ApproveTime",v.Args.sJob,v.Args.sSuffix,v.Local.sSQL)
+	f.Intrinsic.Control.else
+		F.Intrinsic.String.Build("Select g.AutoNum, g.Job,g.Suffix,g.Seq,h.Part,h.Description,o.Description as SeqDescription,g.InspectType,g.SubmitNote,g.SubmitEmp,'' as EmpName,g.SubmitDate,g.SubmitTime,g.Status,g.Approver,g.ApproveDate,g.ApproveTime,g.ApproveNote,g.InspectQty from GCG_6034_QC g left join v_job_header h on g.job = h.job and g.suffix = h.suffix left join v_job_Operations o on g.job = o.job and g.suffix = o.suffix and g.seq = o.seq Where g.Job = '{0}' and g.Suffix = '{1}' and g.Seq = '{2}' Order by g.SubmitDate,g.SubmitTime,g.ApproveDate,g.ApproveTime",v.Args.sJob,v.Args.sSuffix,v.Args.sSeq,v.Local.sSQL)
+	f.Intrinsic.Control.EndIf
+	
+	f.Data.DataTable.CreateFromSQL("Insp","conx",v.Local.sSQL,True)
+	
+	'Get Employee Name
+	f.Data.DataTable.FillFromDictionary("Insp","dEmpName","SubmitEmp","EmpName")	
+	f.Data.DataTable.RemoveColumn("Insp","SubmitEmp")
+	f.Data.DataTable.AcceptChanges("Insp")
+	
+	gui.Inspection.gsInsp.AddGridviewFromDatatable("gvMain","Insp")
+	f.Intrinsic.Control.CallSub(Format_gvMain)	
+	gui.Inspection.gsInsp.MainView("gvMain")
+	V.Global.bLoad.Set(True)
+		
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry	
+Program.Sub.Load.End
+
+Program.Sub.Format_gvMain.Start
+F.Intrinsic.Control.Try
+	v.Local.sProperty.Declare
+
+	gui.Inspection.gsInsp.SuspendLayout
+
+	'General
+	Gui.Inspection.gsInsp.SetGridViewProperty("gvMain","AllowSort",True)
+	Gui.Inspection.gsInsp.SetGridViewProperty("gvMain","AllowFilter",True)
+	Gui.Inspection.gsInsp.SetGridViewProperty("gvMain","OptionsFindAlwaysVisible",True)
+	Gui.Inspection.gsInsp.SetGridViewProperty("gvMain","Showgrouppanel",True)
+	Gui.Inspection.gsInsp.SetGridViewProperty("gvMain","EnableAppearanceOddRow",False)
+	Gui.Inspection.gsInsp.SetGridViewProperty("gvMain","OptionsViewShowAutoFilterRow",True)
+	Gui.Inspection.gsInsp.SetGridViewProperty("gvMain","AllowColumnResizing",True)
+	Gui.Inspection.gsInsp.SetGridViewProperty("gvMain","OptionsViewColumnAutoWidth",False)	
+	Gui.Inspection.gsInsp.SetGridViewProperty("gvMain","ColumnPanelRowHeight","35")	
+
+	v.Local.sProperty.Set("HeaderFontBold")
+	
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","AutoNum",v.local.sProperty,True) 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","Job",v.local.sProperty,True) 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","Suffix",v.local.sProperty,True) 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","Seq",v.local.sProperty,True) 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","Part",v.local.sProperty,True) 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","Description",v.local.sProperty,True) 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","SeqDescription",v.local.sProperty,True) 	
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","InspectType",v.local.sProperty,True) 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","SubmitNote",v.local.sProperty,True) 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","EmpName",v.local.sProperty,True) 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","SubmitDate",v.local.sProperty,True) 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","SubmitTime",v.local.sProperty,True) 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","Status",v.local.sProperty,True) 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","Approver",v.local.sProperty,True) 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","ApproveDAte",v.local.sProperty,True) 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","ApproveTime",v.local.sProperty,True) 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","ApproveNote",v.local.sProperty,True) 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","InspectQty",v.local.sProperty,True) 
+	
+	v.Local.sProperty.Set("HeaderWordWrap")
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","AutoNum",v.local.sProperty,"wrap") 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","Job",v.local.sProperty,"wrap") 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","Suffix",v.local.sProperty,"wrap") 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","Seq",v.local.sProperty,"wrap") 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","Part",v.local.sProperty,"wrap") 	
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","Description",v.local.sProperty,"wrap") 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","SeqDescription",v.local.sProperty,"wrap") 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","InspectType",v.local.sProperty,"wrap") 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","SubmitNote",v.local.sProperty,"wrap") 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","EmpName",v.local.sProperty,"wrap") 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","SubmitDate",v.local.sProperty,"wrap") 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","SubmitTime",v.local.sProperty,"wrap") 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","Status",v.local.sProperty,"wrap") 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","Approver",v.local.sProperty,"wrap") 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","ApproveDAte",v.local.sProperty,"wrap") 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","ApproveTime",v.local.sProperty,"wrap") 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","ApproveNote",v.local.sProperty,"wrap") 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","InspectQty",v.local.sProperty,"wrap") 
+	
+	v.Local.sProperty.Set("HeaderVAlignment")
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","AutoNum",v.local.sProperty,"Top")
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","Job",v.local.sProperty,"Top") 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","Suffix",v.local.sProperty,"Top") 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","Seq",v.local.sProperty,"Top") 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","Part",v.local.sProperty,"Top")
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","Description",v.local.sProperty,"Top")
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","SeqDescription",v.local.sProperty,"Top")
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","InspectType",v.local.sProperty,"Top") 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","SubmitNote",v.local.sProperty,"Top") 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","EmpName",v.local.sProperty,"Top") 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","SubmitDate",v.local.sProperty,"Top") 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","SubmitTime",v.local.sProperty,"Top") 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","Status",v.local.sProperty,"Top") 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","Approver",v.local.sProperty,"Top") 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","ApproveDAte",v.local.sProperty,"Top") 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","ApproveTime",v.local.sProperty,"Top") 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","ApproveNote",v.local.sProperty,"Top") 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","InspectQty",v.local.sProperty,"Top") 
+	
+	v.Local.sProperty.Set("HeaderHAlignment")
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","AutoNum",v.local.sProperty,"far") 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","Job",v.local.sProperty,"Center") 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","Suffix",v.local.sProperty,"Center") 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","Seq",v.local.sProperty,"Center") 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","Part",v.local.sProperty,"near") 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","Description",v.local.sProperty,"near") 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","SeqDescription",v.local.sProperty,"near") 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","InspectType",v.local.sProperty,"Center") 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","SubmitNote",v.local.sProperty,"Near") 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","EmpName",v.local.sProperty,"near") 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","SubmitDate",v.local.sProperty,"Center") 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","SubmitTime",v.local.sProperty,"Center") 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","Status",v.local.sProperty,"Center") 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","Approver",v.local.sProperty,"Center") 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","ApproveDAte",v.local.sProperty,"Center") 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","ApproveTime",v.local.sProperty,"Center") 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","ApproveNote",v.local.sProperty,"Top") 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","InspectQty",v.local.sProperty,"far") 
+	
+	v.Local.sProperty.Set("CellHAlignment")
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","AutoNum",v.local.sProperty,"far") 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","Job",v.local.sProperty,"Center") 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","Suffix",v.local.sProperty,"Center") 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","Seq",v.local.sProperty,"Center") 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","Part",v.local.sProperty,"near")
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","Description",v.local.sProperty,"near") 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","SeqDescription",v.local.sProperty,"near") 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","InspectType",v.local.sProperty,"Center") 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","SubmitNote",v.local.sProperty,"Near") 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","EmpName",v.local.sProperty,"near") 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","SubmitDate",v.local.sProperty,"Center") 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","SubmitTime",v.local.sProperty,"Center") 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","Status",v.local.sProperty,"Center") 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","Approver",v.local.sProperty,"Center") 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","ApproveDAte",v.local.sProperty,"Center") 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","ApproveTime",v.local.sProperty,"Center") 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","ApproveNote",v.local.sProperty,"Top") 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","InspectQty",v.local.sProperty,"far") 
+	
+	v.Local.sProperty.Set("Caption")
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","Job",v.local.sProperty,"Job") 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","Suffix",v.local.sProperty,"Suf") 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","Seq",v.local.sProperty,"Seq") 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","Part",v.local.sProperty,"Part") 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","Description",v.local.sProperty,"Description") 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","SeqDescription",v.local.sProperty,"Seq Description") 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","InspectType",v.local.sProperty,"Type") 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","SubmitNote",v.local.sProperty,"Emp. Note") 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","EmpName",v.local.sProperty,"Empl. Name") 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","SubmitDate",v.local.sProperty,"Submit Date") 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","SubmitTime",v.local.sProperty,"Submit Time") 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","Status",v.local.sProperty,"Status") 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","Approver",v.local.sProperty,"Approver") 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","ApproveDAte",v.local.sProperty,"Approve Date") 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","ApproveTime",v.local.sProperty,"Approve Time") 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","ApproveNote",v.local.sProperty,"Approver Note") 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","InspectQty",v.local.sProperty,"Insp. Qty") 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","AutoNum",v.local.sProperty,"Rec. Num")
+	
+	v.Local.sProperty.Set("MinWidth")
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","AutoNum",v.local.sProperty,"40")
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","Job",v.local.sProperty,"55") 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","Suffix",v.local.sProperty,"38") 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","Seq",v.local.sProperty,"55") 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","Part",v.local.sProperty,"65") 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","Description",v.local.sProperty,"65") 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","SeqDescription",v.local.sProperty,"65") 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","InspectType",v.local.sProperty,"65") 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","SubmitNote",v.local.sProperty,"65") 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","EmpName",v.local.sProperty,"65") 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","SubmitDate",v.local.sProperty,"75") 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","SubmitTime",v.local.sProperty,"75") 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","Status",v.local.sProperty,"75") 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","Approver",v.local.sProperty,"65") 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","ApproveDAte",v.local.sProperty,"75") 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","ApproveTime",v.local.sProperty,"75") 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","ApproveNote",v.local.sProperty,"65") 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","InspectQty",v.local.sProperty,"85") 
+	
+	v.Local.sProperty.Set("MaxWidth")
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","AutoNum",v.local.sProperty,"40")
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","Job",v.local.sProperty,"55") 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","Suffix",v.local.sProperty,"38") 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","Seq",v.local.sProperty,"55") 	
+
+	'Allow Edit
+	v.Local.sProperty.Set("AllowEdit")
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","Job",v.local.sProperty,False) 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","Suffix",v.local.sProperty,False) 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","Seq",v.local.sProperty,False)
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","Part",v.local.sProperty,False) 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","Description",v.local.sProperty,False) 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","SeqDescription",v.local.sProperty,False) 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","InspectType",v.local.sProperty,False) 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","SubmitNote",v.local.sProperty,False) 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","EmpName",v.local.sProperty,False)
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","SubmitDate",v.local.sProperty,False) 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","SubmitTime",v.local.sProperty,False) 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","Status",v.local.sProperty,False) 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","Approver",v.local.sProperty,False) 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","ApproveDAte",v.local.sProperty,False) 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","ApproveTime",v.local.sProperty,False) 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","ApproveNote",v.local.sProperty,False) 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","InspectQty",v.local.sProperty,False) 
+
+	'ReadOnly
+	v.Local.sProperty.Set("ReadOnly")
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","Job",v.local.sProperty,True) 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","Suffix",v.local.sProperty,True) 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","Seq",v.local.sProperty,True) 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","Part",v.local.sProperty,True) 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","Description",v.local.sProperty,True) 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","SeqDescription",v.local.sProperty,True) 	
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","InspectType",v.local.sProperty,True) 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","SubmitNote",v.local.sProperty,True) 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","EmpName",v.local.sProperty,True) 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","SubmitDate",v.local.sProperty,True) 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","SubmitTime",v.local.sProperty,True) 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","Status",v.local.sProperty,True) 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","Approver",v.local.sProperty,True) 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","ApproveDAte",v.local.sProperty,True) 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","ApproveTime",v.local.sProperty,True) 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","ApproveNote",v.local.sProperty,True) 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","InspectQty",v.local.sProperty,True) 
+
+'	v.Local.sProperty.Set("CELLTRIMMING")
+'	gui.Inspection.gsInsp.SetColumnProperty("gvMain","Part",v.local.sProperty,"Word") 
+'	gui.Inspection.gsInsp.SetColumnProperty("gvMain","EmpName",v.local.sProperty,"Word") 
+'	gui.Inspection.gsInsp.SetColumnProperty("gvMain","Description",v.local.sProperty,"Word") 
+'	gui.Inspection.gsInsp.SetColumnProperty("gvMain","SeqDescription",v.local.sProperty,"Word") 
+'	gui.Inspection.gsInsp.SetColumnProperty("gvMain","InspectType",v.local.sProperty,"Word") 
+'	gui.Inspection.gsInsp.SetColumnProperty("gvMain","SubmitNote",v.local.sProperty,"Word") 
+'	gui.Inspection.gsInsp.SetColumnProperty("gvMain","Status",v.local.sProperty,"Word") 
+'	gui.Inspection.gsInsp.SetColumnProperty("gvMain","ApproveNote",v.local.sProperty,"Word") 
+	
+	v.Local.sProperty.Set("HeaderBackColor")
+	
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","SubmitNote",v.local.sProperty,"Ivory") 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","ApproveNote",v.local.sProperty,"Ivory") 
+
+	v.Local.sProperty.Set("HeaderForeColor")
+	
+	v.Local.sProperty.Set("CellBackColor")
+	
+
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","SubmitNote",v.local.sProperty,"Ivory") 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","ApproveNote",v.local.sProperty,"Ivory") 
+
+	v.Local.sProperty.Set("CellForeColor")
+	
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","Job",v.local.sProperty,"Blue")
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","Suffix",v.local.sProperty,"Blue")
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","Seq",v.local.sProperty,"Blue")
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","Part",v.local.sProperty,"Blue")
+
+	v.Local.sProperty.Set("Fixed")
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","AutoNum",v.local.sProperty,"Left")
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","Job",v.local.sProperty,"Left") 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","Suffix",v.local.sProperty,"Left") 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","Seq",v.local.sProperty,"Left") 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","Part",v.local.sProperty,"Left")
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","Description",v.local.sProperty,"Left")
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","SeqDescription",v.local.sProperty,"Left")
+	
+	'Custom Date
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","SubmitDate","DisplayCustomDatetime","d") 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","ApproveDate","DisplayCustomDatetime","d") 
+	
+	'Numeric
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","SubmitDate","DisplayCustomNumeric","###,###,###,###.0000") 
+	gui.Inspection.gsInsp.SetColumnProperty("gvMain","ApproveDate","DisplayCustomNumeric","###,###,###,###.0000")
+	
+	'Summary
+	gui.Inspection.gsInsp.AddSummaryItem("gvMain","InspectQty","sum1","Sum","","","###,###,###,###.0000")
+	
+	'color
+	gui.Inspection.gsInsp.AddStyleFormatCondition("gvMain","Status","tagStatusApproved","equal","Approved")
+	gui.Inspection.gsInsp.SetStyleFormatConditionProperty("gvMain","Status","tagStatusApproved","forecolor","Blue")
+	
+	gui.Inspection.gsInsp.AddStyleFormatCondition("gvMain","Status","tagStatusRejected","equal","Rejected")
+	gui.Inspection.gsInsp.SetStyleFormatConditionProperty("gvMain","Status","tagStatusRejected","forecolor","Red")
+	
+	gui.Inspection.gsInsp.AddStyleFormatCondition("gvMain","Status","tagStatusInProcess","equal","Need More Info")
+	gui.Inspection.gsInsp.SetStyleFormatConditionProperty("gvMain","Status","tagStatusInProcess","forecolor","LightSalmon")	
+	
+	'InspectType
+	gui.Inspection.gsInsp.AddStyleFormatCondition("gvMain","InspectType","tagFAI","equal","FAI")
+	gui.Inspection.gsInsp.SetStyleFormatConditionProperty("gvMain","InspectType","tagFAI","backcolor","LightBlue")
+	
+	gui.Inspection.gsInsp.AddStyleFormatCondition("gvMain","InspectType","tagLot","equal","Lot")
+	gui.Inspection.gsInsp.SetStyleFormatConditionProperty("gvMain","InspectType","tagLot","backcolor","Gold")
+	
+	gui.Inspection.gsInsp.AddStyleFormatCondition("gvMain","InspectType","tagFinal","equal","Final")
+	gui.Inspection.gsInsp.SetStyleFormatConditionProperty("gvMain","InspectType","tagFinal","backcolor","LightPink")
+	
+	
+	
+	gui.Inspection.gsInsp.ResumeLayout
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+
+Program.Sub.Format_gvMain.End
+
+Program.Sub.cmdLoadEmployee_Click.Start
+f.Intrinsic.Control.Try
+	v.Local.sHold.Declare
+	v.Local.sEmpl.Declare
+	v.Local.sSQL.Declare
+	v.Local.sName.Declare
+	v.Local.sWO.Declare
+	
+	'Validate employee
+	F.Intrinsic.String.Replace(v.Screen.Inspection!txtBadgeEmpNum.Text.Trim,"%$","",V.Local.sEmpl)
+	gui.Inspection.txtBadgeEmpNum.Text(v.Local.sEmpl)	
+	f.Intrinsic.String.Replace(v.Screen.Inspection!txtWO.Text.Trim,"$%","",v.Local.sWO)
+	gui.Inspection.txtWO.Text(v.Local.sWO)	
+	f.Intrinsic.String.Build("Select name from Employee_Mstr where employee = '{0}'",v.Local.sEmpl.PSQLFriendly,v.Local.sSQL)
+	f.ODBC.Connection!conx.ExecuteAndReturn(v.Local.ssql,v.Local.sName)
+	f.Intrinsic.Control.If(v.Ambient.ExecuteAndReturnEOF)
+		f.Intrinsic.UI.Msgbox("Invalid Employee number.","Attention")
+		f.Intrinsic.Control.ExitSub		
+	f.Intrinsic.Control.EndIf		
+	
+	f.Intrinsic.String.Build("Welcome {0}",v.Local.sName,v.Local.sHold)
+	gui.Inspection.lblWelcome.Caption(v.Local.sHold)
+	
+	f.Intrinsic.Control.CallSub(cmdClear_Click)
+	
+		
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry	
+Program.Sub.cmdLoadEmployee_Click.End
+
+Program.Sub.ContextMenu.Start
+f.Intrinsic.Control.Try
+
+	Gui.Inspection..ContextMenuCreate("MAINGRID")	
+	Gui.Inspection..ContextMenuAddItem("MAINGRID","REFRESH",0,"Refresh")
+	Gui.Inspection..ContextMenuAddItem("MAINGRID","EXPORT",0,"Export")
+	
+	Gui.Inspection..ContextMenuSetItemEventHandler("MAINGRID","REFRESH","MAINGRID_Click")
+	Gui.Inspection..ContextMenuSetItemEventHandler("MAINGRID","EXPORT","MAINGRID_Click")	
+	
+	gui.Inspection.gsInsp.ContextMenuAttach("MAINGRID")
+
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.ContextMenu.End
+
+Program.Sub.MAINGRID_Click.Start
+f.Intrinsic.Control.Try
+	v.Local.sSQL.Declare
+	v.Local.sUserID.Declare	
+	V.Local.sFileExport.Declare
+	V.Local.bExcel.Declare
+	V.Local.bFileLocked.Declare
+	V.Local.sMsg.Declare	
+	v.Local.sWO.Declare
+	
+	F.Intrinsic.Control.SelectCase(V.Args.ItemName)
+		f.Intrinsic.Control.Case("REFRESH")
+			f.Intrinsic.String.Split(v.Screen.Inspection!txtWO.Text.Trim,"-",v.Local.sWO)
+			f.Intrinsic.Control.If(v.Local.sWO.UBound,=,2)
+				F.Intrinsic.Control.CallSub(Load,"sJob",v.Local.sWO(0).Trim,"sSuffix",v.Local.sWO(1).Trim,"sSeq",v.Local.sWO(2).Trim)
+			f.Intrinsic.Control.EndIf			
+		
+		F.Intrinsic.Control.Case("EXPORT")
+			f.Intrinsic.Control.If(v.Global.bLoad.Not)
+				F.Intrinsic.Control.ExitSub
+			f.Intrinsic.Control.EndIf		
+
+			F.Automation.MSExcel.CheckPresence(V.Local.bExcel)
+		
+			F.Intrinsic.Control.If(V.Local.bExcel)
+				F.Intrinsic.String.Build("{0}\QualityInsp_{1}.xlsx",V.Caller.LocalGssTempDir,v.Ambient.Now.FormatMMDDYYYYHhNnSs,V.Local.sFileExport)
+				F.Intrinsic.File.IsFileLocked(V.Local.sFileExport,V.Local.bFileLocked)
+				F.Intrinsic.Control.If(V.Local.bFileLocked)
+					F.Intrinsic.String.Build("File is already open. Please close and export again.{0}File: {1}",V.Ambient.NewLine,V.Local.sFileExport,V.Local.sMsg)
+					F.Intrinsic.UI.Msgbox(V.Local.sMsg,"File In Use")
+				F.Intrinsic.Control.Else
+					Gui.Inspection.gsInsp.Export(V.Local.sFileExport,"xlsx")
+					F.Intrinsic.Task.ShellExec(0,"",V.Local.sFileExport,"","",1)
+				F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.Else
+				F.Intrinsic.String.Build("{0}\QualityInsp{1}.csv",V.Caller.LocalGssTempDir,v.Ambient.Now.FormatMMDDYYYYHhNnSs,V.Local.sFileExport)
+				F.Intrinsic.File.IsFileLocked(V.Local.sFileExport,V.Local.bFileLocked)
+				F.Intrinsic.Control.If(V.Local.bFileLocked)
+					F.Intrinsic.String.Build("File is already open. Please close and export again.{0}File: {1}",V.Ambient.NewLine,V.Local.sFileExport,V.Local.sMsg)
+					F.Intrinsic.UI.Msgbox(V.Local.sMsg,"File In Use")
+				F.Intrinsic.Control.Else
+					Gui.Inspection.gsInsp.Export(V.Local.sFileExport,"csv")
+				F.Intrinsic.Control.EndIf
+				F.Intrinsic.Task.ShellExec(0,"",V.Local.sFileExport,"","",1)
+			F.Intrinsic.Control.EndIf		
+	
+	F.Intrinsic.Control.EndSelect
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.MAINGRID_Click.End
+
+Program.Sub.txtWO_LostFocus.Start
+f.Intrinsic.Control.Try
+	v.Local.sSQL.Declare
+	v.Local.sWO.Declare
+	v.Local.sSuffix.Declare
+	
+	f.Intrinsic.String.Replace(v.Screen.Inspection!txtWO.Text.Trim,"$%","",v.Local.sWO)
+	f.Intrinsic.Control.If(v.Local.sWO.Length,=,13)
+		f.Intrinsic.String.Build("{0}--{1}",v.Local.sWO.left6,v.Local.sWO.Right6,v.Local.sWO)
+	f.Intrinsic.Control.ElseIf(v.Local.sWO.Length,=,15)	
+		f.Intrinsic.String.Mid(v.Local.sWO,7,3,v.Local.sSuffix)
+		f.Intrinsic.String.Build("{0}-{1}-{2}",v.Local.sWO.left6,v.Local.sSuffix,v.Local.sWO.Right6,v.Local.sWO)
+	f.Intrinsic.Control.EndIf
+	
+	gui.Inspection.txtWO.Text(v.Local.sWO)
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.txtWO_LostFocus.End
