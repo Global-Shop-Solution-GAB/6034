@@ -1,0 +1,2031 @@
+Program.Sub.ScreenSU.Start
+Gui.Form..Create
+Gui.Form..Caption("Quality Inspection 6034 v20.11.02.00")
+Gui.Form..Size(20730,10695)
+Gui.Form..MinX(0)
+Gui.Form..MinY(0)
+Gui.Form..Position(0,0)
+Gui.Form..BackColor(-2147483633)
+Gui.Form..MousePointer(0)
+Gui.Form..Event(UnLoad,Form_UnLoad)
+Gui.Form.gsInsp.Create(GsGridControl)
+Gui.Form.gsInsp.Size(20355,8925)
+Gui.Form.gsInsp.Position(105,1245)
+Gui.Form.gsInsp.Event(RowCellClick,gsInsp_RowCellClick)
+Gui.Form.gsInsp.Anchor(15)
+Gui.Form.gsInsp.TabStop(True)
+Gui.Form.gsInsp.TabIndex(5)
+Gui.Form.dtpStartSubmit.Create(DatePicker)
+Gui.Form.dtpStartSubmit.Size(1935,285)
+Gui.Form.dtpStartSubmit.Position(105,405)
+Gui.Form.dtpStartSubmit.ToolTip("Start Submission Date")
+Gui.Form.dtpStartSubmit.TabStop(True)
+Gui.Form.dtpStartSubmit.TabIndex(1)
+Gui.Form.dtpEndSubmit.Create(DatePicker)
+Gui.Form.dtpEndSubmit.Size(1935,285)
+Gui.Form.dtpEndSubmit.Position(2190,405)
+Gui.Form.dtpEndSubmit.ToolTip("End Submission Date")
+Gui.Form.dtpEndSubmit.TabStop(True)
+Gui.Form.dtpEndSubmit.TabIndex(2)
+Gui.Form.lbl1.Create(Label,"Submit Start Date",True,1905,255,0,120,180,True,0,"Arial",8,-2147483633,0)
+Gui.Form.lbl1.FontStyle(True,False,False,False,False)
+Gui.Form.lbl2.Create(Label,"Submit End Date",True,1965,255,0,2175,180,True,0,"Arial",8,-2147483633,0)
+Gui.Form.lbl2.FontStyle(True,False,False,False,False)
+Gui.Form.cmdLoad.Create(Button)
+Gui.Form.cmdLoad.Size(855,375)
+Gui.Form.cmdLoad.Position(4260,375)
+Gui.Form.cmdLoad.Caption("Load")
+Gui.Form.cmdLoad.Event(Click,cmdLoad_Click)
+Gui.Form.cmdLoad.BackColor(9157775)
+Gui.Form.cmdLoad.ForeColor(16777215)
+Gui.Form.cmdLoad.FontStyle(True,False,False,False,False)
+Gui.Form.cmdLoad.TabStop(True)
+Gui.Form.cmdLoad.TabIndex(3)
+Gui.Form.picGSSLogo.Create(PictureBox)
+Gui.Form.picGSSLogo.Size(3765,660)
+Gui.Form.picGSSLogo.Position(8970,90)
+Gui.Form.picGSSLogo.Anchor(1)
+Gui.Form.cmdSettings.Create(Button)
+Gui.Form.cmdSettings.Size(1440,375)
+Gui.Form.cmdSettings.Position(5220,375)
+Gui.Form.cmdSettings.Caption("Settings")
+Gui.Form.cmdSettings.FontStyle(True,False,False,False,False)
+Gui.Form.cmdSettings.Event(Click,cmdSettings_Click)
+Gui.Form.cmdSettings.TabStop(True)
+Gui.Form.cmdSettings.TabIndex(4)
+Gui.Form.frTotalNonProcess.Create(Frame)
+Gui.Form.frTotalNonProcess.Size(4680,1155)
+Gui.Form.frTotalNonProcess.Position(13725,30)
+Gui.Form.frTotalNonProcess.Anchor(9)
+Gui.Form.frTotalNonProcess.Caption("Non-Processed Count")
+Gui.Form.frTotalNonProcess.FontStyle(True,False,False,False,False)
+Gui.Form.lbl3.Create(Label,"FAI",True,495,315,0,270,330,True,0,"Arial",8,15128749,0)
+Gui.Form.lbl3.Parent("frTotalNonProcess")
+Gui.Form.lbl3.FontStyle(True,False,False,False,False)
+Gui.Form.txtFAI.Create(TextBox,"",True,660,300,0,765,270,True,1,"Arial",8,-2147483643,1)
+Gui.Form.txtFAI.Parent("frTotalNonProcess")
+Gui.Form.lbl4.Create(Label,"Lot",True,495,315,0,1800,330,True,0,"Arial",8,55295,0)
+Gui.Form.lbl4.Parent("frTotalNonProcess")
+Gui.Form.lbl4.FontStyle(True,False,False,False,False)
+Gui.Form.lbl4.ForeColor(0)
+Gui.Form.lbl5.Create(Label,"Final",True,540,315,0,3270,330,True,0,"Arial",8,12695295,0)
+Gui.Form.lbl5.Parent("frTotalNonProcess")
+Gui.Form.lbl5.FontStyle(True,False,False,False,False)
+Gui.Form.txtLot.Create(TextBox,"",True,660,300,0,2325,270,True,1,"Arial",8,-2147483643,1)
+Gui.Form.txtLot.Parent("frTotalNonProcess")
+Gui.Form.txtFinal.Create(TextBox,"",True,660,300,0,3825,270,True,1,"Arial",8,-2147483643,1)
+Gui.Form.txtFinal.Parent("frTotalNonProcess")
+Gui.Form.lbl7.Create(Label,"Total Non-Proc.",True,1320,315,0,255,750,True,0,"Arial",8,14474460,0)
+Gui.Form.lbl7.Parent("frTotalNonProcess")
+Gui.Form.txtTotalNonProc.Create(TextBox,"",True,660,300,0,1575,690,True,1,"Arial",8,-2147483643,1)
+Gui.Form.txtTotalNonProc.Parent("frTotalNonProcess")
+Gui.Form.lbl8.Create(Label,"Last 24h Proc.",True,1185,315,0,2640,750,True,0,"Arial",8,14474460,0)
+Gui.Form.lbl8.Parent("frTotalNonProcess")
+Gui.Form.txtTotalLast24.Create(TextBox,"",True,660,300,0,3825,690,True,1,"Arial",8,-2147483643,1)
+Gui.Form.txtTotalLast24.Parent("frTotalNonProcess")
+Gui.Form.timerAutoRefresh.Create(Timer)
+Gui.Form.timerAutoRefresh.Size(495,495)
+Gui.Form.timerAutoRefresh.Position(6870,240)
+Gui.Form.timerAutoRefresh.Event(Timer,timerAutoRefresh_Timer)
+Gui.Form.timerAutoRefresh.Enabled(False)
+Gui.Form.frRefresh.Create(Frame)
+Gui.Form.frRefresh.Size(1950,810)
+Gui.Form.frRefresh.Position(18495,30)
+Gui.Form.frRefresh.Anchor(9)
+Gui.Form.frRefresh.Caption("Refresh")
+Gui.Form.frRefresh.FontStyle(True,False,False,False,False)
+Gui.Form.lblCountDown.Create(Label,"",True,960,255,0,900,180,True,1,"Arial",8,-2147483633,0)
+Gui.Form.lblCountDown.Anchor(9)
+Gui.Form.lblCountDown.FontStyle(True,False,False,False,False)
+Gui.Form.lblCountDown.Parent("frRefresh")
+Gui.Form.chkRefresh.Create(CheckBox)
+Gui.Form.chkRefresh.Size(765,360)
+Gui.Form.chkRefresh.Position(165,375)
+Gui.Form.chkRefresh.Anchor(9)
+Gui.Form.chkRefresh.Caption("Refr.")
+Gui.Form.chkRefresh.ToolTip("Check this box for auto refreshing")
+Gui.Form.chkRefresh.FontStyle(True,False,False,False,False)
+Gui.Form.chkRefresh.Event(Click,chkRefresh_Click)
+Gui.Form.chkRefresh.Parent("frRefresh")
+Gui.Form.lbl6.Create(Label,"Min",True,420,315,0,1035,450,True,0,"Arial",8,-2147483633,0)
+Gui.Form.lbl6.Anchor(9)
+Gui.Form.lbl6.FontStyle(True,False,False,False,False)
+Gui.Form.lbl6.Parent("frRefresh")
+Gui.Form.txtMin.Create(TextBox,"",True,360,300,0,1485,375,True,1,"Arial",8,-2147483643,1)
+Gui.Form.txtMin.Anchor(9)
+Gui.Form.txtMin.ToolTip("Enter minutes for refresh inverval and hit Tab")
+Gui.Form.txtMin.NumericOnly(2)
+Gui.Form.txtMin.Event(LostFocus,txtMin_LostFocus)
+Gui.Form.txtMin.Parent("frRefresh")
+Gui.Request..Create
+Gui.Request..Caption("Request Approve ")
+Gui.Request..Size(8955,10830)
+Gui.Request..MinX(0)
+Gui.Request..MinY(0)
+Gui.Request..Position(0,0)
+Gui.Request..BackColor(-2147483633)
+Gui.Request..MousePointer(0)
+Gui.Request..Event(UnLoad,Request_UnLoad)
+Gui.Request.lbl1.Create(Label,"Job-Suffix-Seq",True,1560,255,0,120,180,True,0,"Arial",8,-2147483633,0)
+Gui.Request.lbl1.FontStyle(True,False,False,False,False)
+Gui.Request.optApprove.Create(Option)
+Gui.Request.optApprove.Size(1125,255)
+Gui.Request.optApprove.Position(1920,3735)
+Gui.Request.optApprove.Caption("Approve")
+Gui.Request.optApprove.Event(Click,optApprove_Click)
+Gui.Request.optApprove.ForeColor(-2147483635)
+Gui.Request.optApprove.FontStyle(True,False,False,False,False)
+Gui.Request.optApprove.TabStop(True)
+Gui.Request.optApprove.TabIndex(3)
+Gui.Request.optReject.Create(Option)
+Gui.Request.optReject.Size(1830,255)
+Gui.Request.optReject.Position(3705,3750)
+Gui.Request.optReject.Caption("Reject")
+Gui.Request.optReject.Event(Click,optReject_Click)
+Gui.Request.optReject.ForeColor(255)
+Gui.Request.optReject.FontStyle(True,False,False,False,False)
+Gui.Request.optReject.TabStop(True)
+Gui.Request.optReject.TabIndex(4)
+Gui.Request.cmdProcess.Create(Button)
+Gui.Request.cmdProcess.Size(1005,495)
+Gui.Request.cmdProcess.Position(105,9930)
+Gui.Request.cmdProcess.Caption("Process")
+Gui.Request.cmdProcess.Event(Click,cmdProcess_Click)
+Gui.Request.cmdProcess.BackColor(9157775)
+Gui.Request.cmdProcess.ForeColor(16777215)
+Gui.Request.cmdProcess.FontStyle(True,False,False,False,False)
+Gui.Request.cmdProcess.Anchor(6)
+Gui.Request.cmdProcess.ToolTip("This will validate Approve/Reject/Need Info, Save Note, Email if Email is checked")
+Gui.Request.cmdProcess.TabStop(True)
+Gui.Request.cmdProcess.TabIndex(16)
+Gui.Request.chkEmail.Create(CheckBox)
+Gui.Request.chkEmail.Size(1020,360)
+Gui.Request.chkEmail.Position(7605,3675)
+Gui.Request.chkEmail.Caption("Email")
+Gui.Request.chkEmail.Event(Click,chkEmail_Click)
+Gui.Request.chkEmail.Value(1)
+Gui.Request.chkEmail.FontStyle(True,False,False,False,False)
+Gui.Request.chkEmail.TabStop(True)
+Gui.Request.chkEmail.TabIndex(6)
+Gui.Request.frEmail.Create(Frame)
+Gui.Request.frEmail.Size(8550,5745)
+Gui.Request.frEmail.Position(135,4125)
+Gui.Request.frEmail.Caption("Email")
+Gui.Request.frEmail.Anchor(15)
+Gui.Request.txtEmail.Create(TextBox,"",True,2400,300,0,750,1170,True,0,"Arial",8,-2147483643,2)
+Gui.Request.txtEmail.Parent("frEmail")
+Gui.Request.txtEmail.TabStop(True)
+Gui.Request.txtEmail.TabIndex(9)
+Gui.Request.cmdBrowseEmail.Create(Button)
+Gui.Request.cmdBrowseEmail.Size(525,345)
+Gui.Request.cmdBrowseEmail.Position(3240,1140)
+Gui.Request.cmdBrowseEmail.Parent("frEmail")
+Gui.Request.cmdBrowseEmail.Caption("^")
+Gui.Request.cmdBrowseEmail.Event(Click,cmdBrowseEmail_Click)
+Gui.Request.cmdBrowseEmail.TabStop(True)
+Gui.Request.cmdBrowseEmail.TabIndex(10)
+Gui.Request.cmdAddRecipient.Create(Button)
+Gui.Request.cmdAddRecipient.Size(1815,375)
+Gui.Request.cmdAddRecipient.Position(3855,1125)
+Gui.Request.cmdAddRecipient.Parent("frEmail")
+Gui.Request.cmdAddRecipient.Caption("Add Recepient")
+Gui.Request.cmdAddRecipient.Event(Click,cmdAddRecepient_Click)
+Gui.Request.cmdAddRecipient.TabStop(True)
+Gui.Request.cmdAddRecipient.TabIndex(11)
+Gui.Request.lbl2.Create(Label,"To ",True,465,255,0,75,690,True,0,"Arial",8,-2147483633,0)
+Gui.Request.lbl2.Parent("frEmail")
+Gui.Request.lbl2.ForeColor(0)
+Gui.Request.lbl2.FontStyle(True,False,False,False,False)
+Gui.Request.txtRecepients.Create(TextBoxR)
+Gui.Request.txtRecepients.Size(7725,435)
+Gui.Request.txtRecepients.Position(765,630)
+Gui.Request.txtRecepients.Parent("frEmail")
+Gui.Request.txtRecepients.Anchor(13)
+Gui.Request.txtRecepients.TabStop(True)
+Gui.Request.txtRecepients.TabIndex(8)
+Gui.Request.lbl3.Create(Label,"Subject",True,795,255,0,75,1560,True,0,"Arial",8,-2147483633,0)
+Gui.Request.lbl3.Parent("frEmail")
+Gui.Request.lbl3.ForeColor(0)
+Gui.Request.lbl3.FontStyle(True,False,False,False,False)
+Gui.Request.txtSubject.Create(TextBoxR)
+Gui.Request.txtSubject.Size(8385,660)
+Gui.Request.txtSubject.Position(90,1770)
+Gui.Request.txtSubject.Parent("frEmail")
+Gui.Request.txtSubject.Anchor(13)
+Gui.Request.txtSubject.TabStop(True)
+Gui.Request.txtSubject.TabIndex(12)
+Gui.Request.txtBody.Create(TextBoxR)
+Gui.Request.txtBody.Size(8385,2520)
+Gui.Request.txtBody.Position(105,2475)
+Gui.Request.txtBody.Parent("frEmail")
+Gui.Request.txtBody.Anchor(15)
+Gui.Request.txtBody.TabStop(True)
+Gui.Request.txtBody.TabIndex(13)
+Gui.Request.lbl10.Create(Label,"From",True,615,255,0,75,345,True,0,"Arial",8,-2147483633,0)
+Gui.Request.lbl10.Parent("frEmail")
+Gui.Request.lbl10.ForeColor(0)
+Gui.Request.lbl10.FontStyle(True,False,False,False,False)
+Gui.Request.txtSender.Create(TextBox,"",True,2400,300,0,750,255,True,0,"Arial",8,-2147483643,2)
+Gui.Request.txtSender.Parent("frEmail")
+Gui.Request.txtSender.TabStop(True)
+Gui.Request.txtSender.TabIndex(7)
+Gui.Request.txtAttachment.Create(TextBoxR)
+Gui.Request.txtAttachment.Size(6690,360)
+Gui.Request.txtAttachment.Position(75,5280)
+Gui.Request.txtAttachment.Parent("frEmail")
+Gui.Request.txtAttachment.Anchor(14)
+Gui.Request.txtAttachment.TabStop(True)
+Gui.Request.txtAttachment.TabIndex(14)
+Gui.Request.cmdSelectAttachment.Create(Button)
+Gui.Request.cmdSelectAttachment.Size(1650,345)
+Gui.Request.cmdSelectAttachment.Position(6825,5295)
+Gui.Request.cmdSelectAttachment.Parent("frEmail")
+Gui.Request.cmdSelectAttachment.Anchor(10)
+Gui.Request.cmdSelectAttachment.Caption("Select Attachment")
+Gui.Request.cmdSelectAttachment.Event(Click,cmdSelectAttachment_Click)
+Gui.Request.cmdSelectAttachment.TabStop(True)
+Gui.Request.cmdSelectAttachment.TabIndex(15)
+Gui.Request.lblType.Create(Label,"Type",True,660,255,0,3240,180,True,0,"Arial",8,-2147483633,0)
+Gui.Request.lblType.FontStyle(True,False,False,False,False)
+Gui.Request.lbl9.Create(Label,"Employee",True,930,255,0,2220,180,True,0,"Arial",8,-2147483633,0)
+Gui.Request.lbl9.FontStyle(True,False,False,False,False)
+Gui.Request.txtNote.Create(TextBoxR)
+Gui.Request.txtNote.Size(8535,780)
+Gui.Request.txtNote.Position(165,1065)
+Gui.Request.txtNote.Anchor(13)
+Gui.Request.txtNote.ToolTip("Note from Employee who submitted inspection")
+Gui.Request.txtNote.Enabled(False)
+Gui.Request.txtNote.BackColor(-2147483624)
+Gui.Request.lbl11.Create(Label,"Employee Note",True,1380,255,0,120,825,True,0,"Arial",8,-2147483633,0)
+Gui.Request.lbl11.FontStyle(True,False,False,False,False)
+Gui.Request.txtRowIndex.Create(TextBox,"",False,1215,300,0,7425,45,True,0,"Arial",8,-2147483643,1)
+Gui.Request.txtWO.Create(TextBox,"",True,1920,300,0,165,390,False,0,"Arial",8,-2147483643,1)
+Gui.Request.txtEmp.Create(TextBox,"",True,930,300,0,2220,390,False,0,"Arial",8,-2147483643,1)
+Gui.Request.txtType.Create(TextBox,"",True,720,300,0,3285,390,False,0,"Arial",8,-2147483643,1)
+Gui.Request.txtType.ToolTip("Inspection Type")
+Gui.Request.optNeedMoreInfo.Create(Option)
+Gui.Request.optNeedMoreInfo.Size(1710,255)
+Gui.Request.optNeedMoreInfo.Position(5580,3735)
+Gui.Request.optNeedMoreInfo.Caption("Need More Info")
+Gui.Request.optNeedMoreInfo.ForeColor(8036607)
+Gui.Request.optNeedMoreInfo.Event(Click,optNeedMoreInfo_Click)
+Gui.Request.optNeedMoreInfo.FontStyle(True,False,False,False,False)
+Gui.Request.optNeedMoreInfo.TabStop(True)
+Gui.Request.optNeedMoreInfo.TabIndex(5)
+Gui.Request.txtApproverNote.Create(TextBoxR)
+Gui.Request.txtApproverNote.Size(8535,780)
+Gui.Request.txtApproverNote.Position(165,2430)
+Gui.Request.txtApproverNote.Anchor(13)
+Gui.Request.txtApproverNote.ToolTip("Note from Inspector")
+Gui.Request.txtApproverNote.BackColor(-2147483624)
+Gui.Request.txtApproverNote.TabStop(True)
+Gui.Request.txtApproverNote.TabIndex(1)
+Gui.Request.lbl12.Create(Label,"Inspector Note (will be appended in email body)",True,8565,255,0,105,2220,True,0,"Arial",8,-2147483633,0)
+Gui.Request.lbl12.FontStyle(True,False,False,False,False)
+Gui.Request.cmdSaveNoteOnly.Create(Button)
+Gui.Request.cmdSaveNoteOnly.Size(1500,375)
+Gui.Request.cmdSaveNoteOnly.Position(120,3300)
+Gui.Request.cmdSaveNoteOnly.Caption("Save Note Only")
+Gui.Request.cmdSaveNoteOnly.BackColor(-2147483624)
+Gui.Request.cmdSaveNoteOnly.ToolTip("Save Note Only when you don't need to process now")
+Gui.Request.cmdSaveNoteOnly.Event(Click,cmdSaveNoteOnly_Click)
+Gui.Request.cmdSaveNoteOnly.TabStop(True)
+Gui.Request.cmdSaveNoteOnly.TabIndex(2)
+Gui.Request.lblType2.Create(Label,"Seq Descr",True,1020,255,0,4125,180,True,0,"Arial",8,-2147483633,0)
+Gui.Request.lblType2.FontStyle(True,False,False,False,False)
+Gui.Request.txtSeqDescr.Create(TextBox,"",True,3270,300,0,4155,390,False,0,"Arial",8,-2147483643,1)
+Gui.Request.txtSeqDescr.ToolTip("Sequence Description")
+Gui.Request.lblType3.Create(Label,"Qty",True,660,255,0,7560,180,True,0,"Arial",8,-2147483633,0)
+Gui.Request.lblType3.FontStyle(True,False,False,False,False)
+Gui.Request.txtQty.Create(TextBox,"",True,1125,300,0,7590,390,False,1,"Arial",8,-2147483643,1)
+Gui.Request.txtQty.ToolTip("Quantity to Inspect")
+Gui.Request.lbl4.Create(Label,"-------------------------------------------------------------------------------------------------------------------------------------------",True,8520,255,0,165,1950,True,0,"Arial",8,-2147483633,0)
+Gui.Request.lbl4.Anchor(13)
+Gui.Settings..Create
+Gui.Settings..Caption("Settings")
+Gui.Settings..Size(9240,9930)
+Gui.Settings..MinX(0)
+Gui.Settings..MinY(0)
+Gui.Settings..Position(0,0)
+Gui.Settings..BackColor(-2147483633)
+Gui.Settings..MousePointer(0)
+Gui.Settings..Event(UnLoad,Settings_UnLoad)
+Gui.Settings..Position(0,0)
+Gui.Settings..BackColor(-2147483633)
+Gui.Settings..MousePointer(0)
+Gui.Settings..Event(UnLoad,Form_UnLoad)
+Gui.Settings.lbl1.Create(Label,"Inspector Groups (Comma delimited)",True,3390,255,0,150,210,True,0,"Arial",8,-2147483633,0)
+Gui.Settings.lbl1.FontStyle(True,False,False,False,False)
+Gui.Settings.cmdBrowseSecurityGroup.Create(Button)
+Gui.Settings.cmdBrowseSecurityGroup.Size(705,375)
+Gui.Settings.cmdBrowseSecurityGroup.Position(3375,465)
+Gui.Settings.cmdBrowseSecurityGroup.Caption("^")
+Gui.Settings.cmdBrowseSecurityGroup.Event(Click,cmdBrowseSecurityGroup_Click)
+Gui.Settings.cmdBrowseSecurityGroup.FontStyle(True,False,False,False,False)
+Gui.Settings.cmdBrowseSecurityGroup.TabStop(True)
+Gui.Settings.cmdBrowseSecurityGroup.TabIndex(2)
+Gui.Settings.cmdSaveSettings.Create(Button)
+Gui.Settings.cmdSaveSettings.Size(1125,375)
+Gui.Settings.cmdSaveSettings.Position(150,1905)
+Gui.Settings.cmdSaveSettings.Caption("Save")
+Gui.Settings.cmdSaveSettings.Event(Click,cmdSaveSettings_Click)
+Gui.Settings.cmdSaveSettings.BackColor(9157775)
+Gui.Settings.cmdSaveSettings.ForeColor(16777215)
+Gui.Settings.cmdSaveSettings.FontStyle(True,False,False,False,False)
+Gui.Settings.cmdSaveSettings.TabStop(True)
+Gui.Settings.cmdSaveSettings.TabIndex(6)
+Gui.Settings.txtSecurityGroup.Create(TextBoxR)
+Gui.Settings.txtSecurityGroup.Size(3195,435)
+Gui.Settings.txtSecurityGroup.Position(150,465)
+Gui.Settings.txtSecurityGroup.TabStop(True)
+Gui.Settings.txtSecurityGroup.TabIndex(1)
+Gui.Settings.txtWC.Create(TextBox,"",True,855,300,0,150,2940,True,0,"Arial",8,-2147483643,1)
+Gui.Settings.txtWC.MaxLength(4)
+Gui.Settings.txtWC.TabStop(True)
+Gui.Settings.txtWC.TabIndex(7)
+Gui.Settings.lblWC.Create(Label,"WC",True,825,255,0,150,2715,True,0,"Arial",8,-2147483633,0)
+Gui.Settings.lblWC.FontStyle(True,False,False,False,False)
+Gui.Settings.txtWCDescr.Create(TextBox,"",True,2115,300,0,1125,2940,True,0,"Arial",8,-2147483643,1)
+Gui.Settings.txtWCDescr.MaxLength(20)
+Gui.Settings.txtWCDescr.TabStop(True)
+Gui.Settings.txtWCDescr.TabIndex(8)
+Gui.Settings.lblWCDesc.Create(Label,"Description",True,1260,255,0,1095,2715,True,0,"Arial",8,-2147483633,0)
+Gui.Settings.lblWCDesc.FontStyle(True,False,False,False,False)
+Gui.Settings.cmdBrowseWC.Create(Button)
+Gui.Settings.cmdBrowseWC.Size(735,375)
+Gui.Settings.cmdBrowseWC.Position(3375,2910)
+Gui.Settings.cmdBrowseWC.Caption("^")
+Gui.Settings.cmdBrowseWC.Event(Click,cmdBrowseWC_Click)
+Gui.Settings.cmdBrowseWC.TabStop(True)
+Gui.Settings.cmdBrowseWC.TabIndex(9)
+Gui.Settings.gsWCs.Create(GsGridControl)
+Gui.Settings.gsWCs.Size(8820,5580)
+Gui.Settings.gsWCs.Position(150,3720)
+Gui.Settings.gsWCs.Anchor(15)
+Gui.Settings.gsWCs.Event(RowCellClick,gsWCs_RowCellClick)
+Gui.Settings.gsWCs.TabStop(True)
+Gui.Settings.gsWCs.TabIndex(11)
+Gui.Settings.cmdSaveWC.Create(Button)
+Gui.Settings.cmdSaveWC.Size(855,375)
+Gui.Settings.cmdSaveWC.Position(4260,2910)
+Gui.Settings.cmdSaveWC.Caption("Add")
+Gui.Settings.cmdSaveWC.Event(Click,cmdSaveWC_Click)
+Gui.Settings.cmdSaveWC.FontStyle(True,False,False,False,False)
+Gui.Settings.cmdSaveWC.TabStop(True)
+Gui.Settings.cmdSaveWC.TabIndex(10)
+Gui.Settings.lbl2.Create(Label,"Exclude Work Centers",True,3390,255,0,150,3480,True,0,"Arial",8,-2147483633,0)
+Gui.Settings.lbl2.FontStyle(True,False,False,False,False)
+Gui.Settings.lbl3.Create(Label,"Default Sender Email",True,1950,255,0,4335,210,True,0,"Arial",8,-2147483633,0)
+Gui.Settings.lbl3.FontStyle(True,False,False,False,False)
+Gui.Settings.lbl4.Create(Label,"Default Recipient Email",True,2310,255,0,6585,210,True,0,"Arial",8,-2147483633,0)
+Gui.Settings.lbl4.FontStyle(True,False,False,False,False)
+Gui.Settings.txtDefaultSender.Create(TextBox,"",True,2130,300,0,4350,465,True,0,"Arial",8,-2147483643,1)
+Gui.Settings.txtDefaultSender.TabStop(True)
+Gui.Settings.txtDefaultSender.TabIndex(3)
+Gui.Settings.txtDefaultReceipient.Create(TextBox,"",True,2295,300,0,6615,465,True,0,"Arial",8,-2147483643,1)
+Gui.Settings.txtDefaultReceipient.TabStop(True)
+Gui.Settings.txtDefaultReceipient.TabIndex(4)
+Gui.Settings.lbl5.Create(Label,"Starting WO Creation Date",True,2340,255,0,150,1110,True,0,"Arial",8,-2147483633,0)
+Gui.Settings.lbl5.FontStyle(True,False,False,False,False)
+Gui.Settings.dtpWOCreateDate.Create(DatePicker)
+Gui.Settings.dtpWOCreateDate.Size(2130,285)
+Gui.Settings.dtpWOCreateDate.Position(150,1350)
+Gui.Settings.dtpWOCreateDate.TabStop(True)
+Gui.Settings.dtpWOCreateDate.TabIndex(5)
+Gui.Settings.frame1.Create(Frame)
+Gui.Settings.frame1.Size(8730,120)
+Gui.Settings.frame1.Position(150,1740)
+Gui.Settings.frame1.Anchor(13)
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+v.Global.bLoad.Declare
+v.Global.bLoadingHappening.Declare
+v.Global.sDefaultApprovedText.Declare
+v.Global.sDefaultApprovedText.Set("Your Inspection Record has been approved.")
+v.Global.sDefaultRejectedText.Declare
+v.Global.sDefaultRejectedText.Set("Your Inspection Record has been rejected.")
+v.Global.sDefaultNeedMoreInfo.Declare
+v.Global.sDefaultNeedMoreInfo.Set("We need more information on your request.")
+Program.External.Include.Library("3500.lib",False)
+
+v.Global.iSecs.Declare
+v.Global.iMinute.Declare
+
+v.Global.bInAdminGroup.Declare
+v.Global.bCanProcess.Declare
+v.Global.sApproverEmpNum.Declare
+v.Global.sApproverName.Declare
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+F.Intrinsic.Control.Try
+	
+	v.Local.sGroup.Declare
+	v.Local.iCnt.Declare
+	v.Local.bFound.Declare
+	v.Local.sMembers.Declare
+	v.Local.sAllMembers.Declare
+	v.Local.sFilter.Declare
+	v.Local.sRet.Declare
+	v.Local.sGroups.Declare
+	
+
+	f.ODBC.Connection!conx.OpenCompanyConnection
+	f.Intrinsic.Control.CallSub(Check_Tables)
+	f.Intrinsic.Control.CallSub(Check_Folder)
+
+	'Get Project Settings
+	f.Intrinsic.Control.CallSub(Get_Project_Settings)	
+	'If user is not in security group, and not SUPERVSR, exit out
+	
+	f.Global.Security.IsInGroup(v.Caller.User,"QBADMN",v.Caller.CompanyCode,v.Global.bInAdminGroup)
+	f.Intrinsic.Control.If(v.Caller.User,<>,"SUPERVSR",AND,v.Global.bInAdminGroup,=,False)	
+	
+		'Check if user is in an approval group
+		f.Intrinsic.String.Split(v.Screen.Settings!txtSecurityGroup.Text.Trim,",",v.Local.sGroups)
+		f.Intrinsic.Control.For(v.Local.iCnt,0,v.Local.sGroups.UBound,1)
+			f.Intrinsic.Control.If(v.Local.sGroups(v.Local.iCnt).Trim,<>,"")
+				f.Global.Security.GetGroupMembers(v.Local.sGroups(v.Local.iCnt),V.Caller.CompanyCode,V.Local.sMembers)
+				f.Intrinsic.String.Build("{0}*!*{1}",v.Local.sAllMembers,v.Local.sMembers,v.Local.sAllMembers)			
+			f.Intrinsic.Control.EndIf
+		f.Intrinsic.Control.Next(v.Local.iCnt)
+		f.Data.DataTable.CreateFromString("SECUGROUP",v.Local.sAllMembers,"Mem","String","@!@","*!*",True)
+		f.Intrinsic.String.Build("Trim(Mem) = '{0}'",v.Caller.User,v.Local.sFilter)
+		f.Data.DataTable.Select("SECUGROUP",V.Local.sFilter,V.Local.sRet)
+		f.Intrinsic.Control.If(v.Local.sRet.Trim,<>,"***NORETURN***")
+			v.Global.bCanProcess.Set(True)
+		f.Intrinsic.Control.EndIf	
+	f.Intrinsic.Control.Else
+		v.Global.bCanProcess.Set(True)
+	f.Intrinsic.Control.EndIf		
+	
+	f.Intrinsic.Control.CallSub(Set_Logo)
+	f.Intrinsic.Control.CallSub(Get_User_Parameters)
+	
+	f.Intrinsic.Control.CallSub(Bind_WCs)	
+
+	f.Intrinsic.Control.CallSub(ContextMenu)
+	
+	'Get Employee Name Dictionary
+	f.Data.Dictionary.CreateFromSQL("dEmpName","conx","Select Employee,Name from Employee_MSTR")
+	f.Data.Dictionary.SetDefaultReturn("dEmpName","")
+	
+	f.Intrinsic.Control.If(v.Caller.User,<>,"SUPERVSR",AND,v.Global.bInAdminGroup,=,False)
+		gui.Form.cmdSettings.Visible(False)
+	f.Intrinsic.Control.EndIf
+		
+	gui.Form..Visible(True)
+	
+	f.Intrinsic.Control.If(v.Screen.Form!chkRefresh.Value,=,1,and,v.Screen.Form!txtMin.Text.Trim,=,"")
+		gui.Form.txtMin.Text("3")
+	f.Intrinsic.Control.EndIf
+	
+	f.Intrinsic.Control.CallSub("Load")
+	f.Intrinsic.Control.If(v.Screen.Form!chkRefresh.Value,=,1,and,v.Screen.Form!txtMin.Text.Trim,<>,"0",v.Screen.Form!txtMin.Text.Trim,<>,"")
+		f.Intrinsic.Control.CallSub("Set_Timer")
+	f.Intrinsic.Control.EndIf
+	
+		
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry	
+Program.Sub.Main.End
+
+Program.Sub.Catching.Start
+f.Intrinsic.Control.Try
+	v.Local.sMsg.Declare
+	v.Local.sPath.Declare
+	v.Local.sErrorDescr.Declare
+	v.Local.sTitle.Declare
+	f.Intrinsic.String.Replace(v.Ambient.ScriptPath,"\","\\",v.Local.sPath)
+	f.Intrinsic.String.Build("{0}\\GCG_6034_QC.g2u",v.Local.sPath,v.Local.sPath)
+	f.Intrinsic.String.Replace(v.Args.ErrorDesc,"\","\\",v.Local.sErrorDescr)
+	
+	f.Intrinsic.String.Build("RTF{\rtf1\fbidis\ansi\ansicpg1252\deff0\nouicompat\deflang1033{\fonttbl{\f0\fnil\fcharset1 Segoe UI Symbol;}{\f1\fnil Times New Roman;}{\f2\fnil\fcharset0 Times New Roman;}{\f3\fnil\fcharset1 Segoe UI Emoji;}}{0}{\colortbl ;\red247\green150\blue70;\red0\green176\blue80;\red0\green128\blue0;}{0}{\*\generator Riched20 10.0.18362}\viewkind4\uc1{0}\pard\sl240\slmult1\cf1\b\f0\fs20\u-10179?\u-9026?\cf0\f1  \b0\f2 {1}\tab\par{0}\f3\u9881?\u-497?\f1  \f2 {2}\par{0}\cf2\f3\u-10178?\u-8706?\cf0\f1  \f2 {3}\cf3\lang9\par{0}}",v.Ambient.NewLine,v.Local.sPath,v.Args.Sub,v.Local.sErrorDescr,v.Local.sMsg)
+	f.Intrinsic.String.Build("GAB Error Number {0}",v.Args.errorno,v.Local.sTitle)
+	f.Intrinsic.UI.MsgboxExt(v.Local.sTitle,v.Local.sMsg,1)
+	F.Intrinsic.Control.CallSub("Unload")
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.UI.Msgbox(v.Ambient.ErrorDescription)
+	f.Intrinsic.Control.If(v.ODBC.conx.State,=,1)
+		f.ODBC.Connection!conx.Close
+	f.Intrinsic.Control.EndIf
+	f.Intrinsic.Control.End
+f.Intrinsic.Control.EndTry
+Program.Sub.Catching.End
+
+Program.Sub.Form_UnLoad.Start
+F.Intrinsic.Control.Try
+
+	F.Intrinsic.Control.CallSub(Save_User_Parameters)
+	
+	f.Intrinsic.Control.CallSub(Unload)
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry	
+Program.Sub.Form_UnLoad.End
+
+Program.Sub.Unload.Start
+f.Intrinsic.Control.Try	
+	
+	f.Intrinsic.Control.If(v.ODBC.conx.State,=,1)
+		f.ODBC.Connection!conx.Close	
+	f.Intrinsic.Control.EndIf
+	f.Intrinsic.Control.End
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.End
+f.Intrinsic.Control.EndTry	
+Program.Sub.Unload.End
+
+Program.Sub.Get_Project_Settings.Start
+F.Intrinsic.Control.Try
+	v.Local.sHold.Declare
+	v.Local.bDate.Declare
+	v.Local.dStart.Declare
+	
+	'Security group (Approver Group)
+	F.Global.Registry.ReadValue("SUPERVSR",V.Caller.CompanyCode,"SECUGROUP",6034,1004,6,"",v.Local.sHold)
+	gui.Settings.txtSecurityGroup.Text(v.Local.sHold.Trim)
+	
+	'Default Sender Email
+	F.Global.Registry.ReadValue("SUPERVSR",V.Caller.CompanyCode,"DEFAULTSENDER",6034,1005,6,"",v.Local.sHold)
+	gui.Settings.txtDefaultSender.Text(v.Local.sHold.Trim)	
+	gui.Request.txtSender.Text(v.Local.sHold.Trim)
+	
+	'Default Receipient Email
+	F.Global.Registry.ReadValue("SUPERVSR",V.Caller.CompanyCode,"DEFAULTRECEIPIENT",6034,1006,6,"",v.Local.sHold)
+	gui.Settings.txtDefaultReceipient.Text(v.Local.sHold.Trim)	
+	gui.Request.txtRecepients.Text(v.Local.sHold.Trim)
+	
+	'WO Creation Date
+	F.Global.Registry.ReadValue("SUPERVSR",V.Caller.CompanyCode,"WOCREATEDATE",6034,1007,6,"",v.Local.sHold)
+	F.Intrinsic.Date.IsDate(V.Local.sHold,V.Local.bDate)
+	f.Intrinsic.Control.If(v.Local.bDate)
+		gui.Settings.dtpWOCreateDate.Value(v.Local.sHold)
+	f.Intrinsic.Control.EndIf	
+	
+	'Start date is prior 30 days
+	f.Intrinsic.Date.DateAdd("d",-30,v.Ambient.Date,v.Local.dStart)
+	gui.Form.dtpStartSubmit.Value(v.Local.dStart)
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry	
+
+Program.Sub.Get_Project_Settings.End
+
+Program.Sub.cmdSaveSettings_Click.Start
+f.Intrinsic.Control.Try
+	v.Local.dDate.Declare
+	v.Local.dDate.Set(v.Screen.Settings!dtpWOCreateDate.Value)
+	
+	'Security group (Approver Group)
+	F.Global.Registry.AddValue("SUPERVSR",V.Caller.CompanyCode,"SECUGROUP",6034,1004,False,"SECUGROUP",False,0,-999.0,1/1/1980,12:00:00 AM,v.Screen.Settings!txtSecurityGroup.Text.Trim)	
+	
+	'Default Sender Email
+	F.Global.Registry.AddValue("SUPERVSR",V.Caller.CompanyCode,"DEFAULTSENDER",6034,1005,False,"DEFAULTSENDER",False,0,-999.0,1/1/1980,12:00:00 AM,v.Screen.Settings!txtDefaultSender.Text.Trim)
+	
+	'Default Receipient Email
+	F.Global.Registry.AddValue("SUPERVSR",V.Caller.CompanyCode,"DEFAULTRECEIPIENT",6034,1006,False,"DEFAULTRECEIPIENT",False,0,-999.0,1/1/1980,12:00:00 AM,v.Screen.Settings!txtDefaultReceipient.Text.Trim)
+	
+	'WO Creation Date
+	F.Global.Registry.AddValue("SUPERVSR",V.Caller.CompanyCode,"WOCREATEDATE",6034,1007,False,"WOCREATEDATE",False,0,-999.0,1/1/1980,12:00:00 AM,v.Local.dDate.FormatMM/DD/YYYY)
+	
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdSaveSettings_Click.End
+
+Program.Sub.Serialize.Start
+F.Intrinsic.Control.Try
+	V.Local.sSerialize.Declare
+
+	gui.Form.gsInsp.Serialize("GVMAIN",V.Local.sSerialize)
+	F.Global.Registry.AddValue(V.Caller.User,V.Caller.CompanyCode,"GVMAIN",6034,1001,False,"Serialize",False,0,-999.0,1/1/1980,12:00:00 AM,V.Local.sSerialize)	
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry	
+Program.Sub.Serialize.End
+
+Program.Sub.Deserialize.Start
+f.Intrinsic.Control.Try
+	V.Local.sSerialize.Declare
+		
+	F.Global.Registry.ReadValue(V.Caller.User,V.Caller.CompanyCode,"GVMAIN",6034,"1001",6,"",V.Local.sSerialize)		
+	F.Intrinsic.Control.If(V.Local.sSerialize.Trim,<>,"")
+		gui.Form.gsInsp.Deserialize(V.Local.sSerialize)
+	F.Intrinsic.Control.EndIf	
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.Deserialize.End
+
+Program.Sub.Set_Logo.Start
+f.Intrinsic.Control.Try
+	V.Local.sIcon.Declare
+	V.Local.sGssLogo.Declare
+	v.Local.bEx.Declare
+	
+	F.Intrinsic.String.Build("{0}\GCG_6034_Logo.png",V.Caller.GasDir,V.Local.sGssLogo)
+	f.Intrinsic.File.Exists(v.Local.sGssLogo,v.Local.bEx)
+	f.Intrinsic.Control.If(v.Local.bEx)
+		gui.Form.picGSSLogo.Picture(V.Local.sGssLogo)
+	f.Intrinsic.Control.EndIf	
+	
+	'image files used in the form
+	F.Intrinsic.String.Build("{0}\GCG_6034.ico",v.Caller.GasDir,v.Local.sIcon)
+	f.Intrinsic.File.Exists(v.Local.sIcon,v.Local.bEx)
+	f.Intrinsic.Control.If(v.Local.bEx)
+		gui.Form..Icon(V.Local.sIcon)
+		gui.Request..Icon(v.Local.sIcon)
+	f.Intrinsic.Control.EndIf	
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry	
+Program.Sub.Set_Logo.End
+
+Program.Sub.Get_User_Parameters.Start
+f.Intrinsic.Control.Try
+	v.Local.sHold.Declare
+
+	F.Global.Registry.ReadValue(V.Caller.User,V.Caller.CompanyCode,"CHKREFRESH",6034,1004,0,"False",V.Local.sHold)
+	GUI.Form.chkRefresh.Value(V.Local.sHold)	
+	
+	F.Global.Registry.ReadValue(V.Caller.User,V.Caller.CompanyCode,"MINUTES",6034,1005,5,"",V.Local.sHold)
+	F.Intrinsic.Control.If(v.Local.sHold.IsNumeric)
+		gui.Form.txtMin.Text(v.Local.sHold)
+	F.Intrinsic.Control.EndIf
+	
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry	
+Program.Sub.Get_User_Parameters.End
+
+Program.Sub.Save_User_Parameters.Start
+f.Intrinsic.Control.Try
+	v.Local.dDate.Declare
+
+	v.Local.dDate.Set(v.Screen.Form!dtpStartSubmit.Value)
+	F.Global.Registry.AddValue(V.Caller.User,V.Caller.CompanyCode,"STARTSUBMITDATE",6034,1002,False,v.Local.dDate.FormatMM/DD/YYYY,False,0,-1,v.Ambient.Date,12:00:00 AM)
+	
+	v.Local.dDate.Set(v.Screen.Form!dtpEndSubmit.Value)
+	F.Global.Registry.AddValue(V.Caller.User,V.Caller.CompanyCode,"ENDSUBMITDATE",6034,1003,False,v.Local.dDate.FormatMM/DD/YYYY,False,0,-1,v.Ambient.Date,12:00:00 AM)
+	
+	F.Global.Registry.AddValue(V.Caller.User,V.Caller.CompanyCode,"CHKREFRESH",6034,1004,False,"Checkbox",v.Screen.Form!chkRefresh.CheckedAsBoolean,0,-1,v.Ambient.Date,12:00:00 AM)
+	
+	F.Global.Registry.AddValue(V.Caller.User,V.Caller.CompanyCode,"MINUTES",6034,1005,False,v.Screen.Form!txtMin.Text.Trim,False,0,-1,v.Ambient.Date,12:00:00 AM)
+	
+	f.Intrinsic.Control.If(v.Global.bLoad)
+		f.Intrinsic.Control.CallSub(Serialize)
+	f.Intrinsic.Control.EndIf
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry	
+Program.Sub.Save_User_Parameters.End
+
+Program.Sub.Load.Start
+F.Intrinsic.Control.Try
+	v.Local.sSQL.Declare
+	v.Local.dStart.Declare
+	v.Local.dEnd.Declare
+	
+	v.Global.bLoadingHappening.Set(True)
+	f.Intrinsic.Control.If(v.Global.bLoad)
+		gui.Form.gsInsp.ClearRows("gvMain")
+		f.Intrinsic.Control.CallSub(Serialize)
+	f.Intrinsic.Control.EndIf
+	
+	v.Local.dStart.Set(v.Screen.Form!dtpStartSubmit.Value)
+	v.Local.dEnd.Set(v.Screen.Form!dtpEndSubmit.Value)
+
+	f.Intrinsic.Control.If(v.DataTable.Insp.Exists)
+		f.Data.DataTable.Close("Insp")
+	f.Intrinsic.Control.EndIf
+	F.Intrinsic.String.Build("Select g.AutoNum, g.Job,g.Suffix,g.Seq,h.Part,h.Description,o.Description as SeqDescription,g.InspectType,g.SubmitNote,g.SubmitEmp,'' as EmpName,g.SubmitDate,g.SubmitTime,g.Status,g.Approver,g.ApproveDAte,g.ApproveTime,g.ApproveNote,g.InspectQty,h.Location from GCG_6034_QC g left join v_job_header h on g.job = h.job and g.suffix = h.suffix left join v_job_Operations o on g.job = o.job and g.suffix = o.suffix and g.seq = o.seq Where SubmitDate between '{0}' and '{1}' order by SubmitDate",v.Local.dStart.PervasiveDate,v.Local.dEnd.PervasiveDate,v.Local.sSQL)
+	f.Data.DataTable.CreateFromSQL("Insp","conx",v.Local.sSQL,True)
+	f.Data.DataTable.AddExpressionColumn("Insp","Process","String","IIF(Trim(Status) = '' or Trim(Status) = 'Need More Info','Process','')")
+	
+	'Get Employee Name
+	f.Data.DataTable.FillFromDictionary("Insp","dEmpName","SubmitEmp","EmpName")
+	
+	f.Intrinsic.Control.CallSub(Compute_NonProcess)
+	
+	gui.Form.gsInsp.AddGridviewFromDatatable("gvMain","Insp")
+	f.Intrinsic.Control.CallSub(Format_gvMain)		
+	
+	gui.Form.gsInsp.MainView("gvMain")
+	F.Intrinsic.Control.CallSub(Deserialize)
+	V.Global.bLoad.Set(True)
+	v.Global.bLoadingHappening.Set(False)
+		
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry	
+Program.Sub.Load.End
+
+Program.Sub.Format_gvMain.Start
+F.Intrinsic.Control.Try
+	v.Local.sProperty.Declare
+
+	gui.Form.gsInsp.SuspendLayout
+	
+	'General
+	Gui.Form.gsInsp.SetGridViewProperty("gvMain","AllowSort",True)
+	Gui.Form.gsInsp.SetGridViewProperty("gvMain","AllowFilter",True)
+	Gui.Form.gsInsp.SetGridViewProperty("gvMain","OptionsFindAlwaysVisible",True)
+	Gui.Form.gsInsp.SetGridViewProperty("gvMain","Showgrouppanel",True)
+	Gui.Form.gsInsp.SetGridViewProperty("gvMain","EnableAppearanceOddRow",False)
+	Gui.Form.gsInsp.SetGridViewProperty("gvMain","OptionsViewShowAutoFilterRow",True)
+	Gui.Form.gsInsp.SetGridViewProperty("gvMain","AllowColumnResizing",True)
+	Gui.Form.gsInsp.SetGridViewProperty("gvMain","OptionsViewColumnAutoWidth",False)	
+	Gui.Form.gsInsp.SetGridViewProperty("gvMain","ColumnPanelRowHeight","35")	
+
+	gui.Form.gsInsp.SetColumnProperty("gvMain","Location","Visible",False)
+
+	v.Local.sProperty.Set("HeaderFontBold")
+	
+	gui.Form.gsInsp.SetColumnProperty("gvMain","AutoNum",v.local.sProperty,True) 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","Job",v.local.sProperty,True) 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","Suffix",v.local.sProperty,True) 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","Seq",v.local.sProperty,True) 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","Part",v.local.sProperty,True) 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","Location",v.local.sProperty,True)
+	gui.Form.gsInsp.SetColumnProperty("gvMain","Description",v.local.sProperty,True) 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","SeqDescription",v.local.sProperty,True) 	
+	gui.Form.gsInsp.SetColumnProperty("gvMain","InspectType",v.local.sProperty,True) 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","SubmitNote",v.local.sProperty,True) 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","SubmitEmp",v.local.sProperty,True) 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","EmpName",v.local.sProperty,True) 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","SubmitDate",v.local.sProperty,True) 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","SubmitTime",v.local.sProperty,True) 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","Status",v.local.sProperty,True) 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","Process",v.local.sProperty,True)
+	gui.Form.gsInsp.SetColumnProperty("gvMain","Approver",v.local.sProperty,True) 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","ApproveDAte",v.local.sProperty,True) 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","ApproveTime",v.local.sProperty,True) 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","ApproveNote",v.local.sProperty,True) 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","InspectQty",v.local.sProperty,True) 
+	
+	v.Local.sProperty.Set("HeaderWordWrap")
+	gui.Form.gsInsp.SetColumnProperty("gvMain","AutoNum",v.local.sProperty,"wrap") 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","Job",v.local.sProperty,"wrap") 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","Suffix",v.local.sProperty,"wrap") 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","Seq",v.local.sProperty,"wrap") 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","Part",v.local.sProperty,"wrap") 	
+	gui.Form.gsInsp.SetColumnProperty("gvMain","Description",v.local.sProperty,"wrap") 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","SeqDescription",v.local.sProperty,"wrap") 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","InspectType",v.local.sProperty,"wrap") 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","SubmitNote",v.local.sProperty,"wrap") 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","SubmitEmp",v.local.sProperty,"wrap") 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","EmpName",v.local.sProperty,"wrap") 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","SubmitDate",v.local.sProperty,"wrap") 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","SubmitTime",v.local.sProperty,"wrap") 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","Status",v.local.sProperty,"wrap") 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","Process",v.local.sProperty,"wrap")
+	gui.Form.gsInsp.SetColumnProperty("gvMain","Approver",v.local.sProperty,"wrap") 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","ApproveDAte",v.local.sProperty,"wrap") 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","ApproveTime",v.local.sProperty,"wrap") 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","ApproveNote",v.local.sProperty,"wrap") 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","InspectQty",v.local.sProperty,"wrap") 
+	
+	v.Local.sProperty.Set("HeaderVAlignment")
+	gui.Form.gsInsp.SetColumnProperty("gvMain","AutoNum",v.local.sProperty,"Top")
+	gui.Form.gsInsp.SetColumnProperty("gvMain","Job",v.local.sProperty,"Top") 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","Suffix",v.local.sProperty,"Top") 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","Seq",v.local.sProperty,"Top") 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","Part",v.local.sProperty,"Top")
+	gui.Form.gsInsp.SetColumnProperty("gvMain","Description",v.local.sProperty,"Top")
+	gui.Form.gsInsp.SetColumnProperty("gvMain","SeqDescription",v.local.sProperty,"Top")
+	gui.Form.gsInsp.SetColumnProperty("gvMain","InspectType",v.local.sProperty,"Top") 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","SubmitNote",v.local.sProperty,"Top") 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","SubmitEmp",v.local.sProperty,"Top") 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","EmpName",v.local.sProperty,"Top") 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","SubmitDate",v.local.sProperty,"Top") 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","SubmitTime",v.local.sProperty,"Top") 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","Status",v.local.sProperty,"Top") 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","Process",v.local.sProperty,"Top") 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","Approver",v.local.sProperty,"Top") 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","ApproveDAte",v.local.sProperty,"Top") 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","ApproveTime",v.local.sProperty,"Top") 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","ApproveNote",v.local.sProperty,"Top") 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","InspectQty",v.local.sProperty,"Top") 
+	
+	v.Local.sProperty.Set("HeaderHAlignment")
+	gui.Form.gsInsp.SetColumnProperty("gvMain","AutoNum",v.local.sProperty,"far") 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","Job",v.local.sProperty,"Center") 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","Suffix",v.local.sProperty,"Center") 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","Seq",v.local.sProperty,"Center") 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","Part",v.local.sProperty,"near") 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","Description",v.local.sProperty,"near") 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","SeqDescription",v.local.sProperty,"near") 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","InspectType",v.local.sProperty,"Center") 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","SubmitNote",v.local.sProperty,"Near") 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","SubmitEmp",v.local.sProperty,"Center") 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","EmpName",v.local.sProperty,"near") 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","SubmitDate",v.local.sProperty,"Center") 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","SubmitTime",v.local.sProperty,"Center") 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","Status",v.local.sProperty,"Center") 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","Process",v.local.sProperty,"Center")
+	gui.Form.gsInsp.SetColumnProperty("gvMain","Approver",v.local.sProperty,"Center") 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","ApproveDAte",v.local.sProperty,"Center") 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","ApproveTime",v.local.sProperty,"Center") 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","ApproveNote",v.local.sProperty,"Top") 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","InspectQty",v.local.sProperty,"far") 
+	
+	v.Local.sProperty.Set("CellHAlignment")
+	gui.Form.gsInsp.SetColumnProperty("gvMain","AutoNum",v.local.sProperty,"far") 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","Job",v.local.sProperty,"Center") 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","Suffix",v.local.sProperty,"Center") 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","Seq",v.local.sProperty,"Center") 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","Part",v.local.sProperty,"near")
+	gui.Form.gsInsp.SetColumnProperty("gvMain","Description",v.local.sProperty,"near") 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","SeqDescription",v.local.sProperty,"near") 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","InspectType",v.local.sProperty,"Center") 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","SubmitNote",v.local.sProperty,"Near") 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","SubmitEmp",v.local.sProperty,"Center") 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","EmpName",v.local.sProperty,"near") 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","SubmitDate",v.local.sProperty,"Center") 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","SubmitTime",v.local.sProperty,"Center") 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","Status",v.local.sProperty,"Center") 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","Process",v.local.sProperty,"Center") 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","Approver",v.local.sProperty,"Center") 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","ApproveDAte",v.local.sProperty,"Center") 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","ApproveTime",v.local.sProperty,"Center") 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","ApproveNote",v.local.sProperty,"Top") 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","InspectQty",v.local.sProperty,"far") 
+	
+	v.Local.sProperty.Set("Caption")
+	gui.Form.gsInsp.SetColumnProperty("gvMain","Job",v.local.sProperty,"Job") 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","Suffix",v.local.sProperty,"Suffix") 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","Seq",v.local.sProperty,"Seq") 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","Part",v.local.sProperty,"Part") 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","Description",v.local.sProperty,"Description") 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","SeqDescription",v.local.sProperty,"Seq Description") 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","InspectType",v.local.sProperty,"Type") 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","SubmitNote",v.local.sProperty,"Emp. Note") 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","SubmitEmp",v.local.sProperty,"Employee") 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","EmpName",v.local.sProperty,"Empl. Name") 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","SubmitDate",v.local.sProperty,"Submit Date") 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","SubmitTime",v.local.sProperty,"Submit Time") 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","Status",v.local.sProperty,"Status") 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","Process",v.local.sProperty,"Process") 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","Approver",v.local.sProperty,"Inspector") 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","ApproveDAte",v.local.sProperty,"Inspect Date") 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","ApproveTime",v.local.sProperty,"Inspect Time") 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","ApproveNote",v.local.sProperty,"Inspector Note") 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","InspectQty",v.local.sProperty,"Insp. Qty") 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","AutoNum",v.local.sProperty,"Record #")
+	
+	v.Local.sProperty.Set("MinWidth")
+	gui.Form.gsInsp.SetColumnProperty("gvMain","AutoNum",v.local.sProperty,"40")
+	gui.Form.gsInsp.SetColumnProperty("gvMain","Job",v.local.sProperty,"65") 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","Suffix",v.local.sProperty,"45") 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","Seq",v.local.sProperty,"65") 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","Part",v.local.sProperty,"65") 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","Description",v.local.sProperty,"65") 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","SeqDescription",v.local.sProperty,"65") 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","InspectType",v.local.sProperty,"65") 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","SubmitNote",v.local.sProperty,"65") 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","SubmitEmp",v.local.sProperty,"65") 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","EmpName",v.local.sProperty,"65") 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","SubmitDate",v.local.sProperty,"75") 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","SubmitTime",v.local.sProperty,"75") 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","Status",v.local.sProperty,"75") 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","Process",v.local.sProperty,"65") 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","Approver",v.local.sProperty,"65") 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","ApproveDAte",v.local.sProperty,"75") 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","ApproveTime",v.local.sProperty,"75") 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","ApproveNote",v.local.sProperty,"65") 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","InspectQty",v.local.sProperty,"85") 
+
+	'Allow Edit
+	v.Local.sProperty.Set("AllowEdit")
+	gui.Form.gsInsp.SetColumnProperty("gvMain","Job",v.local.sProperty,False) 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","Suffix",v.local.sProperty,False) 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","Seq",v.local.sProperty,False)
+	gui.Form.gsInsp.SetColumnProperty("gvMain","Part",v.local.sProperty,False) 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","Description",v.local.sProperty,False) 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","SeqDescription",v.local.sProperty,False) 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","InspectType",v.local.sProperty,False) 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","SubmitNote",v.local.sProperty,False) 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","SubmitEmp",v.local.sProperty,False) 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","EmpName",v.local.sProperty,False)
+	gui.Form.gsInsp.SetColumnProperty("gvMain","SubmitDate",v.local.sProperty,False) 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","SubmitTime",v.local.sProperty,False) 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","Status",v.local.sProperty,False) 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","Process",v.local.sProperty,False) 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","Approver",v.local.sProperty,False) 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","ApproveDAte",v.local.sProperty,False) 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","ApproveTime",v.local.sProperty,False) 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","ApproveNote",v.local.sProperty,False) 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","InspectQty",v.local.sProperty,False) 
+
+	'ReadOnly
+	v.Local.sProperty.Set("ReadOnly")
+	gui.Form.gsInsp.SetColumnProperty("gvMain","Job",v.local.sProperty,True) 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","Suffix",v.local.sProperty,True) 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","Seq",v.local.sProperty,True) 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","Part",v.local.sProperty,True) 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","Description",v.local.sProperty,True) 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","SeqDescription",v.local.sProperty,True) 	
+	gui.Form.gsInsp.SetColumnProperty("gvMain","InspectType",v.local.sProperty,True) 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","SubmitNote",v.local.sProperty,True) 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","SubmitEmp",v.local.sProperty,True)
+	gui.Form.gsInsp.SetColumnProperty("gvMain","EmpName",v.local.sProperty,True) 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","SubmitDate",v.local.sProperty,True) 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","SubmitTime",v.local.sProperty,True) 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","Status",v.local.sProperty,True) 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","Process",v.local.sProperty,True) 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","Approver",v.local.sProperty,True) 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","ApproveDAte",v.local.sProperty,True) 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","ApproveTime",v.local.sProperty,True) 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","ApproveNote",v.local.sProperty,True) 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","InspectQty",v.local.sProperty,True) 
+
+'	v.Local.sProperty.Set("CELLTRIMMING")
+'	gui.Form.gsInsp.SetColumnProperty("gvMain","Part",v.local.sProperty,"Word") 
+'	gui.Form.gsInsp.SetColumnProperty("gvMain","EmpName",v.local.sProperty,"Word") 
+'	gui.Form.gsInsp.SetColumnProperty("gvMain","Description",v.local.sProperty,"Word") 
+'	gui.Form.gsInsp.SetColumnProperty("gvMain","SeqDescription",v.local.sProperty,"Word") 
+'	gui.Form.gsInsp.SetColumnProperty("gvMain","InspectType",v.local.sProperty,"Word") 
+'	gui.Form.gsInsp.SetColumnProperty("gvMain","SubmitNote",v.local.sProperty,"Word") 
+'	gui.Form.gsInsp.SetColumnProperty("gvMain","Status",v.local.sProperty,"Word") 
+'	gui.Form.gsInsp.SetColumnProperty("gvMain","ApproveNote",v.local.sProperty,"Word") 
+	
+	v.Local.sProperty.Set("HeaderBackColor")
+	gui.Form.gsInsp.SetColumnProperty("gvMain","SubmitNote",v.local.sProperty,"Ivory") 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","Process",v.local.sProperty,"DodgerBlue")
+	gui.Form.gsInsp.SetColumnProperty("gvMain","ApproveNote",v.local.sProperty,"Ivory") 
+
+	v.Local.sProperty.Set("HeaderForeColor")
+	gui.Form.gsInsp.SetColumnProperty("gvMain","Process",v.local.sProperty,"White")
+
+	v.Local.sProperty.Set("CellBackColor")
+	gui.Form.gsInsp.SetColumnProperty("gvMain","SubmitNote",v.local.sProperty,"Ivory") 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","ApproveNote",v.local.sProperty,"Ivory") 
+
+	v.Local.sProperty.Set("CellForeColor")
+	gui.Form.gsInsp.SetColumnProperty("gvMain","Job",v.local.sProperty,"Blue")
+	gui.Form.gsInsp.SetColumnProperty("gvMain","Suffix",v.local.sProperty,"Blue")
+	gui.Form.gsInsp.SetColumnProperty("gvMain","Seq",v.local.sProperty,"Blue")
+	gui.Form.gsInsp.SetColumnProperty("gvMain","Part",v.local.sProperty,"Blue")
+
+	v.Local.sProperty.Set("Fixed")
+	gui.Form.gsInsp.SetColumnProperty("gvMain","AutoNum",v.local.sProperty,"Left")
+	gui.Form.gsInsp.SetColumnProperty("gvMain","Job",v.local.sProperty,"Left") 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","Suffix",v.local.sProperty,"Left") 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","Seq",v.local.sProperty,"Left") 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","Part",v.local.sProperty,"Left")
+	gui.Form.gsInsp.SetColumnProperty("gvMain","Description",v.local.sProperty,"Left")
+	gui.Form.gsInsp.SetColumnProperty("gvMain","SeqDescription",v.local.sProperty,"Left")
+	
+	'Custom Date
+	gui.Form.gsInsp.SetColumnProperty("gvMain","SubmitDate","DisplayCustomDatetime","d") 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","ApproveDate","DisplayCustomDatetime","d") 
+	
+	'Numeric
+	gui.Form.gsInsp.SetColumnProperty("gvMain","SubmitDate","DisplayCustomNumeric","###,###,###,###.0000") 
+	gui.Form.gsInsp.SetColumnProperty("gvMain","ApproveDate","DisplayCustomNumeric","###,###,###,###.0000")
+	
+	'Summary
+	gui.Form.gsInsp.AddSummaryItem("gvMain","InspectQty","sum1","Sum","","","###,###,###,###.0000")
+	
+	'Editor
+	'gui.Form.gsInsp.ColumnEdit("gvMain","Process","EditorButton","Process")
+	
+	'color
+	gui.Form.gsInsp.AddStyleFormatCondition("gvMain","Status","tagStatusApproved","equal","Approved")
+	gui.Form.gsInsp.SetStyleFormatConditionProperty("gvMain","Status","tagStatusApproved","forecolor","Blue")
+	
+	gui.Form.gsInsp.AddStyleFormatCondition("gvMain","Status","tagStatusRejected","equal","Rejected")
+	gui.Form.gsInsp.SetStyleFormatConditionProperty("gvMain","Status","tagStatusRejected","forecolor","Red")
+	
+	gui.Form.gsInsp.AddStyleFormatCondition("gvMain","Status","tagStatusInProcess","equal","Need More Info")
+	gui.Form.gsInsp.SetStyleFormatConditionProperty("gvMain","Status","tagStatusInProcess","forecolor","LightSalmon")
+	
+	'InspectType
+	gui.Form.gsInsp.AddStyleFormatCondition("gvMain","InspectType","tagFAI","equal","FAI")
+	gui.Form.gsInsp.SetStyleFormatConditionProperty("gvMain","InspectType","tagFAI","backcolor","LightBlue")
+	
+	gui.Form.gsInsp.AddStyleFormatCondition("gvMain","InspectType","tagLot","equal","Lot")
+	gui.Form.gsInsp.SetStyleFormatConditionProperty("gvMain","InspectType","tagLot","backcolor","Gold")
+	
+	gui.Form.gsInsp.AddStyleFormatCondition("gvMain","InspectType","tagFinal","equal","Final")
+	gui.Form.gsInsp.SetStyleFormatConditionProperty("gvMain","InspectType","tagFinal","backcolor","LightPink")	
+	
+
+	gui.Form.gsInsp.ResumeLayout
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+
+Program.Sub.Format_gvMain.End
+
+Program.Sub.gsInsp_RowCellClick.Start
+F.Intrinsic.Control.Try
+	v.Local.sWO.Declare
+	v.Local.sEmp.Declare
+	v.Local.sSender.Declare
+	v.Local.sSQL.Declare
+	v.Local.sRet.Declare
+	v.Local.bAuth.Declare
+	v.Local.sPart.Declare
+	v.Local.sLoc.Declare
+	V.Local.sTemp.Declare
+	v.Local.bInSecuGroup.Declare
+	v.Local.sUserID.Declare
+	v.Local.sGroups.Declare
+	v.Local.iCnt.Declare
+	v.Local.sMembers.Declare
+	v.Local.sAllMembers.Declare
+	v.Local.sFilter.Declare
+	v.Local.sFile.Declare
+	v.Local.bEx.Declare
+	v.Local.sList.Declare
+
+	f.Intrinsic.Control.SelectCase(v.Args.Column.UCase)	
+	
+		f.Intrinsic.Control.Case("PROCESS")			
+			f.Intrinsic.Control.If(v.DataTable.Insp(v.Args.RowIndex).Process!FieldValTrim,=,"")
+				f.Intrinsic.Control.ExitSub
+			f.Intrinsic.Control.EndIf
+			f.Intrinsic.Control.If(v.Global.bCanProcess.Not)
+				f.Intrinsic.UI.Msgbox("You are not authorized to process. Please contact Administrator.","Attention")
+				f.Intrinsic.Control.ExitSub
+			f.Intrinsic.Control.EndIf
+			
+			f.Intrinsic.UI.Inputbox("Badge Enter","Please input your Badge number:","",v.Global.sApproverEmpNum)
+			f.Intrinsic.Control.If(v.Global.sApproverEmpNum.IsCancel)
+				f.Intrinsic.Control.ExitSub
+			f.Intrinsic.Control.EndIf
+			f.Intrinsic.String.Build("Select rtrim(name) from Employee_mstr where employee = '{0}'",v.Global.sApproverEmpNum.Trim,v.Local.sSQL)
+			f.ODBC.Connection!conx.ExecuteAndReturn(v.Local.sSQL,v.Global.sApproverName)			
+			f.Intrinsic.Control.If(v.Ambient.ExecuteAndReturnEOF)
+				f.Intrinsic.UI.Msgbox("Invalid Badge number","Attention")
+				f.Intrinsic.Control.ExitSub
+			f.Intrinsic.Control.EndIf
+		
+'			f.Intrinsic.String.Build("{0}\APPR.txt",V.Caller.FilesDir,v.Local.sFile)	
+'			f.Intrinsic.File.Exists(v.Local.sFile,v.Local.bEx)
+'			f.Intrinsic.Control.If(v.Local.bEx.Not)
+'				f.Intrinsic.UI.Msgbox("Cannot find Inspector list.","Attention")
+'				f.Intrinsic.Control.ExitSub
+'			f.Intrinsic.Control.EndIf
+'			f.Intrinsic.File.File2String(v.Local.sFile,v.Local.sList)
+'			f.Intrinsic.String.Build(",{0},",v.Global.sApproverEmpNum.Trim,v.Local.sRet)
+'			f.Intrinsic.String.Instr(v.Local.sList,v.Local.sRet,True,v.Local.bInSecuGroup)
+'			f.Intrinsic.Control.If(v.Local.bInSecuGroup.Not)
+'				f.Intrinsic.UI.Msgbox("This employee is not authorized to process.","Attention")
+'				f.Intrinsic.Control.ExitSub				
+'			f.Intrinsic.Control.EndIf
+						
+		
+			gui.Request.txtRowIndex.Text(v.Args.RowIndex)
+			
+			'Header
+			f.Intrinsic.String.Build("{0}-{1}-{2}",v.DataTable.Insp(v.Args.RowIndex).Job!FieldValString,v.DataTable.Insp(v.Args.RowIndex).Suffix!FieldValString,v.DataTable.Insp(v.Args.RowIndex).Seq!FieldValString,v.Local.sWO)
+			gui.Request.txtWO.Text(v.Local.sWO)
+			gui.Request.txtEmp.Text(v.DataTable.Insp(v.Args.RowIndex).SubmitEmp!FieldValString)
+			gui.Request.txtType.Text(v.DataTable.Insp(v.Args.RowIndex).InspectType!FieldValString)
+			gui.Request.txtNote.Text(v.DataTable.Insp(v.Args.RowIndex).SubmitNote!FieldValString)
+			gui.Request.txtSeqDescr.Text(v.DataTable.Insp(v.Args.RowIndex).SeqDescription!FieldValTrim)
+			gui.Request.txtQty.Text(v.DataTable.Insp(v.Args.RowIndex).InspectQty!FieldValTrim)
+			
+			'Inspector Note
+			gui.Request.txtApproverNote.Text(v.DataTable.Insp(v.Args.RowIndex).ApproveNote!FieldValTrim)
+			
+			'Emails
+			'Sender Email
+			'f.Global.Security.GetUserEmail(v.Caller.User,v.Caller.CompanyCode,v.Local.sSender)
+			'f.Intrinsic.Control.If(v.Local.sSender.Trim,=,"")
+				'f.Global.Security.GetUserEmail("SUPERVSR",v.Caller.CompanyCode,v.Local.sSender)
+			'f.Intrinsic.Control.EndIf
+			'gui.Request.txtSender.Text(v.Local.sSender.Trim)
+			'Receipient Email
+			'f.Intrinsic.String.Build("Select Email_Addr from V_Employee_Mstr where Employee = '{0}'",v.DataTable.Insp(v.Args.RowIndex).SubmitEmp!FieldValString,v.Local.sSQL)
+			'f.ODBC.Connection!conx.ExecuteAndReturn(v.Local.sSQL,v.Local.sRet)
+			'f.Intrinsic.Control.If(v.Ambient.ExecuteAndReturnEOF.Not)
+				'gui.Request.txtRecepients.Text(v.Local.sRet.Trim)
+			'f.Intrinsic.Control.Else
+				'gui.Request.txtRecepients.Text("")
+			'f.Intrinsic.Control.EndIf	
+			'gui.Request.txtEmail.Text("")
+			
+			'Subject and Body by default
+			f.Intrinsic.Control.CallSub(optNeedMoreInfo_Click)		
+			
+			'Attachment
+			gui.Request.txtAttachment.Text("")
+			
+			gui.Form.timerAutoRefresh.Enabled(False)
+			gui.Form.frRefresh.Enabled(False)
+			gui.Request..Visible(True)
+			
+		f.Intrinsic.Control.Case("SUBMITNOTE")	
+			F.Intrinsic.UI.MsgBoxExt("Employee Note",v.DataTable.Insp(v.Args.RowIndex).SubmitNote!FieldValTrim)
+			
+		f.Intrinsic.Control.Case("APPROVENOTE")	
+			F.Intrinsic.UI.MsgBoxExt("Inspector Note",v.DataTable.Insp(v.Args.RowIndex).APPROVENOTE!FieldValTrim)
+			
+		f.Intrinsic.Control.Case("PART")
+			Function.Global.Security.CheckUserAccessIPM(312,0,v.Local.bAuth)
+			f.Intrinsic.Control.If(v.Local.bAuth.Not)
+				f.Intrinsic.UI.Msgbox("User does not have permission to Inventory > View > Inventory Parts.","Menu Item Not Assigned")
+				f.Intrinsic.Control.ExitSub
+			f.Intrinsic.Control.EndIf					
+			f.Data.DataTable.AddRow("3500","CompanyCode",v.Caller.CompanyCode,"Mode","V","PART",v.DataTable.Insp(v.Args.RowIndex).Part!FieldValString,"LOC",V.DataTable.Insp(v.Args.RowIndex).Location!FieldValString)
+			F.Intrinsic.Control.CallSub(3500Sync)	
+			
+		F.Intrinsic.Control.CaseAny("JOB","SUFFIX","SEQ")
+			Function.Global.Security.CheckUserAccessIPM(536,0,v.Local.bAuth)
+			f.Intrinsic.Control.If(v.Local.bAuth.Not)
+				f.Intrinsic.UI.Msgbox("User does not have permission to Shop Floor Control > View > Work Orders.","Menu Item Not Assigned")
+				f.Intrinsic.Control.ExitSub
+			f.Intrinsic.Control.EndIf			
+			F.Intrinsic.String.Concat("7","!*!",v.DataTable.Insp(v.Args.RowIndex).JOB!FieldValString,"!*!",v.DataTable.Insp(v.Args.RowIndex).SUFFIX!FieldValString,"!*!","A",V.Local.sTemp)
+			F.Global.General.CallWrapperSync(450000,V.Local.sTemp)	
+		
+	f.Intrinsic.Control.EndSelect
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.gsInsp_RowCellClick.End
+
+Program.Sub.Request_UnLoad.Start
+f.Intrinsic.Control.Try
+	
+	gui.Request..Visible(False)
+	f.Intrinsic.Control.If(v.Screen.Form!chkRefresh.Value,=,1)
+		gui.Form.timerAutoRefresh.Enabled(True)
+	f.Intrinsic.Control.EndIf
+	gui.Form.frRefresh.Enabled(True)
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.Request_UnLoad.End
+
+Program.Sub.optApprove_Click.Start
+f.Intrinsic.Control.Try
+	v.Local.sSubject.Declare
+	v.Local.sBody.Declare
+	
+	gui.Request.optApprove.Value(1)
+	f.Intrinsic.Control.CallSub(Get_Basic_Request_Info)
+	f.Intrinsic.String.Build("Approved: {0}",v.Args.sBasicSubject,v.Local.sSubject)
+	gui.Request.txtSubject.Text(v.Local.sSubject)
+	f.Intrinsic.String.Build("{0}{1}{2}{1}",v.Global.sDefaultApprovedText,v.Ambient.NewLine,v.Args.sBasicBody,,v.Local.sBody)
+	gui.Request.txtBody.Text(v.Local.sBody)
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.optApprove_Click.End
+
+Program.Sub.optReject_Click.Start
+f.Intrinsic.Control.Try
+	v.Local.sSubject.Declare
+	v.Local.sBody.Declare
+	
+	gui.Request.optReject.Value(1)
+	f.Intrinsic.Control.CallSub(Get_Basic_Request_Info)
+	f.Intrinsic.String.Build("Rejected: {0}",v.Args.sBasicSubject,v.Local.sSubject)
+	gui.Request.txtSubject.Text(v.Local.sSubject)
+	f.Intrinsic.String.Build("{0}{1}{2}{1}",v.Global.sDefaultRejectedText,v.Ambient.NewLine,v.Args.sBasicBody,v.Local.sBody)
+	gui.Request.txtBody.Text(v.Local.sBody)
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.optReject_Click.End
+
+Program.Sub.optNeedMoreInfo_Click.Start
+f.Intrinsic.Control.Try
+	v.Local.sSubject.Declare
+	v.Local.sBody.Declare
+	
+	gui.Request.optNeedMoreInfo.Value(1)
+	f.Intrinsic.Control.CallSub(Get_Basic_Request_Info)
+	f.Intrinsic.String.Build("Need more info: {0}",v.Args.sBasicSubject,v.Local.sSubject)
+	gui.Request.txtSubject.Text(v.Local.sSubject)
+	f.Intrinsic.String.Build("{0}{1}{2}{1}",v.Global.sDefaultNeedMoreInfo,v.Ambient.NewLine,v.Args.sBasicBody,v.Local.sBody)
+	gui.Request.txtBody.Text(v.Local.sBody)
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.optNeedMoreInfo_Click.End
+
+Program.Sub.Get_Basic_Request_Info.Start
+f.Intrinsic.Control.Try
+	v.Local.sRow.Declare
+	v.Local.bNumeric.Declare
+	v.Local.sPart.Declare
+	v.Local.sDescr.Declare
+	v.Local.sSeqDescr.Declare
+	v.Local.sBasicSubject.Declare
+	v.Local.sBasicBody.Declare
+	v.Local.sRecordNumber.Declare
+	v.Local.sQtyToInspect.Declare
+	v.Local.sJob.Declare
+	v.Local.sSuffix.Declare
+	v.Local.sSeq.Declare
+	v.Local.sJSS.Declare
+	v.Local.sSQL.Declare
+	v.Local.sRet.Declare
+	v.Local.sCust.Declare
+	v.Local.sNextSeq.Declare
+	
+	v.Local.sRow.Set(v.Screen.Request!txtRowIndex.Text.Trim)
+	f.Intrinsic.Math.IsNumeric(v.Local.sRow,v.Local.bNumeric)
+	f.Intrinsic.Control.If(v.Local.bNumeric)
+		v.Local.sPart.Set(v.DataTable.Insp(v.Local.sRow).Part!FieldValTrim)
+		v.Local.sDescr.Set(v.DataTable.Insp(v.Local.sRow).Description!FieldValTrim)
+		v.Local.sSeqDescr.Set(v.DataTable.Insp(v.Local.sRow).SeqDescription!FieldValTrim)
+		v.Local.sRecordNumber.Set(v.DataTable.Insp(v.Local.sRow).AutoNum!FieldValTrim)
+		v.Local.sQtyToInspect.Set(v.DataTable.Insp(v.Local.sRow).InspectQty!FieldValTrim)	
+	f.Intrinsic.Control.EndIf
+	
+	f.Intrinsic.String.Split(v.Screen.Request!txtWO.Text.Trim,"-",v.Local.sJSS)
+	v.Local.sJob.Set(v.Local.sJSS(0).Trim)
+	f.Intrinsic.Control.If(v.Local.sJSS.UBound,>=,1)
+		v.Local.sSuffix.Set(v.Local.sJSS(1).Trim)
+	f.Intrinsic.Control.EndIf
+	f.Intrinsic.Control.If(v.Local.sJSS.UBound,>=,2)
+		v.Local.sSeq.Set(v.Local.sJSS(2).Trim)
+	f.Intrinsic.Control.EndIf
+	
+	f.Intrinsic.String.Build("Select Top 1 Name_Customer from v_job_header H LEFT JOIN V_CUSTOMER_MASTER C on H.Customer = C.Customer where H.job = '{0}' and H.suffix = '{1}'",v.Local.sJob,v.Local.sSuffix,v.Local.sSQL)
+	f.ODBC.Connection!conx.ExecuteAndReturn(v.Local.sSQL,v.Local.sRet)
+	f.Intrinsic.Control.If(v.Ambient.ExecuteAndReturnEOF.Not)
+		v.Local.sCust.Set(v.Local.sRet)
+	f.Intrinsic.Control.EndIf
+	
+	f.Intrinsic.String.Build("Select Top 1 Seq,Operation,Description from v_job_Operations where job = '{0}' and suffix = '{1}' and seq > '{2}' order by seq ",v.Local.sJob,v.Local.sSuffix,v.Local.sSeq,v.Local.sSQL)
+	f.ODBC.Connection!conx.ExecuteAndReturn(v.Local.sSQL,v.Local.sRet)
+	f.Intrinsic.Control.If(v.Ambient.ExecuteAndReturnEOF.Not)
+		f.Intrinsic.String.Replace(v.Local.sRet,"*!*"," - ",v.Local.sNextSeq)
+	f.Intrinsic.Control.EndIf	
+	
+	f.Intrinsic.Control.If(v.Screen.Request!optReject.Value,=,True)
+		v.Local.sNextSeq.Set("Parts Not Moved")
+	f.Intrinsic.Control.EndIf
+
+	f.Intrinsic.String.Build("WO {0} Part {1} Descr: {2} Seq Descr: {3}",v.Screen.Request!txtWO.Text.Trim,v.Local.sPart,v.Local.sDescr,v.Local.sSeqDescr,v.Local.sBasicSubject)
+	f.Intrinsic.String.Build("Record #: {5}{4}WO {0}{4}Customer: {7}{4}Part {1}{4}Descr: {2}{4}Seq Descr: {3}{4}Qty to Inspect: {6}{4}Going To: {8}",v.Screen.Request!txtWO.Text.Trim,v.Local.sPart,v.Local.sDescr,v.Local.sSeqDescr,v.Ambient.NewLine,v.Local.sRecordNumber,v.Local.sQtyToInspect,v.Local.sCust,v.Local.sNextSeq,v.Local.sBasicBody)
+	f.Intrinsic.Variable.AddRV("sBasicSubject",v.Local.sBasicSubject)
+	f.Intrinsic.Variable.AddRV("sBasicBody",v.Local.sBasicBody)
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.Get_Basic_Request_Info.End
+
+Program.Sub.cmdProcess_Click.Start
+f.Intrinsic.Control.Try	
+	v.Local.sError.Declare
+	v.Local.sSQL.Declare
+	v.Local.sStatus.Declare
+	v.Local.sRet.Declare
+	v.Local.bEmailAddressValid.Declare
+	v.Local.sRecepients.Declare
+	v.Local.sHold.Declare
+	v.Local.iCnt.Declare
+	v.Local.sSender.Declare
+	v.Local.sBody.Declare
+	v.Local.iUser.Declare	
+	v.Local.bEx.Declare
+	v.Local.sRow.Declare
+	v.Local.bNumeric.Declare
+	v.Local.sAutoNum.Declare
+	v.Local.sApproveNote.Declare
+	v.Local.dDate.Declare
+	v.Local.sNow.Declare
+	v.Local.sAttach.Declare
+	v.Local.sFullpath.Declare
+	v.Local.sFileName.Declare
+	v.Local.sFolderPath.Declare
+	
+	v.Local.sRow.Set(v.Screen.Request!txtRowIndex.Text.Trim)
+	f.Intrinsic.Math.IsNumeric(v.Local.sRow,v.Local.bNumeric)
+	f.Intrinsic.Control.If(v.Local.bNumeric)
+		f.Intrinsic.Control.If(v.Local.sRow,>=,v.DataTable.Insp.RowCount)
+			f.Intrinsic.UI.Msgbox("Invalid Row Index.","Invalid")
+			f.Intrinsic.Control.ExitSub			
+		f.Intrinsic.Control.EndIf
+	f.Intrinsic.Control.Else
+		f.Intrinsic.UI.Msgbox("Invalid Row Index.","Invalid")
+		f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.EndIf
+	v.Local.sAutoNum.Set(v.DataTable.Insp(v.Local.sRow).AutoNum!FieldValTrim)
+	v.Local.sApproveNote.Set(v.Screen.Request!txtApproverNote.Text.Trim)
+	v.Local.sApproveNote.Set(v.Local.sApproveNote.left3000)
+	
+	'Validate Approve or Reject
+	f.Intrinsic.Control.If(v.Screen.Request!optApprove.Value,=,False,and,v.Screen.Request!optReject.Value,=,False,v.Screen.Request!optNeedMoreInfo.Value,=,False)
+		f.Intrinsic.UI.Msgbox("Please select Approve or Reject or Nedd More Info","Invalid")
+		f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.EndIf
+	
+	'Approve selected
+	f.Intrinsic.Control.If(v.Screen.Request!optApprove.Value,=,True)
+		v.Local.sStatus.Set("Approved")
+	f.Intrinsic.Control.EndIf
+	'Rejected Selected
+	f.Intrinsic.Control.If(v.Screen.Request!optReject.Value,=,True)
+		v.Local.sStatus.Set("Rejected")
+	f.Intrinsic.Control.EndIf
+	'Need More Info
+	f.Intrinsic.Control.If(v.Screen.Request!optNeedMoreInfo.Value,=,True)
+		v.Local.sStatus.Set("Need More Info")
+	f.Intrinsic.Control.EndIf	
+
+	'Validate Email Address if they want to email
+	v.Local.sSender.Set(v.Screen.Request!txtSender.Text)
+	f.Intrinsic.Control.If(v.Screen.Request!chkEmail.Value,=,1)
+	
+		'Validate Sender email
+		f.Global.Messaging.IsAddressValid(v.Local.sSender,v.Local.bEmailAddressValid)
+		f.Intrinsic.Control.If(v.Local.bEmailAddressValid.Not)
+			f.Intrinsic.UI.Msgbox("Sender Email is not valid. Please set up your email or contact Administrator.","Invalid")
+			f.Intrinsic.Control.ExitSub
+		f.Intrinsic.Control.EndIf	
+		'Validate Recepients
+		f.Intrinsic.String.Split(v.Screen.Request!txtRecepients.Text.Trim,";",v.Local.sRecepients)
+		f.Intrinsic.Control.For(v.Local.iCnt,0,v.Local.sRecepients.UBound,1)
+			v.Local.sHold.Set(v.Local.sRecepients(v.Local.iCnt).Trim)
+			f.Global.Messaging.IsAddressValid(v.Local.sHold,v.Local.bEmailAddressValid)
+			f.Intrinsic.Control.If(v.Local.bEmailAddressValid.Not)
+				f.Intrinsic.String.Build("Please verify Recepient Emails.{0}Recepient Emails must be valid emails and seperated by semicolon.{0}No blank email accepted.{0}A semicolon at the start or the end of Recepient Email list is also not accepted.",v.Ambient.NewLine,v.Local.sHold)
+				f.Intrinsic.UI.Msgbox(v.Local.sHold,"Invalid")
+				f.Intrinsic.Control.ExitSub
+			f.Intrinsic.Control.EndIf
+		f.Intrinsic.Control.Next(v.Local.iCnt)
+		
+		'Build Sender Email *!* Sender Name
+		f.Intrinsic.String.Build("{0}*!*{1}",v.Local.sSender,"",v.Local.sSender)
+		'Build Recipient Emails
+		f.Intrinsic.String.Join(v.Local.sRecepients,"@!@",v.Local.sRecepients)
+		f.Intrinsic.String.Build("{0}{1}{1}Inspector Note: {2}{1}Inspector Name: {3}",v.Screen.Request!txtBody.Text,v.Ambient.NewLine,v.Screen.Request!txtApproverNote.Text.Trim,v.Global.sApproverName,v.Local.sBody)
+		v.Global.sApproverName.Set(v.Global.sApproverName.left200)
+		
+		f.Intrinsic.String.Split(v.Local.sBody,v.Ambient.NewLine,v.Local.sBody)
+		f.Intrinsic.String.Join(v.Local.sBody,v.ASCII.13,v.Local.sBody)
+		f.Intrinsic.String.Split(v.Local.sBody,v.ASCII.13,v.Local.sBody)
+		f.Intrinsic.String.Join(v.Local.sBody,v.ASCII.13,v.Local.sBody)			
+				
+		'Create email to be sent by courier	
+		F.Global.Security.GetUserID(v.Caller.User,v.Caller.CompanyCode,v.Local.iUser)
+		
+		'Validate attachment
+		f.Intrinsic.Control.If(v.Screen.Request!txtAttachment.Text.Trim,=,"")
+	
+			'Send email with no attachment
+			F.Global.Messaging.QueueMessage(V.Caller.CompanyCode,V.Local.iUser,"QUAL",v.Screen.Request!txtSubject.Text.Trim,V.Local.sSender,V.Local.sRecepients,v.Local.sBody)
+		f.Intrinsic.Control.Else
+			f.Intrinsic.File.Exists(v.Screen.Request!txtAttachment.Text.Trim,v.Local.bEx)
+			f.Intrinsic.Control.If(v.Local.bEx.Not)
+				f.Intrinsic.UI.Msgbox("Attachment file does not exist.","Invalid")
+				f.Intrinsic.Control.ExitSub	
+			f.Intrinsic.Control.EndIf
+			
+			'Check Attachment folder must be in Global\Custom\6034
+			v.Local.sFullpath.Set(v.Screen.Request!txtAttachment.Text.Trim)
+			'f.Intrinsic.String.IsInString(v.Local.sFullpath.UCase,"GLOBAL\CUSTOM\6034","True",V.Local.bEx)
+			'f.Intrinsic.Control.If(v.Local.bEx.Not)
+				'f.Intrinsic.UI.Msgbox("Attachment must be in folder GLOBAL\CUSTOM\6034","Invalid")
+				'f.Intrinsic.Control.ExitSub	
+			'f.Intrinsic.Control.EndIf
+			
+			'Build Attachment
+			f.Intrinsic.String.Split(v.Local.sFullpath,"\",v.Local.sFullpath)
+			v.Local.sFileName.Set(v.Local.sFullpath(v.Local.sFullpath.UBound))
+			v.Local.sFullpath(v.Local.sFullpath.UBound).Set("")
+			f.Intrinsic.String.Join(v.Local.sFullpath,"\",v.Local.sFolderPath)
+			f.Intrinsic.String.Build("{0}*!*{1}",v.Local.sFileName,v.Local.sFolderPath,v.Local.sAttach)		
+			
+			'Send email with attachment
+			F.Global.Messaging.QueueMessage(V.Caller.CompanyCode,V.Local.iUser,"QUAL",v.Screen.Request!txtSubject.Text.Trim,V.Local.sSender,V.Local.sRecepients,v.Local.sBody,5,"",False,"","","","","","","",V.Local.sAttach,False)
+		f.Intrinsic.Control.EndIf				
+
+	f.Intrinsic.Control.EndIf	
+	
+	'Update the Status of GCG_6034_QC
+	v.Local.dDate.Set(v.Ambient.Date)
+	v.Local.sNow.Set(v.Ambient.Now.FormatHH:NN:SS)
+	f.Intrinsic.String.Build("Update GCG_6034_QC set Status = '{0}',Approver = '{2}',ApproveDate = '{3}',ApproveTime = '{4}', ApproveNote = '{5}' where AutoNum = '{1}'",v.Local.sStatus,v.Local.sAutoNum,v.Global.sApproverName.PSQLFriendly,v.Local.dDate.PervasiveDate,v.Local.sNow,v.Local.sApproveNote.PSQLFriendly,v.Local.sSQL)
+	f.ODBC.Connection!conx.Execute(v.Local.sSQL)
+	f.Data.DataTable.SetValue("Insp",v.Local.sRow,"Status",v.Local.sStatus.Trim,"Approver",v.Global.sApproverName.PSQLFriendly,"ApproveDate",v.Local.dDate,"ApproveTime",v.Local.sNow,"ApproveNote",v.Local.sApproveNote.Trim)
+	gui.Request..Visible(False)
+	f.Intrinsic.Control.If(v.Screen.Form!chkRefresh.Value,=,1)
+		gui.Form.timerAutoRefresh.Enabled(True)
+	f.Intrinsic.Control.EndIf
+	gui.Form.frRefresh.Enabled(True)
+	
+	f.Intrinsic.Control.CallSub(Compute_NonProcess)
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdProcess_Click.End
+
+Program.Sub.chkEmail_Click.Start
+f.Intrinsic.Control.Try	
+	
+	f.Intrinsic.Control.If(v.Screen.Request!chkEmail.Value,=,1)	
+		gui.Request.frEmail.Visible(True)
+	f.Intrinsic.Control.Else
+		gui.Request.frEmail.Visible(False)
+		
+	f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.chkEmail_Click.End
+
+Program.Sub.cmdBrowseEmail_Click.Start
+f.Intrinsic.Control.Try
+	v.Local.sError.Declare
+	v.Local.sRet.Declare
+
+	F.Intrinsic.UI.SetBrowserHotTypeAhead(true)
+	F.Intrinsic.UI.Browser("Employee Email","conx","Select Employee,Name,rtrim(EMAIL_ADDR) as Email from Employee_MSTR order by Name,Email","Employee*!*Name*!*Email","200*!*500*!*500",Variable.Local.sRet)
+	
+	'Check if you choose any record from the result
+	F.Intrinsic.Control.If(Variable.Local.sRet.IsCancel)
+		F.Intrinsic.UI.Msgbox("You select NOTHING!")
+	F.Intrinsic.Control.Else
+		F.Intrinsic.String.Split(Variable.Local.sRet,"*!*",Variable.Local.sRet)
+		gui.Request.txtEmail.Text(v.Local.sRet(2).Trim)
+	F.Intrinsic.Control.EndIf	
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdBrowseEmail_Click.End
+
+Program.Sub.cmdAddRecepient_Click.Start
+f.Intrinsic.Control.Try	
+	v.Local.sReceipients.Declare
+
+	f.Intrinsic.Control.If(v.Screen.Request!txtRecepients.Text.Trim,=,"")
+		gui.Request.txtRecepients.Text(v.Screen.Request!txtEmail.Text.Trim)
+	f.Intrinsic.Control.Else	
+		f.Intrinsic.String.Build("{0};{1}",v.Screen.Request!txtRecepients.Text.Trim,v.Screen.Request!txtEmail.Text.Trim,v.Local.sReceipients)
+		gui.Request.txtRecepients.Text(v.Local.sReceipients)
+	f.Intrinsic.Control.EndIf
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdAddRecepient_Click.End
+
+Program.Sub.cmdLoad_Click.Start
+f.Intrinsic.Control.Try
+
+	f.Intrinsic.Control.If(v.Global.bLoadingHappening)
+		f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.EndIf
+	f.Intrinsic.Control.CallSub(Load)
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry	
+Program.Sub.cmdLoad_Click.End
+
+Program.Sub.cmdSelectAttachment_Click.Start
+f.Intrinsic.Control.Try
+	v.Local.sFilePath.Declare
+	v.Local.sDir.Declare
+
+	f.Intrinsic.String.Build("{0}\Custom\6034\{1}",v.Caller.GlobalDir,v.Caller.CompanyCode,v.Local.sDir)	
+	F.Intrinsic.UI.ShowOpenFileDialog(v.Local.sDir,"*|*.*","",V.Local.sFilePath)
+	F.Intrinsic.Control.If(V.Local.sFilePath,=,"***CANCEL***")
+		F.Intrinsic.UI.Msgbox("No File Was Selected")
+		F.Intrinsic.Control.ExitSub
+	F.Intrinsic.Control.EndIf
+	gui.Request.txtAttachment.Text(v.Local.sFilePath)
+
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry	
+
+Program.Sub.cmdSelectAttachment_Click.End
+
+Program.Sub.cmdSaveNoteOnly_Click.Start
+f.Intrinsic.Control.Try
+	v.Local.sRow.Declare
+	v.Local.sSQL.Declare
+	v.Local.bNumeric.Declare
+	v.Local.sNote.Declare
+
+	v.Local.sRow.Set(v.Screen.Request!txtRowIndex.Text.Trim)
+	f.Intrinsic.Math.IsNumeric(v.Local.sRow,v.Local.bNumeric)
+	f.Intrinsic.Control.If(v.Local.bNumeric,=,True,and,v.Local.sRow,<,v.DataTable.Insp.RowCount)
+		f.Intrinsic.UI.InvokeWaitDialog("Saving Note...")
+		v.Local.sNote.Set(v.Screen.Request!txtApproverNote.Text.Trim)
+		v.Local.sNote.Set(v.Local.sNote.left3000)
+		f.Data.DataTable.SetValue("Insp",v.Local.sRow,"ApproveNote",v.Local.sNote)
+		
+		f.Intrinsic.String.Build("Update GCG_6034_QC set ApproveNote = '{0}' where AutoNum = '{1}'",v.Local.sNote,v.DataTable.Insp(v.Local.sRow).AutoNum!FieldValString,v.Local.sSQL)
+		f.ODBC.Connection!conx.Execute(v.Local.sSQL)
+		f.Intrinsic.UI.CloseWaitDialog
+	f.Intrinsic.Control.EndIf	
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry	
+Program.Sub.cmdSaveNoteOnly_Click.End
+
+Program.Sub.ContextMenu.Start
+f.Intrinsic.Control.Try
+
+	Gui.Form..ContextMenuCreate("MAINGRID")	
+	Gui.Form..ContextMenuAddItem("MAINGRID","REFRESH",0,"Refresh")
+	Gui.Form..ContextMenuAddItem("MAINGRID","EXPORT",0,"Export")	
+	
+	Gui.Form..ContextMenuSetItemEventHandler("MAINGRID","REFRESH","MAINGRID_Click")
+	Gui.Form..ContextMenuSetItemEventHandler("MAINGRID","EXPORT","MAINGRID_Click")	
+	
+	gui.Form.gsInsp.ContextMenuAttach("MAINGRID")
+
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.ContextMenu.End
+
+Program.Sub.MAINGRID_Click.Start
+f.Intrinsic.Control.Try
+	v.Local.sSQL.Declare
+	v.Local.sUserID.Declare	
+	V.Local.sFileExport.Declare
+	V.Local.bExcel.Declare
+	V.Local.bFileLocked.Declare
+	V.Local.sMsg.Declare	
+	
+	F.Intrinsic.Control.SelectCase(V.Args.ItemName)
+		f.Intrinsic.Control.Case("REFRESH")
+			F.Intrinsic.Control.If(V.Global.bLoadingHappening)
+				f.Intrinsic.Control.ExitSub
+			F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.CallSub(Load)
+		
+		F.Intrinsic.Control.Case("EXPORT")
+			f.Intrinsic.Control.If(v.Global.bLoad.Not)
+				F.Intrinsic.Control.ExitSub
+			f.Intrinsic.Control.EndIf		
+
+			F.Automation.MSExcel.CheckPresence(V.Local.bExcel)
+		
+			F.Intrinsic.Control.If(V.Local.bExcel)
+				F.Intrinsic.String.Build("{0}\QualityInsp_{1}.xlsx",V.Caller.LocalGssTempDir,v.Ambient.Now.FormatMMDDYYYYHhNnSs,V.Local.sFileExport)
+				F.Intrinsic.File.IsFileLocked(V.Local.sFileExport,V.Local.bFileLocked)
+				F.Intrinsic.Control.If(V.Local.bFileLocked)
+					F.Intrinsic.String.Build("File is already open. Please close and export again.{0}File: {1}",V.Ambient.NewLine,V.Local.sFileExport,V.Local.sMsg)
+					F.Intrinsic.UI.Msgbox(V.Local.sMsg,"File In Use")
+				F.Intrinsic.Control.Else
+					Gui.Form.gsInsp.Export(V.Local.sFileExport,"xlsx")
+					F.Intrinsic.Task.ShellExec(0,"",V.Local.sFileExport,"","",1)
+				F.Intrinsic.Control.EndIf
+			F.Intrinsic.Control.Else
+				F.Intrinsic.String.Build("{0}\QualityInsp{1}.csv",V.Caller.LocalGssTempDir,v.Ambient.Now.FormatMMDDYYYYHhNnSs,V.Local.sFileExport)
+				F.Intrinsic.File.IsFileLocked(V.Local.sFileExport,V.Local.bFileLocked)
+				F.Intrinsic.Control.If(V.Local.bFileLocked)
+					F.Intrinsic.String.Build("File is already open. Please close and export again.{0}File: {1}",V.Ambient.NewLine,V.Local.sFileExport,V.Local.sMsg)
+					F.Intrinsic.UI.Msgbox(V.Local.sMsg,"File In Use")
+				F.Intrinsic.Control.Else
+					Gui.Form.gsInsp.Export(V.Local.sFileExport,"csv")
+				F.Intrinsic.Control.EndIf
+				F.Intrinsic.Task.ShellExec(0,"",V.Local.sFileExport,"","",1)
+			F.Intrinsic.Control.EndIf			
+	
+	F.Intrinsic.Control.EndSelect
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.MAINGRID_Click.End
+
+Program.Sub.cmdBrowseSecurityGroup_Click.Start
+f.Intrinsic.Control.Try
+	v.local.sRet.Declare
+
+	F.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+	f.Intrinsic.UI.CommonBrowser(15,"",v.Local.sRet)
+	F.Intrinsic.Control.If(Variable.Local.sRet.IsCancel,=,False)
+		F.Intrinsic.String.Split(Variable.Local.sRet,"*!*",Variable.Local.sRet)
+		f.Intrinsic.Control.If(v.Screen.Settings!txtSecurityGroup.Text.Trim,=,"")
+			gui.Settings.txtSecurityGroup.Text(v.Local.sRet(1).Trim)
+		f.Intrinsic.Control.Else
+			f.Intrinsic.String.Build("{0},{1}",v.Screen.Settings!txtSecurityGroup.Text.Trim,v.Local.sRet(1).Trim,v.Local.sRet)
+			gui.Settings.txtSecurityGroup.Text(v.Local.sRet)
+		f.Intrinsic.Control.EndIf
+	F.Intrinsic.Control.EndIf		
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdBrowseSecurityGroup_Click.End
+
+Program.Sub.cmdSettings_Click.Start
+f.Intrinsic.Control.Try
+	
+	gui.Settings..Visible(True)
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdSaveSecurity
+Program.Sub.cmdSettings_Click.End
+
+Program.Sub.Settings_UnLoad.Start
+f.Intrinsic.Control.Try
+	
+	gui.Settings..Visible(False)
+	
+f.Intrinsic.Control.Catch
+	f.Intrinsic.Control.CallSub("Catching","sub",v.Ambient.CurrentSubroutine,"errorno",v.Ambient.ErrorNumber,"errordesc",v.Ambient.ErrorDescription)
+f.Intrinsic.Control.EndTry
+Program.Sub.cmdSaveSecurity
+Program.Sub.Settings_UnLoad.End
+
+Program.Sub.Bind_WCs.Start
+F.Intrinsic.Control.Try
+	v.local.sError.Declare 
+	v.local.sRet.Declare	
+
+	f.Intrinsic.Control.If(v.DataTable.WorkCenters.Exists)
+		f.Data.DataTable.Close("WorkCenters")
+	f.Intrinsic.Control.EndIf
+	f.Data.DataTable.CreateFromSQL("WorkCenters","conx","Select WC,Description from GCG_6034_WC order by WC",True)
+	f.Data.DataTable.AddColumn("WorkCenters","Delete","String","Delete")
+	gui.Settings.gsWCs.AddGridviewFromDatatable("gvWCs","WorkCenters")
+	gui.Settings.gsWCs.SuspendLayout()
+	
+	gui.Settings.gsWCs.SetGridviewProperty("gvWCs","OptionsViewShowAutoFilterRow",True)
+	
+	gui.Settings.gsWCs.SetColumnProperty("gvWCs","Delete","AllowEdit",False)
+	gui.Settings.gsWCs.SetColumnProperty("gvWCs","Delete","ReadOnly",True)
+	
+	gui.Settings.gsWCs.SetColumnProperty("gvWCs","Description","AllowEdit",True)
+	gui.Settings.gsWCs.SetColumnProperty("gvWCs","Description","ReadOnly",False)	
+	
+	gui.Settings.gsWCs.SetColumnProperty("gvWCs","Delete","HeaderHAlignment","Center")
+	
+	gui.Settings.gsWCs.SetColumnProperty("gvWCs","WC","Width","35")
+	gui.Settings.gsWCs.SetColumnProperty("gvWCs","Delete","Width","45")
+	
+	gui.Settings.gsWCs.ColumnEdit("gvWCs","Delete","EditorButton","Delete")	
+	gui.Settings.gsWCs.ResumeLayout()
+	gui.Settings.gsWCs.MainView("gvWCs")	
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: GCG_6034_Approval.g2u {0}{1}Subroutine: {2}{1}Subroutine called from:{6}{1}Error Occurred: {3}{1}Description: {4}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,v.Ambient.SubroutineCalledFrom,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	f.Intrinsic.Control.CallSub("Unload")
+F.Intrinsic.Control.EndTry
+
+Program.Sub.Bind_WCs.End
+
+Program.Sub.cmdBrowseWC_Click.Start
+F.Intrinsic.Control.Try
+	v.local.sError.Declare 
+	v.local.sRet.Declare
+
+	F.Intrinsic.UI.SetBrowserHotTypeAhead(True)
+	f.Intrinsic.UI.Browser("Work Group","Conx","SELECT WORK_GROUP as WorkGroup_WorkCenter,'W_Group' as Type, DESCR as Description FROM V_WORKGROUP_HEAD union Select Machine as WorkGroup_WorkCenter,'W_Center' as Type,WC_Name as Description from WorkCenters order by Type desc","Work Group/Work Center*!*Type*!*Description","500*!*200*!*1000",v.Local.sRet)
+	F.Intrinsic.Control.If(Variable.Local.sRet.IsCancel,=,False)
+		F.Intrinsic.String.Split(Variable.Local.sRet,"*!*",Variable.Local.sRet)
+		gui.Settings.txtWC.Text(v.Local.sRet(0))
+		gui.Settings.txtWCDescr.Text(v.Local.sRet(2).Trim)
+	F.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: GCG_6034_Approval.g2u {0}{1}Subroutine: {2}{1}Subroutine called from:{6}{1}Error Occurred: {3}{1}Description: {4}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,v.Ambient.SubroutineCalledFrom,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	f.Intrinsic.Control.CallSub("Unload")
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdBrowseWC_Click.End
+
+Program.Sub.cmdSaveWC_Click.Start
+F.Intrinsic.Control.Try
+	v.Local.sError.Declare
+	v.Local.sSQL.Declare
+	v.Local.sRet1.Declare
+	v.Local.sRet2.Declare
+	v.Local.sRet.Declare
+	v.Local.sWC.Declare
+	v.Local.sDescr.Declare
+
+	v.Local.sWC.Set(v.Screen.Settings!txtWC.Text.Trim)
+	f.Intrinsic.String.Left(v.Screen.Settings!txtWCDescr.Text.Trim,30,v.Local.sDescr)
+	
+	f.Intrinsic.String.Build("Select * from Workcenters where ltrim(rtrim(Machine)) = '{0}'",v.Local.sWC,v.Local.sSQL)
+	f.ODBC.Connection!conx.ExecuteAndReturn(v.Local.sSQL,v.Local.sRet1)
+	f.Intrinsic.String.Build("SELECT * FROM V_WORKGROUP_HEAD where Work_Group =  '{0}'",v.Local.sWC,v.Local.sSQL)
+	f.ODBC.Connection!conx.ExecuteAndReturn(v.Local.sSQL,v.Local.sRet2)
+	f.Intrinsic.Control.If(v.Local.sRet1,=,"",and,v.Local.sRet2,=,"")
+		f.Intrinsic.UI.Msgbox("Please enter a valid Work Group/Work Center.","Invalid")
+		f.Intrinsic.Control.ExitSub
+	f.Intrinsic.Control.EndIf
+	
+	f.Intrinsic.String.Build("Select * from GCG_6034_WC where WC = '{0}'",v.Local.sWC,v.Local.sSQL)
+	f.ODBC.Connection!conx.ExecuteAndReturn(v.Local.sSQL,v.Local.sRet)
+	f.Intrinsic.Control.If(v.Local.sRet,<>,"")
+		f.Intrinsic.String.Build("Update GCG_6034_WC set Description = '{0}' where WC = '{1}'",v.Local.sDescr.PSQLFriendly,v.Local.sWC,v.Local.sSQL)
+	f.Intrinsic.Control.Else
+		f.Intrinsic.String.Build("Insert into GCG_6034_WC (WC,Description) values ('{0}','{1}')",v.Local.sWC,v.Local.sDescr.PSQLFriendly,v.Local.sSQL)
+	f.Intrinsic.Control.EndIf
+	f.ODBC.Connection!conx.Execute(v.Local.sSQL)
+	
+	f.Intrinsic.Control.CallSub("Bind_WCs")	
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: GCG_6034_Approval.g2u {0}{1}Subroutine: {2}{1}Subroutine called from:{6}{1}Error Occurred: {3}{1}Description: {4}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,v.Ambient.SubroutineCalledFrom,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	f.Intrinsic.Control.CallSub("Unload")
+F.Intrinsic.Control.EndTry
+Program.Sub.cmdSaveWC_Click.End
+
+Program.Sub.gsWCs_CellValueChanged.Start
+F.Intrinsic.Control.Try
+	v.Local.sError.Declare
+	v.Local.sSQL.Declare
+	v.Local.sRet.Declare
+	v.Local.sDescr.Declare
+
+	f.Intrinsic.Control.SelectCase(v.Args.Column.UCase)
+		f.Intrinsic.Control.CaseAny("DESCRIPTION")
+			f.Intrinsic.String.Left(v.DataTable.WorkCenters(v.Args.RowIndex).Description!FieldValString,30,v.Local.sDescr)
+			f.Intrinsic.String.Build("Update GCG_6034_WC set Description = '{1}' where WC = '{0}'",v.DataTable.WorkCenters(v.Args.RowIndex).WC!FieldValString,v.Local.sDescr.PSQLFriendly,V.Local.sSQL)		
+			f.ODBC.Connection!conx.Execute(v.Local.sSQL)
+	f.Intrinsic.Control.EndSelect
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: GCG_6034_Approval.g2u {0}{1}Subroutine: {2}{1}Subroutine called from:{6}{1}Error Occurred: {3}{1}Description: {4}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,v.Ambient.SubroutineCalledFrom,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	f.Intrinsic.Control.CallSub("Unload")
+F.Intrinsic.Control.EndTry
+Program.Sub.gsWCs_CellValueChanged.End
+
+Program.Sub.gsWCs_RowCellClick.Start
+F.Intrinsic.Control.Try
+	v.Local.sError.Declare
+	v.Local.sSQL.Declare
+	v.Local.sRet.Declare
+
+	f.Intrinsic.Control.If(v.Args.Column.UCase,=,"DELETE")
+		f.Intrinsic.String.Build("Delete from GCG_6034_WC where WC = '{0}'",v.DataTable.WorkCenters(v.Args.RowIndex).WC!FieldValString,v.Local.sSQL)
+		f.ODBC.Connection!conx.Execute(v.Local.sSQL)
+		f.Data.DataTable.DeleteRow("Workcenters",v.Args.RowIndex)
+		f.Data.DataTable.AcceptChanges("Workcenters")			
+	f.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: GCG_6034_Approval.g2u {0}{1}Subroutine: {2}{1}Subroutine called from:{6}{1}Error Occurred: {3}{1}Description: {4}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,v.Ambient.SubroutineCalledFrom,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	f.Intrinsic.Control.CallSub("Unload")
+F.Intrinsic.Control.EndTry
+Program.Sub.gsWCs_RowCellClick.End
+
+Program.Sub.Check_Tables.Start
+f.Intrinsic.Control.Try
+	v.Local.sError.Declare	
+	v.Local.bExist.Declare
+	Function.ODBC.Connection!conx.TableExists("GCG_6034_QC",v.Local.bExist)
+	f.Intrinsic.Control.If(v.Local.bExist.Not)
+	 
+		f.ODBC.Connection!conx.Execute("CREATE TABLE GCG_6034_QC ( AutoNum IDENTITY DEFAULT '0' CONSTRAINT UK_AutoNum UNIQUE USING 0, Job CHAR(6) DEFAULT ' ', Suffix CHAR(3) DEFAULT ' ', Seq CHAR(6) DEFAULT ' ', InspectType VARCHAR(20) DEFAULT ' ', SubmitNote VARCHAR(3000) DEFAULT ' ', SubmitEmp CHAR(5) DEFAULT ' ', SubmitDate DATE DEFAULT CURDATE(), SubmitTime CHAR(8) DEFAULT ' ', Status VARCHAR(50) DEFAULT ' ', Approver Varchar(200) DEFAULT ' ', ApproveDate DATE, ApproveTime CHAR(8) DEFAULT ' ', ApproveNote VARCHAR(3000) DEFAULT ' ', InspectQty NUMERIC(16,6) DEFAULT '0');")
+	f.Intrinsic.Control.Endif	
+
+	'Check table again to create Index
+	Function.ODBC.Connection!conx.TableExists("GCG_6034_QC",v.Local.bExist)
+	f.Intrinsic.Control.If(v.Local.bExist)
+	
+		f.Intrinsic.Control.CallSub("Check_Index","sTable","GCG_6034_QC","sIndex","GCG_6034_index1")
+		f.Intrinsic.Control.If(v.Args.bExist,=,False)
+			f.ODBC.Connection!conx.Execute("CREATE INDEX GCG_6034_index1 ON GCG_6034_QC ( Job, Suffix, Seq );")
+		f.Intrinsic.Control.EndIf
+
+		f.Intrinsic.Control.CallSub("Check_Index","sTable","GCG_6034_QC","sIndex","GCG_6034_index2")
+		f.Intrinsic.Control.If(v.Args.bExist,=,False)
+			f.ODBC.Connection!conx.Execute("CREATE INDEX GCG_6034_index2 ON GCG_6034_QC ( Job, Suffix, Seq, Status );")
+		f.Intrinsic.Control.EndIf	
+		
+		f.Intrinsic.Control.CallSub("Check_Index","sTable","GCG_6034_QC","sIndex","GCG_6034_index3")
+		f.Intrinsic.Control.If(v.Args.bExist,=,False)
+			f.ODBC.Connection!conx.Execute("CREATE INDEX GCG_6034_index3 ON GCG_6034_QC ( Job, Suffix, Seq, Status, InspectQty );")
+		f.Intrinsic.Control.EndIf		
+		
+	f.Intrinsic.Control.Endif
+	
+	Function.ODBC.Connection!conx.TableExists("GCG_6034_WC",v.Local.bExist)
+	f.Intrinsic.Control.If(v.Local.bExist.Not)	 
+		f.ODBC.Connection!conx.Execute("CREATE TABLE GCG_6034_WC (WC CHAR(4), Description VARCHAR(30) );")
+	f.Intrinsic.Control.Endif	
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: GCG_6034_Approval.g2u {0}{1}Subroutine: {2}{1}Subroutine called from:{6}{1}Error Occurred: {3}{1}Description: {4}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,v.Ambient.SubroutineCalledFrom,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	f.Intrinsic.Control.CallSub("Unload")
+F.Intrinsic.Control.EndTry
+Program.Sub.Check_Tables.End
+
+Program.Sub.Check_Index.Start
+f.Intrinsic.Control.Try
+	v.Local.sError.Declare
+	v.Local.sSQL.Declare
+	v.Local.sRet.Declare
+	v.Local.bExist.Declare
+	
+	f.Intrinsic.String.Build("Select Xf$Name As TableName,F1.XE$Name As FieldName,F1.Xe$DataType as DataType FROM X$File INNER JOIN X$Field F1 On F1.XE$File = XF$ID WHERE Xf$Name = '{0}' and F1.XE$Name = '{1}'",v.Args.sTable,v.Args.sIndex,v.Local.sSQL)
+	f.ODBC.Connection!conx.ExecuteAndReturn(v.Local.sSQL,v.Local.sRet)
+	f.Intrinsic.Control.If(v.Ambient.ExecuteAndReturnEOF.Not)
+		v.Local.bExist.Set(True)
+	f.Intrinsic.Control.EndIf
+	f.Intrinsic.Variable.AddRV("bExist",v.Local.bExist)
+
+F.Intrinsic.Control.Catch
+	'if any error, assume the index exists
+	f.Intrinsic.Variable.AddRV("bExist",True)
+F.Intrinsic.Control.EndTry
+Program.Sub.Check_Index.End
+
+Program.Sub.Check_Folder.Start
+f.Intrinsic.Control.Try
+	v.Local.bEx.Declare
+	v.Local.sDir.Declare
+	
+	'Check custom folder: Custom\6034
+	f.Intrinsic.String.Build("{0}\Custom",v.Caller.GlobalDir,v.Local.sDir)
+	f.Intrinsic.File.DirExists(v.Local.sDir,v.Local.bEx)
+	f.Intrinsic.Control.If(v.Local.bEx.Not)
+		f.Intrinsic.File.CreateDir(v.Local.sDir)		
+	f.Intrinsic.Control.EndIf
+	
+	f.Intrinsic.String.Build("{0}\Custom\6034",v.Caller.GlobalDir,v.Local.sDir)
+	f.Intrinsic.Control.If(v.Local.bEx.Not)
+		f.Intrinsic.File.CreateDir(v.Local.sDir)		
+	f.Intrinsic.Control.EndIf
+	
+	f.Intrinsic.String.Build("{0}\Custom\6034\{1}",v.Caller.GlobalDir,v.Caller.CompanyCode,v.Local.sDir)
+	f.Intrinsic.File.DirExists(v.Local.sDir,v.Local.bEx)
+	f.Intrinsic.Control.If(v.Local.bEx.Not)
+		f.Intrinsic.File.CreateDir(v.Local.sDir)
+	f.Intrinsic.Control.EndIf		
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: GCG_6034_Approval.g2u {0}{1}Subroutine: {2}{1}Subroutine called from:{6}{1}Error Occurred: {3}{1}Description: {4}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,v.Ambient.SubroutineCalledFrom,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	f.Intrinsic.Control.CallSub("Unload")
+F.Intrinsic.Control.EndTry
+Program.Sub.Check_Folder.End
+
+Program.Sub.Set_Timer.Start
+f.Intrinsic.Control.Try
+	v.Local.sError.Declare
+	v.Local.iMin.Declare
+	
+	v.Global.iSecs.Set(60)
+	f.Intrinsic.Math.Sub(v.Screen.Form!txtMin.Text.Trim,1,v.Global.iMinute)
+	gui.Form.timerAutoRefresh.Enabled(True)
+	Gui.Form.timerAutoRefresh.Interval(1000)
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}GAB Version: {5}}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	f.Intrinsic.Control.CallSub("Unload")
+F.Intrinsic.Control.EndTry
+Program.Sub.Set_Timer.End
+
+Program.Sub.timerAutoRefresh_Timer.Start
+F.Intrinsic.Control.Try
+	V.Local.sError.Declare
+	v.Local.sDisplayTimeCountDown.Declare
+	v.Local.sSec.Declare
+	
+	'Substract 1 sec
+	f.Intrinsic.Math.Sub(v.Global.iSecs,1,v.Global.iSecs)
+	f.Intrinsic.String.LPad(v.Global.iSecs,"0",2,v.Local.sSec)
+	'Set label to current elapsed sec
+	f.Intrinsic.String.Build("{0}:{1}",v.Global.iMinute,v.Local.sSec,v.Local.sDisplayTimeCountDown)
+	gui.Form.lblCountDown.Caption(v.Local.sDisplayTimeCountDown)
+	'If sec reach 0, reset sec
+	f.Intrinsic.Control.If(v.Global.iSecs,=,0)
+		'Reset secs
+		v.Global.iSecs.Set(60)
+		'If reached 0 minute, reset minute
+		f.Intrinsic.Control.If(v.Global.iMinute,=,0)
+			'Refresh
+			gui.Form.timerAutoRefresh.Enabled(False)
+			f.Intrinsic.Control.If(v.Global.bLoadingHappening.Not)
+				f.Intrinsic.Control.CallSub("Load")
+			f.Intrinsic.Control.EndIf			
+			f.Intrinsic.Control.CallSub("Set_Timer")
+		f.Intrinsic.Control.Else		
+			f.Intrinsic.Math.Sub(v.Global.iMinute,1,v.Global.iMinute)
+		f.Intrinsic.Control.EndIf		
+	f.Intrinsic.Control.EndIf
+
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub("Unload") 
+F.Intrinsic.Control.EndTry
+Program.Sub.timerAutoRefresh_Timer.End
+
+Program.Sub.chkRefresh_Click.Start
+f.Intrinsic.Control.Try
+	v.Local.sError.Declare
+	
+	f.Intrinsic.Control.If(v.Screen.Form!chkRefresh.Value,=,1)
+		f.Intrinsic.Control.If(v.Screen.Form!txtMin.Text,=,"0",or,v.Screen.Form!txtMin.Text,=,"")
+			gui.Form.txtMin.Text("3")
+		f.Intrinsic.Control.EndIf
+		f.Intrinsic.Control.CallSub("Set_Timer")
+	f.Intrinsic.Control.Else
+		gui.Form.timerAutoRefresh.Enabled(False)
+		gui.Form.lblCountDown.Text("")	
+	f.Intrinsic.Control.EndIf
+	
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub("Unload") 
+F.Intrinsic.Control.EndTry
+Program.Sub.chkRefresh_Click.End
+
+Program.Sub.txtMin_LostFocus.Start
+f.Intrinsic.Control.Try
+	v.Local.sError.Declare
+	
+	f.Intrinsic.Control.If(v.Screen.Form!chkRefresh.Value,=,1)
+		f.Intrinsic.Control.If(v.Screen.Form!txtMin.Text,=,"0",or,v.Screen.Form!txtMin.Text,=,"")
+			gui.Form.txtMin.Text("3")
+		f.Intrinsic.Control.EndIf
+		f.Intrinsic.Control.CallSub("Set_Timer")
+	f.Intrinsic.Control.Else
+		gui.Form.timerAutoRefresh.Enabled(False)
+		gui.Form.lblCountDown.Text("")	
+	f.Intrinsic.Control.EndIf
+	
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub("Unload") 
+F.Intrinsic.Control.EndTry
+Program.Sub.txtMin_LostFocus.End
+
+Program.Sub.Compute_NonProcess.Start
+f.Intrinsic.Control.Try
+	v.Local.sError.Declare
+	v.Local.sHold.Declare
+	v.Local.iHold.Declare	
+	v.Local.fTotal.Declare	
+	v.Local.dDate.Declare
+	v.Local.sFilter.Declare
+	
+	'Calculate non process by type
+	f.Data.DataTable.Compute("Insp","Count([AutoNum])","InspectType = 'FAI' and [Process] = 'Process'",v.Local.sHold)
+	v.Local.iHold.Set(v.Local.sHold)
+	gui.Form.txtFAI.Text(v.Local.iHold)
+	
+	f.Data.DataTable.Compute("Insp","Count([AutoNum])","InspectType = 'Lot' and [Process] = 'Process'",v.Local.sHold)
+	v.Local.iHold.Set(v.Local.sHold)
+	gui.Form.txtLot.Text(v.Local.iHold)
+	
+	f.Data.DataTable.Compute("Insp","Count([AutoNum])","InspectType = 'Final' and [Process] = 'Process'",v.Local.sHold)
+	v.Local.iHold.Set(v.Local.sHold)
+	gui.Form.txtFinal.Text(v.Local.iHold)
+	
+	f.Data.DataTable.Compute("Insp","Count([AutoNum])"," Trim([Process]) = 'Process'",v.Local.sHold)	
+	gui.Form.txtTotalNonProc.Text(v.Local.sHold)
+	
+	f.Intrinsic.Date.DateAdd("d",-1,v.Ambient.Date,v.Local.dDAte)
+	f.Intrinsic.String.Format(v.Local.dDate,"MM/DD/YYYY",v.Local.sHold)
+	f.Intrinsic.String.Build("IsNull(ApproveDate,#01/01/1900#) >= #{0}#",v.Local.sHold,v.Local.sFilter)
+	
+	f.Data.DataTable.Compute("Insp","Count([AutoNum])",v.Local.sFilter,v.Local.sHold)	
+	gui.Form.txtTotalLast24.Text(v.Local.sHold)
+	
+	
+F.Intrinsic.Control.Catch
+	F.Intrinsic.String.Build("Project: {0}{1}{1}Subroutine: {2}{1}Error Occurred {3} with description {4}{1}{1}GAB Version: {5}",V.Ambient.ScriptPath,V.Ambient.Newline,V.Ambient.CurrentSubroutine,V.Ambient.ErrorNumber,V.Ambient.ErrorDescription,V.Ambient.GABVersion,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.CallSub("Unload") 
+F.Intrinsic.Control.EndTry
+Program.Sub.Compute_NonProcess.End
